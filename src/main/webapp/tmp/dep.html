@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="departmentController">
+<head>
+<meta charset="UTF-8" />
+<title>{{department.name}}</title>
+	<link href="/css-vendor/bootstrap.css" rel="stylesheet"/>
+	<link href='/css-vendor/font-awesome.min.css' rel='stylesheet prefetch'/>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/css-tmp/test.css">
+</head>
+<body>
+<body data-spy="scroll" data-target="#myScrollspy">
+	<div class="container">
+		<div class="jumbotron">
+			<h1>
+				<small>Відділення </small> <br />{{department.name}}
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-9">
+				<div data-ng-repeat="s in department.i">
+					<h2 id="section-{{$index}}">{{s.h2}}</h2>
+					<p>{{s.text}}</p>
+					<div data-ng-repeat="pf in s.paragrafs">
+					<!-- 
+					 -->
+						<p ng-bind-html="pf.p"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3" id="myScrollspy">
+				<ul class="nav nav-tabs nav-stacked affix-top" data-spy="affix"
+					data-offset-top="125">
+					<li ng-repeat="s in department.i"><a
+						href="#section-{{$index}}"> {{s.h2}} </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<script src="/tmp/department.db.js"></script>
+	<script src="/tmp/department.controller.js"></script>
+
+</body>
+</html>
