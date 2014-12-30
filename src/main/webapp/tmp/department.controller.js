@@ -1,19 +1,14 @@
-
-//var cuwyApp = angular.module('cuwyApp', ['ui.bootstrap', 'ngSanitize', 'textAngular']);
-//cuwyApp.controller('drugCtrl', [ '$scope', '$http', '$filter', '$sce', function ($scope, $http, $filter, $sce) {
-
-
 var cuwyApp = angular.module('holweb2secApp', ['ngSanitize']);
-cuwyApp.controller('departmentController', [ '$scope',  function ($scope) {
-	console.log("-----------------");
-	$scope.department = department;
-	console.log($scope.department);
+cuwyApp.controller('departmentController', [ '$scope', '$http', function ($scope, $http) {
+	console.log('departmentController');
+	var departmentName = document.getElementById("departmentName").value
+	console.log(departmentName);
+	$http({ method : 'GET', url : '/model/department/v.' + departmentName + '.json'
+	}).success(function(data, status, headers, config) {
+		$scope.department = data
+		console.log($scope.department);
+	}).error(function(data, status, headers, config) {
+		$scope.error = data
+		console.log(data);
+	});
 }]);
-/*
-var cuwyApp = angular.module('holweb2secApp', ['ngSanitize']);
-cuwyApp.controller('departmentController', [ '$scope', '$sce', function ($scope, $sce) {
-	console.log("-----------------");
-	$scope.department = department;
-	console.log($scope.department);
-}]);
- * */

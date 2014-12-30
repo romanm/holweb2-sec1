@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="departmentController">
+<head>
+<meta charset="UTF-8"/>
+<title>Відділення - {{department.name}}</title>
+<link rel="stylesheet" href="/css-vendor/bootstrap.css"/>
+<link href="/css/scrollspy.css" rel="stylesheet"/>
+
+</head>
+<body>
+	<div id="content" class="bs-docs-header">
+		<div class="container" id="top">
+			<h1>
+				<small>Відділення </small> <br />{{department.name}}
+			</h1>
+		</div>
+	</div>
+	<div class="container bs-docs-container">
+		<div class="row" data-ng-show="error.error">
+			<div class="col-md-12" role="main">
+				<div class="alert alert-danger" role="alert">
+					<span class="glyphicon glyphicon-exclamation-sign"
+						aria-hidden="true"></span> <span class="sr-only">Error:</span> <span>
+						Відділення з вказаною адресою - "<b th:text="${departmentName}"></b>" - 
+						не існує на сайті лікарні.
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-9" role="main">
+				<div class="bs-docs-section" data-ng-repeat="s2 in department.i"
+						data-ng-init="s2index = $index"
+				>
+					<h1 id="section-{{s2index}}" class="page-header">{{s2.h2}}</h1>
+					<i>{{s2.shef}}</i> 
+					<img data-ng-show="s2.img" class="img-thumbnail"
+						align="right" 
+						 src="{{s2.img}}"
+						/>
+						<!-- 
+					<img align="right" src="/img/karnauch-20140924.png" class="img-thumbnail" />
+						 -->
+					<p ng-bind-html="s2.textHtml" class="lead"></p>
+					<p data-ng-repeat="pf in s2.paragrafs" class="lead" ng-bind-html="pf.p"></p>
+					<div data-ng-repeat="s3 in s2.subi2"
+						data-ng-init="s3index = $index"
+						>
+						<h3 id="section-{{s2index}}-{{s3index}}">{{s3.h3}}</h3>
+						<p ng-bind-html="s3.textHtml"></p>
+					</div>
+				</div>
+			</div>
+			<div role="complementary" class="col-md-3">
+			<nav
+				class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top"
+				style="">
+				<ul class="nav bs-docs-sidenav">
+					<li data-ng-repeat="s3 in s2.subi2" data-ng-init="s3index = $index"><a
+							href="#section-{{s2index}}-{{s3index}}"> {{s3.h3}} </a></li>
+				</ul>
+				<ul class="nav bs-docs-sidenav">
+				<li data-ng-repeat="s2 in department.i"
+					data-ng-init="s2index = $index"><a
+					href="#section-{{s2index}}"> {{s2.h2}} </a>
+					<ul class="nav" data-ng-show="s2.subi2">
+						<li data-ng-repeat="s3 in s2.subi2" data-ng-init="s3index = $index"><a
+							href="#section-{{s2index}}-{{s3index}}"> {{s3.h3}} </a></li>
+					</ul></li>
+			</ul>
+			<a class="back-to-top" href="#top"> Догори </a>
+			</nav>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" th:value="${departmentName}" id="departmentName"/>
+
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<!-- 
+	<script th:src="'/model/department/v.'+${departmentName}+'.js'"></script>
+	 -->
+	<script src="/tmp/department.controller.js"></script>
+	<script src="/js/scrollspy.js"></script>
+	
+</body>
+</html>

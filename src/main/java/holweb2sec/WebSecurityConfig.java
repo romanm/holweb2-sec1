@@ -17,8 +17,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/"
 						, "/home"
 						, "/css*/**"
+						, "/fonts/**"
 						, "/js*/**"
+						, "/img*/**"
+						, "/model*/**"
 						, "/tmp/*"
+						, "/hol/*"
 						, "/a1.html"
 						).permitAll()
 				.anyRequest().authenticated()
