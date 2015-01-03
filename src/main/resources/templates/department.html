@@ -60,11 +60,12 @@
 					data-ng-repeat="s2 in department.docBlock"
 					data-ng-init="s2index = $index">
 					<h1 id="section-{{s2index}}" class="page-header">{{s2.h2}}</h1>
-					<div data-ng-show="s2.shef">
-						<i>{{s2.shef}}</i> <img data-ng-show="s2.img"
+					<img data-ng-show="s2.img"
 							class="img-thumbnail" align="right" src="{{s2.img}}" 
 							width="{{s2.imgWidth}}"
 							/>
+					<div data-ng-show="s2.shef">
+						<i>{{s2.shef}}</i> 
 						<div data-ng-show="s2.telefon">тел. {{s2.telefon}}</div>
 						<div data-ng-show="s2.fax">fax: {{s2.fax}}</div>
 						<div data-ng-show="s2.email">
