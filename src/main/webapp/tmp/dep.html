@@ -5,13 +5,41 @@
 <title>{{department.name}}</title>
 	<link href="/css-vendor/bootstrap.css" rel="stylesheet"/>
 	<link href='/css-vendor/font-awesome.min.css' rel='stylesheet prefetch'/>
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="/css-tmp/test.css">
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css-tmp/test.css">
 </head>
-<body>
+
 <body data-spy="scroll" data-target="#myScrollspy">
+
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Brand</a>
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
 	<div class="container">
 		<div class="jumbotron">
 			<h1>
@@ -20,25 +48,70 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-9">
-				<div data-ng-repeat="s in department.i">
-					<h2 id="section-{{$index}}">{{s.h2}}</h2>
-					<p>{{s.text}}</p>
-					<div data-ng-repeat="pf in s.paragrafs">
+				<div class="bs-docs-section"
+					data-ng-repeat="s2 in department.docBlock"
+					data-ng-init="s2index = $index">
+					<h1 id="section-{{s2index}}" class="page-header">{{s2.h2}}</h1>
+					<img data-ng-show="s2.img"
+							class="img-thumbnail" align="right" src="{{s2.img}}" 
+							width="{{s2.imgWidth}}"
+							/>
+					<div data-ng-show="s2.shef">
+						<i>{{s2.shef}}</i> 
+						<div data-ng-show="s2.telefon">тел. {{s2.telefon}}</div>
+						<div data-ng-show="s2.fax">fax: {{s2.fax}}</div>
+						<div data-ng-show="s2.email">
+							email: <span data-ng-repeat="email in s2.email"> <a
+								target="_top"
+								th:href="'mailto:{{email}}?Subject=http://hol.in.ua/'+${departmentName}">
+									{{email}}</a><span data-ng-show="!$last">,</span>
+							</span>
+						</div>
+						<div data-ng-show="s2.titles">
+							- <span data-ng-repeat="title in s2.titles"> {{title}}<span
+								data-ng-show="!$last">,</span><span data-ng-show="$last">.</span>
+							</span>
+						</div>
+					</div>
 					<!-- 
-					 -->
-						<p ng-bind-html="pf.p"></p>
+					<img align="right" src="/img/karnauch-20140924.png" class="img-thumbnail" />
+					<p ng-bind-html="s2.textHtml" class="lead"></p>
+					<p data-ng-repeat="pf in s2.paragrafs" class="lead" ng-bind-html="pf.p"></p>
+						 -->
+					<p data-ng-show="s2.p" data-ng-bind-html="s2.p"></p>
+					<div data-ng-repeat="s3 in s2.docBlock"
+						data-ng-init="s3index = $index">
+						<h3 id="section-{{s2index}}-{{s3index}}">{{s3.h3}}</h3>
+						<p data-ng-show="s3.p" data-ng-bind-html="s3.p"></p>
+						<div data-ng-repeat="s4 in s3.docBlock">
+							<p data-ng-show="s4.p" data-ng-bind-html="s4.p"></p>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-xs-3" id="myScrollspy">
-				<ul class="nav nav-tabs nav-stacked affix-top" data-spy="affix"
-					data-offset-top="125">
-					<li ng-repeat="s in department.i"><a
-						href="#section-{{$index}}"> {{s.h2}} </a></li>
-				</ul>
+				<nav
+					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
+					style="">
+					<ul class="nav bs-docs-sidenav">
+						<li data-ng-repeat="s2 in department.docBlock"
+							data-ng-init="s2index = $index" data-ng-show="s2.h2"><a
+							href="#section-{{s2index}}"> {{s2.h2}} </a>
+							<ul class="nav" data-ng-show="s2.docBlock">
+								<li data-ng-repeat="s3 in s2.docBlock"
+									data-ng-init="s3index = $index" data-ng-show="s3.h3"><a
+									href="#section-{{s2index}}-{{s3index}}"> {{s3.h3}} </a></li>
+							</ul></li>
+					</ul>
+					<a class="back-to-top" href="#top"> Догори <span
+						class="glyphicon glyphicon-chevron-up"></span>
+					</a>
+				</nav>
 			</div>
 		</div>
 	</div>
+
+	<input type="hidden" value="ait" id="departmentName" />
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>

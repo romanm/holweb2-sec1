@@ -25,10 +25,11 @@ public class Holweb2secRest {
 		model.addAttribute("departmentName", departmentName);
 		return "department";
 	}
-	
+
 	@RequestMapping(value="/model/v.{departmentName}", method=RequestMethod.GET)
 	public @ResponseBody Map<String, Object> readDepartment(@PathVariable String departmentName) {
 		logger.debug("/model/department/v."+departmentName);
 		return holweb2secController.readDepartment(departmentName);
 	}
+
 }
