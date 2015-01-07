@@ -1,87 +1,23 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="departmentController">
 <head>
-<meta charset="UTF-8" />
-<title>ХОЛ, Відділення: {{department.name}}</title>
-<link rel="stylesheet" href="/css-vendor/bootstrap.css" />
-<link href="/css/scrollspy.css" rel="stylesheet" />
-<link href="/css/holweb2.css" rel="stylesheet" />
-<style type="text/css">
-
-</style>
+	<div th:replace="head :: metaLink"/>
+	
+	<title>ХОЛ / Відділення / {{department.name}}</title>
 </head>
 <body>
-<!-- 
-	<nav role="navigation" class="navbar navbar-default navbar-fixed-top"
- -->
 
-	<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
+	<nav th:replace="navbar :: topNavBar"/>
+	<ol th:replace="navbar :: breadcrumb"/>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search"/>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-	<div id="content" class="bs-docs-header">
+	<div class="bs-docs-header head-img head-img-vid">
 		<div class="container">
-			<h1>
-				<!-- 
-				<small>
-				Хмельницька обласна лікарня <br/>
-				Відділення: </small> <br />
-			 -->
-				<small class="font050"> Відділення Хмельницької обласної
-					лікарні: </small> <br /> {{department.name}}
-			</h1>
+			<small class="font050"> Відділення Хмельницької обласної
+				лікарні: </small>
+			<div class="h1">{{department.name}}</div>
 		</div>
 	</div>
+
 	<div class="container bs-docs-container" id="ctx">
 		<div class="row" data-ng-show="error.error">
 			<div class="col-md-12" role="main">
@@ -101,13 +37,13 @@
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
 					style="">
 					<ul class="nav bs-docs-sidenav">
-						<li data-ng-repeat="s2 in department.docBlock"
-							data-ng-init="s2index = $index" data-ng-show="s2.h2"><a
-							href="#section-{{s2index}}"> {{s2.h2}} </a>
-							<ul class="nav" data-ng-show="s2.docBlock">
-								<li data-ng-repeat="s3 in s2.docBlock"
-									data-ng-init="s3index = $index" data-ng-show="s3.h3"><a
-									href="#section-{{s2index}}-{{s3index}}"> {{s3.h3}} </a></li>
+						<li th:each="s2,s2row : ${department.docBlock}"
+							th:if="${s2['h2']}"><a
+							th:href="'#section-'+${s2row.index}" th:text="${s2.h2}"></a>
+							<ul class="nav" th:if="${s2['docBlock'] != null}">
+								<li th:each="s3,s3row : ${s2.docBlock}" th:if="${s3['h3']}"><a
+									th:href="'#section-'+${s2row.index}+'-'+${s3row.index}"
+									th:text="${s3.h3}"></a></li>
 							</ul></li>
 					</ul>
 					<a class="back-to-top" href="#top"> Догори <span
@@ -117,44 +53,45 @@
 			</div>
 			<div class="col-md-9" role="main">
 				<div class="bs-docs-section"
-					data-ng-repeat="s2 in department.docBlock"
-					data-ng-init="s2index = $index">
-					<h1 id="section-{{s2index}}" class="page-header">{{s2.h2}}</h1>
-					<img data-ng-show="s2.img"
-							class="img-thumbnail" align="right" src="{{s2.img}}" 
-							width="{{s2.imgWidth}}"
+					th:each="s2,s2row : ${department.docBlock}"
+				>
+					<h1 th:id="'section-'+${s2row.index}" class="page-header" th:text="${s2.h2}"></h1>
+					<img th:if="${s2['img'] != null}"
+							class="img-thumbnail" align="right" th:src="${s2.img}" 
+							th:width="${s2['imgWidth'] != null} ? s2.imgWidth"
 							/>
-					<div data-ng-show="s2.shef">
-						<i>{{s2.shef}}</i> 
-						<div data-ng-show="s2.telefon">тел. {{s2.telefon}}</div>
-						<div data-ng-show="s2.fax">fax: {{s2.fax}}</div>
-						<div data-ng-show="s2.email">
-							email: <span data-ng-repeat="email in s2.email"> <a
+					<th:block th:if="${s2['shef'] != null}">
+						<i th:text="${s2.shef}"></i>
+						<div th:if="${s2['telefon'] != null}" th:text="${'тел. '+s2.telefon}"></div>
+						<div th:if="${s2['fax'] != null}" th:text="${'fax: '+s2.fax}"></div>
+						<th:block th:if="${s2['email'] != null}">
+						email: <span th:each="email,emailRow : ${s2.email}"> <a
 								target="_top"
-								th:href="'mailto:{{email}}?Subject=http://hol.in.ua/'+${departmentName}">
-									{{email}}</a><span data-ng-show="!$last">,</span>
+								th:href="'mailto:'+${email}+'?Subject=http://hol.in.ua/'+${departmentName}"
+								th:text="${email}"></a><span
+								th:if="${emailRow.count != emailRow.size}">, </span>
 							</span>
+						</th:block>
+						<div th:if="${s2['titles'] != null}">
+						- <span th:each="title,titleRow : ${s2.titles}" th:text="${title}"><span
+								th:if="${titleRow.count != titleRow.size}">, </span> </span>
 						</div>
-						<div data-ng-show="s2.titles">
-							- <span data-ng-repeat="title in s2.titles"> {{title}}<span
-								data-ng-show="!$last">,</span><span data-ng-show="$last">.</span>
-							</span>
-						</div>
-					</div>
-					<!-- 
-					<img align="right" src="/img/karnauch-20140924.png" class="img-thumbnail" />
-					<p ng-bind-html="s2.textHtml" class="lead"></p>
-					<p data-ng-repeat="pf in s2.paragrafs" class="lead" ng-bind-html="pf.p"></p>
-						 -->
-					<p data-ng-show="s2.p" data-ng-bind-html="s2.p"></p>
-					<div data-ng-repeat="s3 in s2.docBlock"
-						data-ng-init="s3index = $index">
-						<h3 id="section-{{s2index}}-{{s3index}}">{{s3.h3}}</h3>
-						<p data-ng-show="s3.p" data-ng-bind-html="s3.p"></p>
-						<div data-ng-repeat="s4 in s3.docBlock">
-							<p data-ng-show="s4.p" data-ng-bind-html="s4.p"></p>
-						</div>
-					</div>
+					</th:block>
+					<th:block th:if="${s2['docBlock'] != null}" 
+					th:each="s3,s3row : ${s2['docBlock']}">
+						<h3 th:id="'section-'+${s2row.index}+'-'+${s3row.index}"
+						th:if="${s3['h3'] != null}"
+						 th:text="${s3.h3}"></h3>
+						<p th:if="${s3['p'] != null}" th:utext="${s3.p}"
+						th:id="'p-'+${s2row.index}+'-'+${s3row.index}"
+						></p>
+						<th:block th:if="${s3['docBlock'] != null}"
+							th:each="s4,s4row : ${s3['docBlock']}">
+							<p th:if="${s4['p'] != null}" th:utext="${s4.p}"
+							th:id="'p-'+${s2row.index}+'-'+${s3row.index}+'-'+${s4row.index}"
+							></p>
+						</th:block>
+					</th:block>
 				</div>
 			</div>
 		</div>
@@ -169,10 +106,7 @@
 	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
 	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
 	<script src='/js-vendor/textAngular.min.js'></script>
-	<!-- 
-	<script th:src="'/model/department/v.'+${departmentName}+'.js'"></script>
-	 -->
-	<script src="/tmp/department.controller.js"></script>
+	<script src="/js/department.controller.js"></script>
 	<script src="/js/scrollspy.js"></script>
 
 </body>

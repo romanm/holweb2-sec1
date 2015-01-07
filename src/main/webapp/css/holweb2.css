@@ -1,0 +1,125 @@
+bbody {
+	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg");
+}
+.head-img-vids {
+	background: url("http://localhost:8080/img/hol-shew.png") 0 -30px;
+}
+.head-img-vid {
+	background: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg") 0 -80px;
+	/*
+	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg") 0 -60px;
+	*/
+}
+.head-img {
+	height: 160px;
+	opacity: 0.8;
+}
+.ccontainer{
+	background-color: white;
+}
+.font050 {
+	font-size: 50%;
+}
+
+#hol-menu-icons {
+	width: 30px;
+}
+
+
+#nav, #nav nav {
+	margin-bottom: 2px;
+}
+
+#bc-sm {
+	padding: 0px 15px;
+	margin-bottom: 2px;
+	font-size: 75%;
+}
+
+.group {
+	background: yellow;
+	width: 200px;
+	height: 500px;
+}
+
+.group .subgroup {
+	background: orange;
+	width: 150px;
+	height: 200px;
+}
+
+.fixed {
+	position: fixed;
+}
+
+/* sidebar */
+.bs-docs-sidebar {
+	padding-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* all links */
+.bs-docs-sidebar .nav>li>a {
+	color: #999;
+	border-left: 2px solid transparent;
+	padding: 4px 20px;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+/* nested links */
+.bs-docs-sidebar .nav .nav>li>a {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 30px;
+	font-size: 12px;
+}
+
+/* active & hover links */
+.bs-docs-sidebar .nav>.active>a, .bs-docs-sidebar .nav>li>a:hover,
+	.bs-docs-sidebar .nav>li>a:focus {
+	color: #563d7c;
+	text-decoration: none;
+	background-color: transparent;
+	border-left-color: #563d7c;
+}
+/* all active links */
+.bs-docs-sidebar .nav>.active>a, .bs-docs-sidebar .nav>.active:hover>a,
+	.bs-docs-sidebar .nav>.active:focus>a {
+	font-weight: 700;
+}
+/* nested active links */
+.bs-docs-sidebar .nav .nav>.active>a, .bs-docs-sidebar .nav .nav>.active:hover>a,
+	.bs-docs-sidebar .nav .nav>.active:focus>a {
+	font-weight: 500;
+}
+
+/* hide inactive nested list */
+.bs-docs-sidebar .nav ul.nav {
+	display: none;
+}
+/* show active nested list */
+.bs-docs-sidebar .nav>.active>ul.nav {
+	display: block;
+}
+
+#con .jumbotron {
+	height: 300px;
+}
+
+#inh.affix {
+	position: fixed;
+	z-index: 1;
+	top: 80px;
+}
+#nav.affix {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	background-color: white;
+	width: 100%
+	/*
+	*/
+}
+/* sidebar END */

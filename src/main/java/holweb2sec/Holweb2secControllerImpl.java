@@ -18,7 +18,7 @@ public class Holweb2secControllerImpl {
 
 	public Map<String, Object> readDepartment(String departmentName) {
 		String pathToFile = Holweb2secConfig.applicationFolderPfad + Holweb2secConfig.innerDepartmentModelFolderPfad
-				+"/v."+ departmentName + ".json";
+				+"/v."+ departmentName + ".json.js";
 		File file = new File(pathToFile);
 		return readJsonDbFile2map(file);
 	}

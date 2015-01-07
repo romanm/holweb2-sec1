@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="departmentController">
+<head>
+	<div th:replace="head :: metaLink"/>
+	
+	<title>ХОЛ / Відділення / {{department.name}}</title>
+</head>
+<body>
+	<nav th:replace="navbar :: topNavBar"/>
+	<ol th:replace="navbar :: breadcrumb"/>
+	
+	<div>{{seek}}</div>
+	<div th:text="${seek}"></div>
+
+	<div
+		data-ng-repeat="seekResault in department.docBlock | filter: seek ">
+		<a href="/hol/v.{{departmentName}}#{{seekResault.idx}}">
+			{{seekResault.h2}} </a>
+	</div>
+	----------------
+	{{department.name}}
+
+	<input type="hidden" th:value="${departmentName}" id="departmentName" />
+
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<script src="/js/department.controller.js"></script>
+	<script src="/js/scrollspy.js"></script>
+	
+</body>
+
+</html>

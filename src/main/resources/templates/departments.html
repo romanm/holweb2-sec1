@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="departmentsController">
+<head>
+	<div th:replace="head :: metaLink"/>
+</head>
+<body>
+
+	<nav th:replace="navbar :: topNavBar"/>
+	<ol th:replace="navbar :: breadcrumb"/>
+
+	<div class="bs-docs-header head-img head-img-vids">
+		<div class="container">
+			Відділення
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div role="complementary" class="col-md-3">3</div>
+			<div role="complementary" class="col-md-9">
+				<ul class="nav bs-docs-sidenav">
+					<li data-ng-repeat="v in vids.departments"><a href="v.{{v.vUrl}}">
+							{{v.name}} </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<script src="/js/departments.controller.js"></script>
+	<script src="/js/scrollspy.js"></script>
+	
+</body>
+</html>

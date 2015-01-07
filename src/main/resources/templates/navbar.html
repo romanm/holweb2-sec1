@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumb">
+		<li><a href="/">Хмельницька обласна лікарня</a></li>
+		<li><a th:href="@{/hol/vid}">Відділення</a></li>
+		<th:block th:if="${departmentName}">
+			<li class="active"><a th:href="@{'/hol/v.'+${departmentName}}">{{department.name}}</a></li>
+		</th:block>
+		
+	</ol>
+
+	<nav class="navbar navbar-default" id="nav" th:fragment="topNavBar">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"> <img src="/img/hol-kh-3.png"
+					id="hol-menu-icons" />
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<th:block th:if="${departmentName == 'ait'}">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Накази МОЗ <span
+								class="sr-only">(current)</span></a></li>
+						<li><a href="#">Персонал</a></li>
+						<li><a href="#">Бібліотека</a></li>
+						<li><a href="#">Галерея</a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="false">Ще
+								<span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Ще сторінка</a></li>
+								<li><a href="#">І ще сторінка</a></li>
+								<li><a href="#">Та інша сторінка</a></li>
+								<li class="divider"></li>
+								<li><a href="#">І ще маленька</a></li>
+							</ul></li>
+					</ul>
+					<!-- 
+					<ul class="nav navbar-nav navbar-right">
+					</ul>
+					 -->
+
+				</th:block>
+				<input type="hidden" th:value="${seek}" id="seekParam" />
+				<form class="navbar-form navbar-right" role="search"
+				th:action="'/hol/v.'+${departmentName}+'/seek'"
+				>
+					<div class="form-group">
+						<input type="text" name="seek" 
+						data-ng-model="seek"
+						class="form-control" placeholder="Пошук" />
+					</div>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+				</form>
+			</div>
+
+		</div>
+	</nav>
+
+	<nav class="navbar navbar-default" id="nav">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"> <img src="/img/hol-kh-3.png"
+					id="hol-menu-icons" />
+				</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Накази МОЗ <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Персонал</a></li>
+					
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Пошук" />
+					</div>
+					<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"
+						aria-hidden="true"></span>
+					</button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Бібліотека</a></li>
+					<li><a href="#">Галерея</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false">Ще
+							<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Ще сторінка</a></li>
+							<li><a href="#">І ще сторінка</a></li>
+							<li><a href="#">Та інша сторінка</a></li>
+							<li class="divider"></li>
+							<li><a href="#">І ще маленька</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+</nav>
+
+</body>
+</html>

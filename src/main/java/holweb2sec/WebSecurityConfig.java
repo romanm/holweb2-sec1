@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						, "/img*/**"
 						, "/model*/**"
 						, "/tmp/*"
-						, "/hol/*"
+						, "/hol/**"
 						, "/a1.html"
 						).permitAll()
 				.anyRequest().authenticated()
