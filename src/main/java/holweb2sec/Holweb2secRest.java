@@ -28,17 +28,37 @@ public class Holweb2secRest {
 		System.out.println("seek = "+seek);
 		model.addAttribute("seek", seek);
 		addDepartment(departmentName, model);
-		return "seek";
+		addDepartmentModel(departmentName, model);
+		return "dSeek";
+	}
+	@RequestMapping(value="/hol/v.{departmentName}/regal", method=RequestMethod.GET)
+	public String departmentDecree(@PathVariable String departmentName, Model model) {
+		System.out.println("/hol/v-"+departmentName);
+		logger.debug("/hol/v."+departmentName);
+		model.addAttribute("orders2", "regal");
+		addDepartment(departmentName, model);
+		addDepartmentModel(departmentName, model);
+		return "departmentRegal";
+	}
+	private void addDepartmentModel(String departmentName, Model model) {
+		final Map<String, Object> department = departmentModel(departmentName);
+		System.out.println(department);
+		model.addAttribute("department", department);
 	}
 	@RequestMapping(value="/hol/v.{departmentName}", method=RequestMethod.GET)
 	public String department(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol/v-"+departmentName);
 		logger.debug("/hol/v."+departmentName);
 		addDepartment(departmentName, model);
-		final Map<String, Object> department = departmentModel(departmentName);
-		System.out.println(department);
-		model.addAttribute("department", department);
+		addDepartmentModel(departmentName, model);
 		return "department";
+	}
+	@RequestMapping(value="/hol/e-v.{departmentName}", method=RequestMethod.GET)
+	public String departmentEdit(@PathVariable String departmentName, Model model) {
+		System.out.println("/hol/e-v."+departmentName);
+		logger.debug("/hol/e-v."+departmentName);
+		addDepartment(departmentName, model);
+		return "departmentEdit";
 	}
 	private void addDepartment(String departmentName, Model model) {
 		model.addAttribute("departmentName", departmentName);

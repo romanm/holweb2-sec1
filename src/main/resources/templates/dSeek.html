@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="departmentController">
+<head>
+	<div th:replace="head :: metaLink"/>
+	
+	<title>ХОЛ / Відділення / {{department.name}}</title>
+</head>
+<body>
+	<nav th:replace="navbar :: topNavBar"/>
+	<ol th:replace="navbar :: breadcrumb"/>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<th:block th:if="${seek != null}">
+					<th:block th:replace="navbar :: seekForm" />
+				</th:block>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<hr/>
+				<div data-ng-repeat="o2 in department.orders2 | filter: seek ">
+					<span>{{o2.name}}</span>
+					<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
+						<span class="h2"> <a
+							href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}"
+							target="_blank">{{o3.name}}</a> 
+						</span>
+						<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
+							<span data-ng-if="o3.o3url == 'decree'"> <a
+	href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}-{{o4.decreeDate}}"
+								target="_blank"> <span class="glyphicon glyphicon-link"></span>
+									<b>Наказ № {{o4.decreeNr}}</b> від {{o4.decreeDate}}
+							</a> «<i>{{o4.name}}</i>»
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div data-ng-repeat="s2 in department.docBlock | filter: seek ">
+					<span class="h2"> <a
+						href="/hol/v.{{departmentName}}#{{s2.idx}}" target="_blank">
+							{{s2.h2}} </a>
+					</span>
+					<div data-ng-repeat="s3 in s2.docBlock | filter: seek ">
+						<div data-ng-show="s3.h3">
+							<span class="h3"> <a
+								href="/hol/v.{{departmentName}}#{{s3.idx}}" target="_blank">{{s3.h3}}
+							</a>
+							</span>
+							<div data-ng-repeat="s4 in s3.docBlock | filter: seek ">
+								<div data-ng-show="s4.p">
+									<p data-ng-bind-html="s4.p"></p>
+									<a href="/hol/v.{{departmentName}}#{{s4.idx}}" target="_blank">
+										<span class="glyphicon glyphicon-link"></span>
+									</a>
+									<hr />
+								</div>
+							</div>
+						</div>
+						<div data-ng-show="s3.p">
+							<p data-ng-bind-html="s3.p"></p>
+							<a href="/hol/v.{{departmentName}}#{{s3.idx}}" target="_blank">
+								<span class="glyphicon glyphicon-link"></span>
+							</a>
+							<hr />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" th:value="${departmentName}" id="departmentName" />
+
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<script src="/js/department.controller.js"></script>
+	<script src="/js/scrollspy.js"></script>
+	
+</body>
+
+</html>

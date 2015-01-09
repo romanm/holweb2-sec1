@@ -24,7 +24,7 @@
 				<div class="alert alert-danger" role="alert">
 					<span class="glyphicon glyphicon-exclamation-sign"
 						aria-hidden="true"></span> <span class="sr-only">Error:</span> <span>
-						Відділення з вказаною адресою - "<b th:text="${departmentName}"></b>"
+						Відділення з вказаною адресою - "<b>{{department.name}}</b>"
 						- не існує на сайті лікарні.
 					</span>
 				</div>
@@ -53,21 +53,6 @@
 			</div>
 			<div class="col-md-9" role="main">
 			
-				<div class="bs-docs-section"
-					th:each="s2,s2iterationStatus : ${department.docBlock}"
-				>
-					<h1 id="section-{{s2iterationStatus.count}}" class="page-header" th:text="${s2.h2}"></h1>
-					<img th:if="${s2['img'] != null}"
-							class="img-thumbnail" align="right" th:src="${s2.img}" 
-							th:width="${s2['imgWidth'] != null} ? s2.imgWidth"
-							/>
-					<div data-ng-repeat="s3 in s2.docBlock"
-					th:each="s3,s3iterationStatus : ${s2.docBlock}"
-						>
-						<p th:if="${s3['p'] != null}" th:text="${s3.p}"></p>
-					</div>
-				</div>
-
 				<div class="bs-docs-section"
 					data-ng-repeat="s2 in department.docBlock"
 					data-ng-init="s2index = $index">
@@ -98,7 +83,9 @@
 					<p ng-bind-html="s2.textHtml" class="lead"></p>
 					<p data-ng-repeat="pf in s2.paragrafs" class="lead" ng-bind-html="pf.p"></p>
 						 -->
-					<p data-ng-show="s2.p" data-ng-bind-html="s2.p"></p>
+					<p data-ng-show="s2.p" data-ng-bind-html="s2.p" 
+						id="p-{{s2index}}"
+					></p>
 					<div data-ng-repeat="s3 in s2.docBlock"
 						data-ng-init="s3index = $index">
 						<h3 id="section-{{s2index}}-{{s3index}}">{{s3.h3}}</h3>

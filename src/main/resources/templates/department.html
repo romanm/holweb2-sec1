@@ -3,20 +3,24 @@
 <head>
 	<div th:replace="head :: metaLink"/>
 	
-	<title>ХОЛ / Відділення / {{department.name}}</title>
+	<title th:text="'ХОЛ / Відділення / '+${department.name}"></title>
 </head>
 <body>
+
+	<div class="bs-docs-header head-img head-img-vid">
+		<div class="container">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				<small class="font050"> Відділення Хмельницької обласної
+					лікарні: </small>
+				<div class="h1" th:text="${department.name}"></div>
+			</div>
+		</div>
+	</div>
 
 	<nav th:replace="navbar :: topNavBar"/>
 	<ol th:replace="navbar :: breadcrumb"/>
 
-	<div class="bs-docs-header head-img head-img-vid">
-		<div class="container">
-			<small class="font050"> Відділення Хмельницької обласної
-				лікарні: </small>
-			<div class="h1">{{department.name}}</div>
-		</div>
-	</div>
 
 	<div class="container bs-docs-container" id="ctx">
 		<div class="row" data-ng-show="error.error">
@@ -36,10 +40,11 @@
 				<nav
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
 					style="">
+					<div class="h5" th:text="${department.name}"></div>
 					<ul class="nav bs-docs-sidenav">
 						<li th:each="s2,s2row : ${department.docBlock}"
-							th:if="${s2['h2']}"><a
-							th:href="'#section-'+${s2row.index}" th:text="${s2.h2}"></a>
+							th:if="${s2['h2']}"><a th:href="'#section-'+${s2row.index}"
+							th:text="${s2.h2}"></a>
 							<ul class="nav" th:if="${s2['docBlock'] != null}">
 								<li th:each="s3,s3row : ${s2.docBlock}" th:if="${s3['h3']}"><a
 									th:href="'#section-'+${s2row.index}+'-'+${s3row.index}"
