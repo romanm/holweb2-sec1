@@ -28,8 +28,13 @@
 							target="_blank">{{o3.name}}</a> 
 						</span>
 						<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
-							<span data-ng-if="o3.o3url == 'decree'"> <a
-	href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}-{{o4.decreeDate}}"
+							<span data-ng-if="o3.o3url != 'decree'"> <a
+								href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span
+									class="glyphicon glyphicon-link"></span>{{o4.name}} </a> <span
+								id="{{o3.o3url}}-{{o4.id}}"> </span>
+								<div>{{o4.annotation}}</div>
+							</span> <span data-ng-if="o3.o3url == 'decree'"> <a
+								href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}"
 								target="_blank"> <span class="glyphicon glyphicon-link"></span>
 									<b>Наказ № {{o4.decreeNr}}</b> від {{o4.decreeDate}}
 							</a> «<i>{{o4.name}}</i>»
