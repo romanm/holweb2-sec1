@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="departmentController">
+<head>
+	<div th:replace="head :: metaLink" />
+
+	<title>ХОЛ / Відділення / {{department.name}}</title>
+</head>
+<body>
+	<div class="bs-docs-header head-img head-img-vid">
+		<div class="container">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				<small class="font050"> Відділення Хмельницької обласної
+					лікарні: </small>
+				<div
+					data-ng-class="{'h4': departmentName == 'abdominal', 'h1':departmentName != 'abdominal'}">{{department.name}}</div>
+			</div>
+		</div>
+	</div>
+
+	<nav th:replace="navbar :: topNavBarAjs"/>
+	<ol th:replace="navbar :: breadcrumbAjs"/>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div
+					data-ng-repeat="doctor in personalList | filter:{department_id:department.department_id}  ">
+					{{doctor.personal_surname}} {{doctor.personal_name}}
+					{{doctor.personal_patronymic}}
+					<hr />
+				</div>
+				<div data-ng-show="department.department_id2"
+					data-ng-repeat="doctor in personalList | filter: {department_id:department.department_id2} ">
+					{{doctor.personal_surname}} {{doctor.personal_name}}
+					{{doctor.personal_patronymic}}
+					<hr />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div th:replace="head :: docFooter"/>
+
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<script src="/js/department.controller.js"></script>
+	<script src="/js/scrollspy.js"></script>
+	
+</body>
+
+</html>

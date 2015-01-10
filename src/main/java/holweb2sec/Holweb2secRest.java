@@ -1,5 +1,6 @@
 package holweb2sec;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +32,17 @@ public class Holweb2secRest {
 		addDepartmentModel(departmentName, model);
 		return "dSeek";
 	}
+
+	@RequestMapping(value="/hol/v.{departmentName}/personal", method=RequestMethod.GET)
+	public String departmentPersonal(@PathVariable String departmentName, Model model) {
+		final String url = "/hol/v."+departmentName+"/personal";
+		System.out.println(url);
+		logger.debug(url);
+		addDepartment(departmentName, model);
+		model.addAttribute("orders2", "personal");
+		return "departmentPersonal";
+	}
+
 	@RequestMapping(value="/hol/v.{departmentName}/regal", method=RequestMethod.GET)
 	public String departmentDecree(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol/v-"+departmentName);
@@ -75,6 +87,12 @@ public class Holweb2secRest {
 	public @ResponseBody Map<String, Object> departmentModel(@PathVariable String departmentName) {
 		logger.debug("/model/department/v."+departmentName);
 		return holweb2secController.readDepartment(departmentName);
+	}
+
+	@RequestMapping(value = "/hol/personalList", method = RequestMethod.GET)
+	public @ResponseBody List<Map<String, Object>> personalList() {
+		logger.debug("/personalList");
+		return holweb2secController.personalList();
 	}
 
 }

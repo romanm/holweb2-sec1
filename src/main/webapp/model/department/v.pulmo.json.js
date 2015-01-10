@@ -1,6 +1,16 @@
 {
 	"name":"Пульмонологія"
 	,"name2":"Пульмонологічне"
+		,"department_id" : 21
+		,"orders2":
+			[{
+				"name":"Головна","o2url":"","state":"active"
+			},{
+				"name":"Персонал","o2url":"personal"
+			},{
+				"name":"Полиця","o2url":"regal","state":"active"
+			}]
+
 	,"docBlock":[
 {"h2":"Відділення"
 	,"docBlock":[

@@ -1,4 +1,13 @@
 {"name":"Опікове"
+	,"department_id" : 14
+	,"orders2":
+		[{
+			"name":"Головна","o2url":"","state":"active"
+		},{
+			"name":"Персонал","o2url":"personal"
+		},{
+			"name":"Полиця","o2url":"regal","state":"active"
+		}]
 	,"docBlock":[
 {"h2":"Відділення"
 	,"docBlock":[

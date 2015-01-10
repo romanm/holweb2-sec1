@@ -8,4 +8,12 @@
 		<link href="/css/holweb2.css" rel="stylesheet" />
 	</div>
 </head>
+<body>
+
+	<div th:fragment="docFooter" th:remove="tag">
+		<input type="hidden" th:value="${departmentName}" id="departmentName" />
+		<input type="hidden" th:value="${orders2}" id="orders2" />
+		<input type="hidden" th:value="${seek}" id="seekParam" />
+	</div>
+</body>
 </html>

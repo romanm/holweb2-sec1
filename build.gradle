@@ -20,17 +20,19 @@ jar {
 }
 
 repositories {
-    mavenLocal()
-    mavenCentral()
-    maven { url "https://repo.spring.io/libs-release" }
+	mavenLocal()
+	mavenCentral()
+	maven { url "https://repo.spring.io/libs-release" }
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    // tag::security[]
-    compile("org.springframework.boot:spring-boot-starter-security")
-    // end::security[]
-    testCompile("junit:junit")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	compile("org.springframework:spring-jdbc")
+	compile("mysql:mysql-connector-java:5.1.31")
+	// tag::security[]
+	compile("org.springframework.boot:spring-boot-starter-security")
+	// end::security[]
+	testCompile("junit:junit")
 }
 
 task wrapper(type: Wrapper) {

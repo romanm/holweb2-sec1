@@ -2,9 +2,11 @@
 	"name":"Анестезіологія та інтенсивна терапія"
 	,"name2":"Анестезіології та інтенсивної терапії "
 	,"short":"ВАІТ"
-	, "orders2":
+	,"department_id" : 22
+	,"department_id2" : 6
+	,"orders2":
 		[{
-			"name":"Головна","o2url":"/","state":"active"
+			"name":"Головна","o2url":"","state":"active"
 		},{
 			"name":"Персонал","o2url":"personal"
 		},{

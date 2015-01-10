@@ -2,6 +2,16 @@
 <html>
 <body>
 
+	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumbAjs">
+		<li><a href="/">Хмельницька обласна лікарня</a></li>
+		<li><a th:href="@{/hol/vid}">Відділення</a></li>
+		<li class="active" data-ng-show="departmentName"><a
+			href="/hol/v.{{departmentName}}">{{department.name}}</a></li>
+		<li data-ng-repeat="o2 in department.orders2"
+		data-ng-show="o2.o2url == orders2"
+		>{{o2.name}}</li>
+	</ol>
+
 	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumb">
 		<li><a href="/">Хмельницька обласна лікарня</a></li>
 		<li><a th:href="@{/hol/vid}">Відділення</a></li>
@@ -19,6 +29,28 @@
 			</th:block>
 		</th:block>
 	</ol>
+
+	<nav class="navbar navbar-default" id="nav" th:fragment="topNavBarAjs">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"> <img src="/img/hol-kh-3.png"
+					id="hol-menu-icons" />
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul data-ng-show="department.orders2" class="nav navbar-nav">
+					<li data-ng-repeat="o2 in department.orders2"><a
+						href="/hol/v.{{departmentName}}/{{o2.o2url}}">{{o2.name}}</a></li>
+				</ul>
+				<th:block th:if="${seek == null}">
+					<th:block th:replace="navbar :: seekForm" />
+				</th:block>
+			</div>
+		</div>
+	</nav>
 
 	<nav class="navbar navbar-default" id="nav" th:fragment="topNavBar">
 		<div class="container-fluid">
@@ -63,7 +95,6 @@
 	</nav>
 
 	<th:block th:fragment="seekForm">
-		<input type="hidden" th:value="${seek}" id="seekParam" />
 		<form class="navbar-form navbar-right" role="search"
 			th:action="'/hol/v.'+${departmentName}+'/seek'">
 			<div class="form-group">

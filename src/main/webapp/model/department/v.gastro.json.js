@@ -1,6 +1,16 @@
 {
 	"name":"Гастроентерологія"
 	,"name1":"Гастроентерологічне"
+	,"department_id" : 3
+	,"orders2":
+		[{
+			"name":"Головна","o2url":"","state":"active"
+		},{
+			"name":"Персонал","o2url":"personal"
+		},{
+			"name":"Полиця","o2url":"regal","state":"active"
+		}]
+
 	,"docBlock":[
 {"h2":"Відділення"
 	,"docBlock":[

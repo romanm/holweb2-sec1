@@ -6,8 +6,8 @@
 <body>
 	<div class="bs-docs-header head-img head-img-vids">
 		<div class="container">
-			<h2 style="color: aqua;">
-				Відділення <small style="color: aqua;"> Хмельницької обласної лікарні </small>
+			<h2 class="departmentsHead" >
+				Відділення <small> Хмельницької обласної лікарні </small>
 			</h2>
 		</div>
 	</div>
@@ -15,20 +15,71 @@
 	<nav th:replace="navbar :: topNavBar"/>
 	<ol th:replace="navbar :: breadcrumb"/>
 
-
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">3</div>
 			<div role="complementary" class="col-md-9">
-				<ul class="nav bs-docs-sidenav">
-					<li data-ng-repeat="v in vids.departments"><a href="v.{{v.vUrl}}">
-							{{v.name}} </a></li>
-				</ul>
+				<div class="row">
+					<div class="col-md-6">
+						<h3 id="profile">
+							Відділення 
+							<!-- 
+							<small>За профілем</small>
+							 -->
+						</h3>
+					</div>
+					<div class="col-md-3">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="policlinic"> Поліклініка </a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="nav navbar-nav">
+							<li><a href="reception"> Приймальне відділення </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="list-inline">
+							<li class="h4">Діагностичні</li>
+							<li>Item 1</li>
+							<li>Item 2</li>
+							<li>Item 3</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="nav navbar-nav">
+							<li class="h4">Акушерсько-гінекологічні</li>
+							<li
+								data-ng-repeat="v in vids.departments | filter:{type:'obstetrical-gynecological'} "><a
+								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6"><h4>Хірургічні</h4>
+						<ul class="nav bs-docs-sidenav">
+							<li
+								data-ng-repeat="v in vids.departments | filter:{type:'chirurgiae'} "><a
+								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
+						</ul>
+					</div>
+					<div class="col-md-6"><h4>Терапевтичні</h4>
+						<ul class="nav bs-docs-sidenav">
+							<li
+								data-ng-repeat="v in vids.departments | filter:{type:'therapy'} "><a
+								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
+						</ul>
+					
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
-	
+
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>
 	<script src="/js-vendor/angular.min.js"></script>

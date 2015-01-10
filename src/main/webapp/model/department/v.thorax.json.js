@@ -1,6 +1,16 @@
 {
 	"name":"Торакальна хірургія"
 	,"name2":"Торакальної хірургії"
+	,"department_id" : 25
+	,"orders2":
+		[{
+			"name":"Головна","o2url":"","state":"active"
+		},{
+			"name":"Персонал","o2url":"personal"
+		},{
+			"name":"Полиця","o2url":"regal","state":"active"
+		}]
+
 	,"docBlock":[
 {"h2":"Відділення"
 	,"docBlock":[

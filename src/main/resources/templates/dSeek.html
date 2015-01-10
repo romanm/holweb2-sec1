@@ -21,11 +21,12 @@
 			<div class="col-md-12">
 				<hr/>
 				<div data-ng-repeat="o2 in department.orders2 | filter: seek ">
-					<span>{{o2.name}}</span>
+					{{department.short}} <a
+						href="/hol/v.{{departmentName}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
 					<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
 						<span class="h2"> <a
 							href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}"
-							target="_blank">{{o3.name}}</a> 
+							target="_blank">{{o3.name}}</a>
 						</span>
 						<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
 							<span data-ng-if="o3.o3url != 'decree'"> <a
@@ -42,8 +43,12 @@
 						</div>
 					</div>
 				</div>
-
+<hr/>
 				<div data-ng-repeat="s2 in department.docBlock | filter: seek ">
+					<div>
+						{{department.short}} <a href="/hol/v.{{departmentName}}"
+							target="_blank">Головна</a>
+					</div>
 					<span class="h2"> <a
 						href="/hol/v.{{departmentName}}#{{s2.idx}}" target="_blank">
 							{{s2.h2}} </a>

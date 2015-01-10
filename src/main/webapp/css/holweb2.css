@@ -21,6 +21,21 @@ bbody {
 	font-size: 50%;
 }
 
+.departmentsHead, .departmentsHead small{
+	text-shadow: 1px 2px 1px black;
+	/*
+	text-shadow: 5px 5px 5px black;
+	text-shadow: 5px 5px 5px #FF0000;
+	color: aqua;
+	color: graytext;
+	color: DarkGray  ;
+	color: DarkOrange ;
+	color: DarkKhaki ;
+	color: DarkTurquoise ;
+	*/
+	color: DarkSeaGreen ;
+}
+
 #hol-menu-icons {
 	width: 30px;
 }

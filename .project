@@ -21,26 +21,4 @@
 		<nature>org.springsource.ide.eclipse.gradle.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/main/webapp/tmp/bs-dnc.html</name>
-			<type>1</type>
-			<location>/home/roman/research/bootstrap/navbar-dinamic/bs-dnc.html</location>
-		</link>
-		<link>
-			<name>src/main/webapp/tmp/bs-gs-1.html</name>
-			<type>1</type>
-			<location>/home/roman/research/bootstrap/scrollspy/gs/bs-gs-1.html</location>
-		</link>
-		<link>
-			<name>src/main/webapp/tmp/bs-inhalte.html</name>
-			<type>1</type>
-			<location>/home/roman/research/bootstrap/bs-inhalte/bs-inhalte.html</location>
-		</link>
-		<link>
-			<name>src/main/webapp/tmp/docs.js</name>
-			<type>1</type>
-			<location>/home/roman/research/bootstrap/scrollspy/gs/bs-gs_files/docs.js</location>
-		</link>
-	</linkedResources>
 </projectDescription>

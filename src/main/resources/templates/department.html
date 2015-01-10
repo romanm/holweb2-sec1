@@ -63,7 +63,7 @@
 					<h1 th:id="'section-'+${s2row.index}" class="page-header" th:text="${s2.h2}"></h1>
 					<img th:if="${s2['img'] != null}"
 							class="img-thumbnail" align="right" th:src="${s2.img}" 
-							th:width="${s2['imgWidth'] != null} ? s2.imgWidth"
+							th:width="${s2['imgWidth'] != null} ? ${s2.imgWidth}"
 							/>
 					<th:block th:if="${s2['shef'] != null}">
 						<i th:text="${s2.shef}"></i>
@@ -102,7 +102,7 @@
 		</div>
 	</div>
 
-	<input type="hidden" th:value="${departmentName}" id="departmentName" />
+	<div th:replace="head :: docFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>
