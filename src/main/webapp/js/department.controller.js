@@ -1,5 +1,5 @@
 var cuwyApp = angular.module('holweb2secApp', ['ngSanitize']);
-cuwyApp.controller('departmentController', [ '$scope', '$http', function ($scope, $http) {
+cuwyApp.controller('departmentController', [ '$scope', '$http', '$filter', function ($scope, $http, $filter) {
 	console.log('departmentController');
 	$scope.departmentName = document.getElementById("departmentName").value
 	console.log($scope.departmentName);
@@ -12,7 +12,7 @@ cuwyApp.controller('departmentController', [ '$scope', '$http', function ($scope
 	}).success(function(data, status, headers, config) {
 		$scope.department = data
 		console.log($scope.department);
-		inits2index();
+//		inits2index();
 	}).error(function(data, status, headers, config) {
 		$scope.error = data
 	});
@@ -21,9 +21,23 @@ cuwyApp.controller('departmentController', [ '$scope', '$http', function ($scope
 		$http({ method : 'GET', url : '/model/personalListHolWeb.json.js'
 		}).success(function(data, status, headers, config) {
 			$scope.personalList = data
+			pullOutDepartmentPersonal();
 		}).error(function(data, status, headers, config) {
 			$scope.error = data
 		});
+	}
+
+	pullOutDepartmentPersonal = function(){
+		$scope.department.dpl = [];
+		$scope.personalList.pl.forEach(function(personal) {
+			if($scope.department.department_id === personal.department_id
+				|| $scope.department.department_id2 === personal.department_id
+			){
+				$scope.department.dpl.push(personal);
+			}
+		})
+		$scope.department.dpl = $filter('orderBy')($scope.department.dpl, 'personal_username')
+
 	}
 
 	inits2index = function(){

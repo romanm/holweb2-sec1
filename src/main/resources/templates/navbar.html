@@ -12,6 +12,18 @@
 		>{{o2.name}}</li>
 	</ol>
 
+	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumbSpk">
+		<li><a href="/">Хмельницька обласна лікарня</a></li>
+		<li><a th:href="@{/hol/spivrobitnik}">Співробітники</a></li>
+		<th:block th:if="${personalUrl}">
+			<li><a th:href="@{/hol/spivrobitnik}">Персональна сторінка 
+{{spkPersonal.personal_surname}}
+{{spkPersonal.personal_name}}
+{{spkPersonal.personal_patronymic}}
+			</a></li>
+		</th:block>
+	</ol>
+
 	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumb">
 		<li><a href="/">Хмельницька обласна лікарня</a></li>
 		<li><a th:href="@{/hol/vid}">Відділення</a></li>
@@ -29,6 +41,18 @@
 			</th:block>
 		</th:block>
 	</ol>
+
+	<div class="bs-docs-header head-img head-img-vid" th:fragment="departmentHead">
+		<div class="container">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				<small class="font050"> Відділення Хмельницької обласної
+					лікарні: </small>
+				<div
+					data-ng-class="{'h4': departmentName == 'abdominal', 'h1':departmentName != 'abdominal'}">{{department.name}}</div>
+			</div>
+		</div>
+	</div>
 
 	<nav class="navbar navbar-default" id="nav" th:fragment="topNavBarAjs">
 		<div class="container-fluid">

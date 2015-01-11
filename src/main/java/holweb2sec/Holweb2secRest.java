@@ -83,6 +83,20 @@ public class Holweb2secRest {
 		return "departments";
 	}
 
+	@RequestMapping(value="/hol/spivrobitnik", method=RequestMethod.GET)
+	public String spivrobitnik( Model model) {
+		System.out.println("/hol/spivrobitnik");
+		logger.debug("/hol/spivrobitnik");
+		return "spivrobitnik";
+	}
+	@RequestMapping(value="/hol/spk/{personalUrl}", method=RequestMethod.GET)
+	public String personalUrl(@PathVariable String personalUrl, Model model) {
+		System.out.println("/hol/spk/"+personalUrl);
+		logger.debug("/hol/spk/"+personalUrl);
+		addDepartment(personalUrl, model);
+		return "spkPersonal";
+	}
+
 	@RequestMapping(value="/model/v.{departmentName}", method=RequestMethod.GET)
 	public @ResponseBody Map<String, Object> departmentModel(@PathVariable String departmentName) {
 		logger.debug("/model/department/v."+departmentName);
@@ -93,6 +107,12 @@ public class Holweb2secRest {
 	public @ResponseBody List<Map<String, Object>> personalList() {
 		logger.debug("/personalList");
 		return holweb2secController.personalList();
+	}
+
+	@RequestMapping(value = "/hol/addPL", method = RequestMethod.GET)
+	public @ResponseBody Map<String, Object> addPL() {
+		logger.debug("/addPL");
+		return holweb2secController.addPL();
 	}
 
 }

@@ -6,7 +6,7 @@
 	<title th:text="'ХОЛ / Відділення / '+${department.name}"></title>
 </head>
 <body>
-
+	<div th:replace="navbar :: departmentHead"/>
 	<nav th:replace="navbar :: topNavBar" />
 	<ol th:replace="navbar :: breadcrumb" />
 	<div class="container">
@@ -83,16 +83,18 @@
 	</div>
 	</div>
 	
+	<div th:replace="head :: docFooter"/>
+	
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>
 	<script src="/js/scrollspy.js"></script>
-	<!-- 
 	<script src="/js-vendor/angular.min.js"></script>
 	<script src="/js-vendor/angular-sanitize.min.js"></script>
 	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
 	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
 	<script src='/js-vendor/textAngular.min.js'></script>
 	<script src="/js/department.controller.js"></script>
+	<!-- 
 	 -->
 </body>
 

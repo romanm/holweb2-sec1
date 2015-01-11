@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="personalController">
+<head>
+<div th:replace="head :: metaLink" />
+
+<title>ХОЛ / Співробітники</title>
+</head>
+<body>
+
+	<nav th:replace="navbar :: topNavBar"/>
+	<ol th:replace="navbar :: breadcrumbSpk"/>
+
+<div class="container">
+	<div class="row">
+		<div role="complementary" class="col-md-3"></div>
+		<div role="complementary" class="col-md-9">
+			<h1>ХОЛ / Співпрацівники</h1>
+			
+			<!-- 
+			<div data-ng-repeat="personal in personalList.pl | orderBy:'personal_username'"
+			 -->
+			<div data-ng-repeat="personal4 in personalList.pl"
+				data-ng-init="personalIndex = $index; col = $index%4;
+				personal1 = personalList.pl[personalIndex -3];
+				personal2 = personalList.pl[personalIndex -2];
+				personal3 = personalList.pl[personalIndex -1];
+				">
+				<div class="row" data-ng-if="col == 3">
+					<div class="col-md-3">
+						<img class="img-circle"
+							src="/img/spk/{{personal1.personal_url}}.jpg" />
+						<div class="h4">
+							<a href="/hol/spk/{{personal1.personal_url}}">{{personal1.personal_username}}</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<img class="img-circle"
+							src="/img/spk/{{personal2.personal_url}}.jpg" />
+						<div class="h4">
+							<a href="/hol/spk/{{personal2.personal_url}}">{{personal2.personal_username}}</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<img class="img-circle"
+							src="/img/spk/{{personal3.personal_url}}.jpg" />
+						<div class="h4">
+							<a href="/hol/spk/{{personal3.personal_url}}">{{personal3.personal_username}}</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<img class="img-circle"
+							src="/img/spk/{{personal4.personal_url}}.jpg" />
+						<div class="h4">
+							<a href="/hol/spk/{{personal4.personal_url}}">{{personal4.personal_username}}</a>
+						</div>
+					</div>
+				</div>
+				<div class="row"
+					data-ng-if="personal4.p1 != personalList.pl[personalIndex -
+							1].p1">
+					<div class="col-md-12">
+						<div id="i_{{personal4.p1}}" class="page-header">{{personal4.p1}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<input type="hidden" th:value="${personalUrl}" id="personalUrl" />
+	
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<script src="/js/personal.controller.js"></script>
+	<script src="/js/scrollspy.js"></script>
+
+</body>
+</html>

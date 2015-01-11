@@ -6,17 +6,8 @@
 	<title>ХОЛ / Відділення / {{department.name}}</title>
 </head>
 <body>
-	<div class="bs-docs-header head-img head-img-vid">
-		<div class="container">
-			<div class="col-md-3"></div>
-			<div class="col-md-9">
-				<small class="font050"> Відділення Хмельницької обласної
-					лікарні: </small>
-				<div
-					data-ng-class="{'h4': departmentName == 'abdominal', 'h1':departmentName != 'abdominal'}">{{department.name}}</div>
-			</div>
-		</div>
-	</div>
+
+	<div th:replace="navbar :: departmentHead"/>
 
 	<nav th:replace="navbar :: topNavBarAjs"/>
 	<ol th:replace="navbar :: breadcrumbAjs"/>
@@ -25,16 +16,35 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div
-					data-ng-repeat="doctor in personalList | filter:{department_id:department.department_id}  ">
-					{{doctor.personal_surname}} {{doctor.personal_name}}
-					{{doctor.personal_patronymic}}
-					<hr />
-				</div>
-				<div data-ng-show="department.department_id2"
-					data-ng-repeat="doctor in personalList | filter: {department_id:department.department_id2} ">
-					{{doctor.personal_surname}} {{doctor.personal_name}}
-					{{doctor.personal_patronymic}}
-					<hr />
+					data-ng-repeat="personal1 in department.dpl "
+					data-ng-init="personalIndex = $index; col = $index%4;
+				personal2 = department.dpl[personalIndex +1];
+				personal3 = department.dpl[personalIndex +2];
+				personal4 = department.dpl[personalIndex +3];
+				">
+					<div class="row" data-ng-if="col == 0">
+						<div class="col-md-3">
+							<a href="/hol/spk/{{personal1.personal_url}}"> <img
+								class="img-circle" src="/img/spk/{{personal1.personal_url}}.jpg" />
+								<div class="h4">{{personal1.personal_username}}</div>
+							</a>
+						</div>
+						<div class="col-md-3" data-ng-show="personal2">
+							<a href="/hol/spk/{{personal2.personal_url}}"><img
+								class="img-circle" src="/img/spk/{{personal2.personal_url}}.jpg" />
+							<div class="h4">{{personal2.personal_username}}</div></a>
+						</div>
+						<div class="col-md-3" data-ng-show="personal3">
+							<a href="/hol/spk/{{personal3.personal_url}}"> <img
+								class="img-circle" src="/img/spk/{{personal3.personal_url}}.jpg" />
+								<div class="h4">{{personal3.personal_username}}</div></a>
+						</div>
+						<div class="col-md-3" data-ng-show="personal4">
+							<a href="/hol/spk/{{personal4.personal_url}}"> <img
+								class="img-circle" src="/img/spk/{{personal4.personal_url}}.jpg" />
+								<div class="h4">{{personal4.personal_username}}</div></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

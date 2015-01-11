@@ -1,8 +1,14 @@
 package holweb2sec;
 
+import holweb2sec.util.Cyrillic2english;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +28,58 @@ public class Holweb2secControllerImpl {
 	
 	@Autowired private HolEihJdbc holEihJdbc;
 	
+	public Map<String, Object> addPL() {
+		final String innerPfadFileName = Holweb2secConfig.innerModelFolderPfad
+						+"/personalListHolWeb.json.js";
+		String pathToFile = Holweb2secConfig.applicationFolderPfad + innerPfadFileName;
+		File file = new File(pathToFile);
+		final Map<String, Object> readJsonDbFile2map = readJsonDbFile2map(file);
+		if(false)
+			return readJsonDbFile2map;
+		System.out.println("---------------------0");
+		addLatNameUrl(readJsonDbFile2map);
+		System.out.println("---------------------1");
+		createNullImage(readJsonDbFile2map);
+		System.out.println("---------------------2");
+//		System.out.println(readJsonDbFile2map);
+		writeToFile(readJsonDbFile2map, innerPfadFileName);
+		System.out.println("---------------------3");
+		return readJsonDbFile2map;
+	}
+	private void createNullImage(Map<String, Object> readJsonDbFile2map) {
+		final List<Map<String, Object>> pl = (List<Map<String, Object>>) readJsonDbFile2map.get("pl");
+		final String imgPath = "/src/main/webapp/img/";
+		final String noImageJpg = Holweb2secConfig.applicationFolderPfad+imgPath
+				+ "noimage.jpg";
+		System.out.println(noImageJpg);
+		for (Map<String, Object> person : pl) {
+			final Object personalUrl = person.get("personal_url");
+			
+			final String personalJpg = Holweb2secConfig.applicationFolderPfad+imgPath
+					+"spk/"+ personalUrl
+					+ ".jpg";
+			System.out.println(personalJpg);
+			try {
+				Files.copy(new File(noImageJpg).toPath()
+						, new File(personalJpg).toPath(), StandardCopyOption.REPLACE_EXISTING);
+			} catch (IOException e) {
+				e.printStackTrace();
+				break;
+			}
+		}
+	}
+	private void addLatNameUrl(Map<String, Object> readJsonDbFile2map) {
+		final List<Map<String, Object>> pl = (List<Map<String, Object>>) readJsonDbFile2map.get("pl");
+		final Cyrillic2english cyrillic2english = new Cyrillic2english();
+		for (Map<String, Object> person : pl) {
+			final String pun = (String) person.get("personal_username");
+			final String convert = cyrillic2english.convert(pun);
+			final String personalUrl = convert.replaceAll(" ", "").replaceAll("'", "").replaceAll("\\.", "");
+			person.put("personal_url", personalUrl);
+			person.put("p1", pun.substring(0,1));
+		}
+		
+	}
 	public List<Map<String, Object>> personalList() {
 		final List<Map<String, Object>> personalList = holEihJdbc.personalList();
 		writeToFile(personalList, Holweb2secConfig.innerModelFolderPfad + "personalList.json.js");

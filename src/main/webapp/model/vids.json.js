@@ -51,6 +51,10 @@
 	} ,{"vUrl":"ophthalmology"
 	,"name":"Офтальмологічне"
 	,"type":"chirurgiae"
+		
+	} ,{"vUrl":"gynecology"
+	,"name":"Гінекологічне"
+	,"type":"obstetrical-gynecological"
 				
 	} ,{"vUrl":"pregnancy"
 	,"name":"Патологія вагітних"

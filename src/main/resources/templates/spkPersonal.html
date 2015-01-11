@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="personalController">
+<head>
+<div th:replace="head :: metaLink" />
+
+<title>ХОЛ / {{spkPersonal.personal_username}}</title>
+</head>
+<body>
+	<nav th:replace="navbar :: topNavBar" />
+	<ol th:replace="navbar :: breadcrumbSpk" />
+
+	<div class="container">
+		<div class="row">
+			<div role="complementary" class="col-md-3">
+				<img class="img-thumbnail pull-right"
+					src="/img/spk/{{spkPersonal.personal_url}}.jpg" />
+			</div>
+			<div role="complementary" class="col-md-9">
+				<h2>{{spkPersonal.personal_surname}}
+					{{spkPersonal.personal_name}} {{spkPersonal.personal_patronymic}}</h2>
+				<div>
+					Відділення <a
+						href="/hol/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}">{{spkPersonal.department_name}}
+					</a>
+				</div>
+				<div>{{spkPersonal.position_name}}</div>
+			</div>
+		</div>
+	</div>
+	<!-- 
+{{spkPersonal}}
+	 -->
+
+	<input type="hidden" th:value="${personalUrl}" id="personalUrl" />
+	
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+	<script src="/js/personal.controller.js"></script>
+	<script src="/js/scrollspy.js"></script>
+
+</body>
+</html>
