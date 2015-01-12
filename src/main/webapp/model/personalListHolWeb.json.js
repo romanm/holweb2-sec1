@@ -2756,9 +2756,14 @@
 	"personal_anesthetist" : false,
 	"department_id" : 26,
 	"department_name" : "Урологічне",
-	"position_id" : 1,
-	"position_name" : "Лікар",
-	"personal_url" : "PidmurnyakOlO",
+	"position_id" : 2,
+	"position_name" : "Заступник головного лікаря з хірургічної роботи",
+	"position_name2" : "Лікар"
+	,"titles":[
+	"кандидат медичних наук"
+	,"дійсний член Європейської асоціації урологів"
+		]
+	,"personal_url" : "PidmurnyakOlO",
 	"p1" : "П"
 }, {
 	"personal_username" : "Дрогоруб А.А.",

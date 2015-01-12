@@ -28,15 +28,9 @@ cuwyApp.controller('departmentController', [ '$scope', '$http', '$filter', funct
 		$scope.error = data
 	});
 
-	$scope.initSpkPersonal = function(){
+	$scope.initSpkPersonalTODEL = function(){
 		console.log("----------------");
-		console.log($scope.department);
-		console.log($scope.department.short);
-		console.log($scope.department.docBock);
-		console.log($scope.department['dpl']);
-		console.log($scope.department.dpl);
-		console.log($scope.department['dspl']);
-		console.log($scope.department.dspl);
+		
 		
 		$scope.spkPersonal = $scope.department.dspl[0];
 		console.log($scope.spkPersonal);
