@@ -21,6 +21,7 @@
 	]
 },{"h2":"Завідуючий відділенням"
 	,"shef":"Компанієць Ганна Панасівна"
+		,	"personal_id" : 2646
 	,"iiimg":"/img/foto_medicina_oleksan.jpg"
 },{"h2":"Лікарі"
 	,"docBlock":[

@@ -6,7 +6,8 @@
 	<title th:text="'ХОЛ / Відділення / '+${department.name}"></title>
 </head>
 <body>
-	<div th:replace="navbar :: departmentHead"/>
+	<div th:replace="navbar :: holHead" />
+	<div th:replace="navbar :: departmentHead2"/>
 	<nav th:replace="navbar :: topNavBar" />
 	<ol th:replace="navbar :: breadcrumb" />
 	<div class="container">

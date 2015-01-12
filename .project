@@ -21,4 +21,16 @@
 		<nature>org.springsource.ide.eclipse.gradle.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/tmp/k1.html</name>
+			<type>1</type>
+			<location>/home/roman/research/kiborg/k1/k1.html</location>
+		</link>
+		<link>
+			<name>src/main/webapp/tmp/k2.html</name>
+			<type>1</type>
+			<location>/home/roman/research/kiborg/k2/k2.html</location>
+		</link>
+	</linkedResources>
 </projectDescription>

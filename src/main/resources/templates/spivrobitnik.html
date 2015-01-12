@@ -6,7 +6,7 @@
 <title>ХОЛ / Співробітники</title>
 </head>
 <body>
-
+	<div th:replace="navbar :: holHead" />
 	<nav th:replace="navbar :: topNavBar"/>
 	<ol th:replace="navbar :: breadcrumbSpk"/>
 
@@ -16,16 +16,13 @@
 		<div role="complementary" class="col-md-9">
 			<h1>ХОЛ / Співпрацівники</h1>
 			
-			<!-- 
-			<div data-ng-repeat="personal in personalList.pl | orderBy:'personal_username'"
-			 -->
-			<div data-ng-repeat="personal4 in personalList.pl"
+			<div data-ng-repeat="personal1 in personalList.pl"
 				data-ng-init="personalIndex = $index; col = $index%4;
-				personal1 = personalList.pl[personalIndex -3];
-				personal2 = personalList.pl[personalIndex -2];
-				personal3 = personalList.pl[personalIndex -1];
+				personal2 = personalList.pl[personalIndex +1];
+				personal3 = personalList.pl[personalIndex +2];
+				personal4 = personalList.pl[personalIndex +3];
 				">
-				<div class="row" data-ng-if="col == 3">
+				<div class="row" data-ng-if="col == 0">
 					<div class="col-md-3">
 						<img class="img-circle"
 							src="/img/spk/{{personal1.personal_url}}.jpg" />
@@ -33,21 +30,21 @@
 							<a href="/hol/spk/{{personal1.personal_url}}">{{personal1.personal_username}}</a>
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3" data-ng-show="personal2">
 						<img class="img-circle"
 							src="/img/spk/{{personal2.personal_url}}.jpg" />
 						<div class="h4">
 							<a href="/hol/spk/{{personal2.personal_url}}">{{personal2.personal_username}}</a>
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3" data-ng-show="personal3">
 						<img class="img-circle"
 							src="/img/spk/{{personal3.personal_url}}.jpg" />
 						<div class="h4">
 							<a href="/hol/spk/{{personal3.personal_url}}">{{personal3.personal_username}}</a>
 						</div>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3" data-ng-show="personal4">
 						<img class="img-circle"
 							src="/img/spk/{{personal4.personal_url}}.jpg" />
 						<div class="h4">
@@ -55,11 +52,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="row"
-					data-ng-if="personal4.p1 != personalList.pl[personalIndex -
-							1].p1">
+				<div class="row" 
+					data-ng-if="(col == 0 ? personal1.p1 != personalList.pl[personalIndex + 4].p1 : false)">
 					<div class="col-md-12">
-						<div id="i_{{personal4.p1}}" class="page-header">{{personal4.p1}}</div>
+						<div id="i_{{personalList.pl[personalIndex + 4].p1}}" class="page-header">{{personalList.pl[personalIndex + 4].p1}}</div>
 					</div>
 				</div>
 			</div>

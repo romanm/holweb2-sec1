@@ -42,6 +42,44 @@
 		</th:block>
 	</ol>
 
+	<div class="container" th:fragment="holHead">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-10">
+				<table>
+					<tr>
+						<td style="padding-right: 22px;"><a href="/"> <img
+								src="/img/hol-kh-95.jpg" /></a></td>
+						<td><h2>
+								<a href="/"> Хмельницька обласна лікарня </a>
+							</h2>
+							<p>вул. Пілотская 1, 29010 м.Хмельницкий, Хмельницька обл.</p>
+							<small class="pull-right font075"><i>Ми робим медицину</i></small>
+							</td>
+						<td class="hidden-print"><a href="/"> <img
+								src="/img/hol-bg-95.jpg" /></a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" th:fragment="departmentHead2">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-10">
+				<small class="font075"> Відділення </small>
+				<!-- 
+				<small class="font050"> Відділення </small>
+				<small data-ng-class="{'font050': departmentName != 'abdominal'}">
+					Відділення </small>
+					 -->
+				<div
+					data-ng-class="{'h2': departmentName == 'abdominal', 'h1':departmentName != 'abdominal'}">{{department.name}}</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="bs-docs-header head-img head-img-vid" th:fragment="departmentHead">
 		<div class="container">
 			<div class="col-md-3"></div>
@@ -94,6 +132,13 @@
 							th:text="${o2.name}" th:class="${o2['state'] != null} ? o2.state"></a></li>
 					</ul>
 				</th:block>
+				<th:block th:if="${personalUrl}">
+					<ul class="nav navbar-nav">
+						<li><a
+							href="/hol/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}/personal">
+								Персонал відділення </a></li>
+					</ul>
+				</th:block>
 				<th:block th:if="${departmentName == 'ait'}">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -122,6 +167,7 @@
 		<form class="navbar-form navbar-right" role="search"
 			th:action="'/hol/v.'+${departmentName}+'/seek'">
 			<div class="form-group">
+			<span data-ng-show="seek">Пошук</span>
 				<input type="text" name="seek" data-ng-model="seek"
 					class="form-control" placeholder="Пошук" />
 			</div>

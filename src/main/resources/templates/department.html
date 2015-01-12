@@ -7,7 +7,8 @@
 </head>
 <body>
 
-	<div th:replace="navbar :: departmentHead"/>
+	<div th:replace="navbar :: holHead" />
+	<div th:replace="navbar :: departmentHead2"/>
 
 	<nav th:replace="navbar :: topNavBar"/>
 	<ol th:replace="navbar :: breadcrumb"/>
@@ -41,6 +42,7 @@
 									th:href="'#section-'+${s2row.index}+'-'+${s3row.index}"
 									th:text="${s3.h3}"></a></li>
 							</ul></li>
+						<li><a href="/hol/v.{{departmentName}}/personal"> Персонал </a></li>
 					</ul>
 					<a class="back-to-top" href="#top"> Догори <span
 						class="glyphicon glyphicon-chevron-up"></span>
@@ -51,13 +53,37 @@
 				<div class="bs-docs-section"
 					th:each="s2,s2row : ${department.docBlock}"
 				>
-					<h1 th:id="'section-'+${s2row.index}" class="page-header" th:text="${s2.h2}"></h1>
+					<h1 th:id="${s2.sectionIdx}" class="page-header" th:text="${s2.h2}"></h1>
+					<th:block th:if="${s2['shef'] != null}">
+						<table>
+							<tr>
+								<td style="padding-right: 22px;"><img class="img-circle"
+									src="/img/spk/{{department.dspl[0].personal_url}}.jpg" /></td>
+								<td>
+									<h4>{{department.dspl[0].personal_surname}}
+										{{department.dspl[0].personal_name}}
+										{{department.dspl[0].personal_patronymic}}</h4>
+									<div data-ng-if="department.dspl[0].titles">
+										-
+										<div data-ng-repeat="title in department.dspl[0].titles">
+											{{title}}<span data-ng-if="!$last">, </span>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</th:block>
+					<!-- 
 					<img th:if="${s2['img'] != null}"
 							class="img-thumbnail" align="right" th:src="${s2.img}" 
 							th:width="${s2['imgWidth'] != null} ? ${s2.imgWidth}"
 							/>
+					 -->
+					
 					<th:block th:if="${s2['shef'] != null}">
+					<!-- 
 						<i th:text="${s2.shef}"></i>
+					 -->
 						<div th:if="${s2['telefon'] != null}" th:text="${'тел. '+s2.telefon}"></div>
 						<div th:if="${s2['fax'] != null}" th:text="${'fax: '+s2.fax}"></div>
 						<th:block th:if="${s2['email'] != null}">
@@ -68,23 +94,27 @@
 								th:if="${emailRow.count != emailRow.size}">, </span>
 							</span>
 						</th:block>
+						<!-- 
 						<div th:if="${s2['titles'] != null}">
 						- <span th:each="title,titleRow : ${s2.titles}" th:text="${title}"><span
 								th:if="${titleRow.count != titleRow.size}">, </span> </span>
 						</div>
+						 -->
 					</th:block>
+					
+					
 					<th:block th:if="${s2['docBlock'] != null}" 
 					th:each="s3,s3row : ${s2['docBlock']}">
-						<h3 th:id="'section-'+${s2row.index}+'-'+${s3row.index}"
+						<h3 th:id="${s3.sectionIdx}"
 						th:if="${s3['h3'] != null}"
 						 th:text="${s3.h3}"></h3>
 						<p th:if="${s3['p'] != null}" th:utext="${s3.p}"
-						th:id="'p-'+${s2row.index}+'-'+${s3row.index}"
+						th:id="${s3.pIdx}"
 						></p>
 						<th:block th:if="${s3['docBlock'] != null}"
 							th:each="s4,s4row : ${s3['docBlock']}">
 							<p th:if="${s4['p'] != null}" th:utext="${s4.p}"
-							th:id="'p-'+${s2row.index}+'-'+${s3row.index}+'-'+${s4row.index}"
+							th:id="${s4.pIdx}"
 							></p>
 						</th:block>
 					</th:block>

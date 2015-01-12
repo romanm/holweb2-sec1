@@ -17,6 +17,7 @@
 	]
 },{"h2":"Завідуючий відділенням"
 	,"shef":"Рехтман Грегорій Борисович"
+		,"personal_id" : 2669
 	,"telefon":"0382-65-05-75"
 	,"fax":"0382-65-05-75"
 	,"email":["grekhtman@ukr.net","abobrovnik@gmail.com"]

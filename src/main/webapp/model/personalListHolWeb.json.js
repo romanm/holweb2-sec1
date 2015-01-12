@@ -2,6 +2,8 @@
 	"departmentsUrl":{
 		"Пульмонологічне":"pulmo"
 		,"Реанімаційне":"ait"
+		,"ЕГ реанімація доросла":"ait"
+		,"Хірургічне":"abdominal"
 	}
 	,"pl" : [ {
 	"personal_username" : "Скакальська Л.І.",
@@ -1889,9 +1891,12 @@
 	"personal_anesthetist" : true,
 	"department_id" : 22,
 	"department_name" : "Реанімаційне",
-	"position_id" : 1,
-	"position_name" : "Лікар",
-	"personal_url" : "BesarabaMD",
+	"position_id" : 2,
+	"position_name" : "Головний позаштатний анестезіолог ДОЗ ХОДА"
+	,"position_name2" : "Лікар"
+	,"titles":["Лікар вищої категорії"
+		]
+	,"personal_url" : "BesarabaMD",
 	"p1" : "Б"
 }, {
 	"personal_username" : "Каритун В.В.",
@@ -2106,7 +2111,7 @@
 }, {
 	"personal_username" : "Карнаух К.В.",
 	"personal_surname" : "Карнаух",
-	"personal_name" : "Констянтин",
+	"personal_name" : "Костянтин",
 	"personal_patronymic" : "Володимирович",
 	"personal_id" : 166,
 	"personal_surgeon" : false,
@@ -2114,8 +2119,10 @@
 	"department_id" : 6,
 	"department_name" : "ЕГ реанімація доросла",
 	"position_id" : 3,
-	"position_name" : "Завідуючий відділення",
-	"personal_url" : "KarnaukhKV",
+	"position_name" : "Завідуючий відділення"
+	,"titles":["Лікар вищої категорії"
+		]
+	,"personal_url" : "KarnaukhKV",
 	"p1" : "К"
 }, {
 	"personal_username" : "Притуляк Л.В.",
@@ -2283,8 +2290,13 @@
 	"department_id" : 21,
 	"department_name" : "Пульмонологічне",
 	"position_id" : 3,
-	"position_name" : "Завідуючий відділення",
-	"personal_url" : "AleshkoAP",
+	"position_name" : "Завідуючий відділення"
+	,"titles":["к.м.н."
+		,"вища категорія"
+		,"заслужений лікар України"
+		,"1955 р.н."
+		]
+	,"personal_url" : "AleshkoAP",
 	"p1" : "А"
 }, {
 	"personal_username" : "Логвін О.О.",
@@ -3080,9 +3092,16 @@
 	"personal_anesthetist" : false,
 	"department_id" : 27,
 	"department_name" : "Хірургічне",
-	"position_id" : 1,
-	"position_name" : "Лікар",
-	"personal_url" : "SukhodolyaAI",
+	"position_id" : 2,
+	"position_name" : "Головний хірург Хмельницької області",
+	"position_name2" : "Лікар"
+	,"titles":[
+		"Доктор медичних наук"
+		,"Професор"
+		,"Завідуючий кафедрою хірургії післядипломної освіти"
+		,"Заслужений лікар України"
+	]
+	,"personal_url" : "SukhodolyaAI",
 	"p1" : "С"
 }, {
 	"personal_username" : "Павлюк В.Б.",
@@ -3249,8 +3268,10 @@
 	"department_id" : 27,
 	"department_name" : "Хірургічне",
 	"position_id" : 3,
-	"position_name" : "Завідуючий відділення",
-	"personal_url" : "PidmurnyakOrO",
+	"position_name" : "Завідуючий відділення"
+	,"titles":["доктор медичних наук"
+	]
+	,"personal_url" : "PidmurnyakOrO",
 	"p1" : "П"
 }, {
 	"personal_username" : "Компанієць Г.П.",

@@ -6,8 +6,8 @@
 	<title>ХОЛ / Відділення / {{department.name}}</title>
 </head>
 <body>
-
-	<div th:replace="navbar :: departmentHead"/>
+	<div th:replace="navbar :: holHead" />
+	<div th:replace="navbar :: departmentHead2"/>
 
 	<nav th:replace="navbar :: topNavBarAjs"/>
 	<ol th:replace="navbar :: breadcrumbAjs"/>
@@ -15,6 +15,24 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-3">
+						<a href="/hol/spk/{{department.dspl[0].personal_url}}"> <img
+							class="img-circle"
+							src="/img/spk/{{department.dspl[0].personal_url}}.jpg" />
+							<div class="h4">{{department.dspl[0].personal_username}}</div>
+							{{department.dspl[0].position_name}}
+						</a>
+					</div>
+					<div class="col-md-3" data-ng-show="department.dspl[1]">
+						<a href="/hol/spk/{{department.dspl[1].personal_url}}"> <img
+							class="img-circle"
+							src="/img/spk/{{department.dspl[1].personal_url}}.jpg" />
+							<div class="h4">{{department.dspl[1].personal_username}}</div>
+							{{department.dspl[1].position_name}}
+						</a>
+					</div>
+				</div>
 				<div
 					data-ng-repeat="personal1 in department.dpl "
 					data-ng-init="personalIndex = $index; col = $index%4;

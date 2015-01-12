@@ -109,6 +109,13 @@ public class Holweb2secRest {
 		return holweb2secController.personalList();
 	}
 
+	@RequestMapping(value="/hol/addidx-v.{departmentName}", method=RequestMethod.GET)
+	public @ResponseBody Map<String, Object> addDepartmentIndex(@PathVariable String departmentName) {
+		logger.debug("/addidx-v."+departmentName);
+		final Map<String, Object> department = departmentModel(departmentName);
+		return holweb2secController.addDepartmentIndex(department, departmentName);
+	}
+
 	@RequestMapping(value = "/hol/addPL", method = RequestMethod.GET)
 	public @ResponseBody Map<String, Object> addPL() {
 		logger.debug("/addPL");

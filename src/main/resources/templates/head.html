@@ -10,10 +10,36 @@
 </head>
 <body>
 
+	<div class="row" th:fragment="showPersonal">
+		<div role="complementary" class="col-md-3">
+			<img class="img-thumbnail pull-right"
+				src="/img/spk/{{spkPersonal.personal_url}}.jpg" />
+		</div>
+		<div role="complementary" class="col-md-9">
+			<h2>{{spkPersonal.personal_surname}}
+				{{spkPersonal.personal_name}} {{spkPersonal.personal_patronymic}}</h2>
+			<div>
+				Відділення <a
+					href="/hol/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}">{{spkPersonal.department_name}}
+				</a>
+			</div>
+			<div>{{spkPersonal.position_name}}</div>
+			<div data-ng-if="spkPersonal.titles">
+				-
+				<div data-ng-repeat="title in spkPersonal.titles">
+					{{title}}<span data-ng-if="!$last">, </span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<div th:fragment="docFooter" th:remove="tag">
 		<input type="hidden" th:value="${departmentName}" id="departmentName" />
 		<input type="hidden" th:value="${orders2}" id="orders2" />
 		<input type="hidden" th:value="${seek}" id="seekParam" />
 	</div>
+	
+	
 </body>
 </html>

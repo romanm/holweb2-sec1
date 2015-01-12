@@ -17,6 +17,7 @@
 	]
 },{"h2":"Завідуючий відділенням"
 	,"shef":"Довгань Лариса Іванівна "
+		,"personal_id" : 146
 	,"img":"/img/dovgany_admission_small.jpg"
 },{"h2":"Показники"
 	,"docBlock":[

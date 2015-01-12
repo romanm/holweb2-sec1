@@ -6,6 +6,8 @@
 	<title>ХОЛ / Відділення / {{department.name}}</title>
 </head>
 <body>
+	<div th:replace="navbar :: holHead" />
+	<div th:replace="navbar :: departmentHead2"/>
 	<nav th:replace="navbar :: topNavBar"/>
 	<ol th:replace="navbar :: breadcrumb"/>
 
@@ -18,9 +20,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
-				<hr/>
+			<div class="col-md-12" data-ng-if="seek != ''">
 				<div data-ng-repeat="o2 in department.orders2 | filter: seek ">
+					<hr data-ng-show="{{$first}}" />
 					{{department.short}} <a
 						href="/hol/v.{{departmentName}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
 					<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
@@ -43,26 +45,32 @@
 						</div>
 					</div>
 				</div>
-<hr/>
-				<div data-ng-repeat="s2 in department.docBlock | filter: seek ">
+				<div data-ng-repeat="s2 in department.docBlock | filter: seek "
+				>
+					<hr data-ng-show="{{$first}}" />
 					<div>
 						{{department.short}} <a href="/hol/v.{{departmentName}}"
 							target="_blank">Головна</a>
 					</div>
 					<span class="h2"> <a
-						href="/hol/v.{{departmentName}}#{{s2.idx}}" target="_blank">
+						href="/hol/v.{{departmentName}}#{{s2.sectionIdx}}" target="_blank">
 							{{s2.h2}} </a>
 					</span>
+					<div data-ng-show="s2.shef" 
+						data-ng-init="spkPersonal = s2.spkPersonal"
+					>
+						<div th:replace="head :: showPersonal" />
+					</div>
 					<div data-ng-repeat="s3 in s2.docBlock | filter: seek ">
 						<div data-ng-show="s3.h3">
 							<span class="h3"> <a
-								href="/hol/v.{{departmentName}}#{{s3.idx}}" target="_blank">{{s3.h3}}
+								href="/hol/v.{{departmentName}}#{{s3.sectionIdx}}" target="_blank">{{s3.h3}}
 							</a>
 							</span>
 							<div data-ng-repeat="s4 in s3.docBlock | filter: seek ">
 								<div data-ng-show="s4.p">
 									<p data-ng-bind-html="s4.p"></p>
-									<a href="/hol/v.{{departmentName}}#{{s4.idx}}" target="_blank">
+									<a href="/hol/v.{{departmentName}}#{{s4.pIdx}}" target="_blank">
 										<span class="glyphicon glyphicon-link"></span>
 									</a>
 									<hr />
@@ -71,18 +79,28 @@
 						</div>
 						<div data-ng-show="s3.p">
 							<p data-ng-bind-html="s3.p"></p>
-							<a href="/hol/v.{{departmentName}}#{{s3.idx}}" target="_blank">
+							<a href="/hol/v.{{departmentName}}#{{s3.pIdx}}" target="_blank">
 								<span class="glyphicon glyphicon-link"></span>
 							</a>
 							<hr />
 						</div>
 					</div>
 				</div>
+				<div data-ng-repeat="spkPersonal in department.dspl | filter: seek ">
+					<hr data-ng-show="{{$first}}" />
+					<div data-ng-show="{{$first}}">Персонал адміністративний</div>
+					<div th:replace="head :: showPersonal" />
+				</div>
+				<div data-ng-repeat="spkPersonal in department.dpl | filter: seek ">
+					<hr data-ng-show="{{$first}}" />
+					<div data-ng-show="{{$first}}">Персонал</div>
+					<div th:replace="head :: showPersonal" />
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<input type="hidden" th:value="${departmentName}" id="departmentName" />
+	<div th:replace="head :: docFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>
