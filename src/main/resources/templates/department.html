@@ -29,9 +29,11 @@
 		
 		<div class="row">
 			<div role="complementary" class="col-md-3">
+			<nav th:replace="head :: navPanelDepartment" />
+			<!-- 
 				<nav
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
-					style="">
+					>
 					<div class="h5" th:text="${department.name}"></div>
 					<ul class="nav bs-docs-sidenav">
 						<li th:each="s2,s2row : ${department.docBlock}"
@@ -48,6 +50,7 @@
 						class="glyphicon glyphicon-chevron-up"></span>
 					</a>
 				</nav>
+			 -->
 			</div>
 			<div class="col-md-9" role="main">
 				<div class="bs-docs-section"
@@ -123,6 +126,7 @@
 		</div>
 	</div>
 
+	<footer th:replace="head :: pageFooter"/>
 	<div th:replace="head :: docFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>

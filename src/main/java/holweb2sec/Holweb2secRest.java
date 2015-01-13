@@ -38,8 +38,9 @@ public class Holweb2secRest {
 		final String url = "/hol/v."+departmentName+"/personal";
 		System.out.println(url);
 		logger.debug(url);
-		addDepartment(departmentName, model);
 		model.addAttribute("orders2", "personal");
+		addDepartment(departmentName, model);
+		addDepartmentModel(departmentName, model);
 		return "departmentPersonal";
 	}
 
@@ -57,6 +58,7 @@ public class Holweb2secRest {
 		System.out.println(department);
 		model.addAttribute("department", department);
 	}
+
 	@RequestMapping(value="/hol/v.{departmentName}", method=RequestMethod.GET)
 	public String department(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol/v-"+departmentName);
@@ -65,6 +67,7 @@ public class Holweb2secRest {
 		addDepartmentModel(departmentName, model);
 		return "department";
 	}
+
 	@RequestMapping(value="/hol/e-v.{departmentName}", method=RequestMethod.GET)
 	public String departmentEdit(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol/e-v."+departmentName);

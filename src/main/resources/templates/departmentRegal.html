@@ -18,72 +18,80 @@
 					style="">
 					<div class="h5">
 						<span th:text="${department.name}"></span>
-						<th:block th:each="o2 : ${department.orders2}"
-							th:if="${'regal' == o2.o2url}">
-							<small class="active" th:text="${o2.name}"></small>
-							<ul class="nav bs-docs-sidenav">
-								<li th:each="o3,o3row : ${o2.orders3}"><a
-									th:href="'#'+${o3.o3url}"
-									th:text="${o3.name}"></a>
-									<ul class="nav" th:if="${o3['orders4'] != null}">
-										<th:block th:if="${o3.o3url != 'decree' }">
-											<li th:each="o4 : ${o3.orders4}"><a
-												th:href="'#'+${o3.o3url}+'-'+${o4.id}" th:text="${o4.short}"></a></li>
-										</th:block>
-										<th:block th:if="${o3.o3url == 'decree' }">
-										<!-- 
-												th:href="'#'+${o3.o3url}+'-'+${o4.decreeNr}+'-'+${o4.decreeDate}"
-										 -->
-											<li th:each="o4 : ${o3.orders4}"><a
-												th:href="'#'+${o3.o3url}+'-'+${o4.decreeNr}"
-												th:text="'№ '+${o4.decreeNr}+' - '+${o4.decreeDate}"></a></li>
-										</th:block>
-									</ul></li>
-							</ul>
-						</th:block>
 					</div>
+					<th:block th:each="o2 : ${department.orders2}"
+						th:if="${'regal' == o2.o2url}"
+						>
+						<small class="active" th:text="${o2.name}"></small>
+						<ul class="nav bs-docs-sidenav"
+						th:if="${o2['orders3'] != null}"
+						>
+							<li th:each="o3,o3row : ${o2.orders3}"><a
+								th:href="'#'+${o3.o3url}"
+								th:text="${o3.name}"></a>
+								<ul class="nav" th:if="${o3['orders4'] != null}">
+									<th:block th:if="${o3.o3url != 'decree' }">
+										<li th:each="o4 : ${o3.orders4}"><a
+											th:href="'#'+${o3.o3url}+'-'+${o4.id}" th:text="${o4.short}"></a></li>
+									</th:block>
+									<th:block th:if="${o3.o3url == 'decree' }">
+										<li th:each="o4 : ${o3.orders4}"><a
+											th:href="'#'+${o3.o3url}+'-'+${o4.decreeNr}"
+											th:text="'№ '+${o4.decreeNr}+' - '+${o4.decreeDate}"></a></li>
+									</th:block>
+								</ul></li>
+							
+						</ul>
+					</th:block>
 				</nav>
 			</div>
 			<div role="complementary" class="col-md-9">
 				<div class="bs-docs-section"
 					th:each="o2,o2row : ${department.orders2}"
 					th:if="${o2.o2url == 'regal'}">
-					<th:block class="bs-docs-section"
-						th:each="o3,o3row : ${o2.orders3}">
-						<h1 th:id="${o3.o3url}" class="page-header"
-							th:text="${o3.name}"></h1>
-						<th:block th:if="${o3['orders4'] != null }">
-							<div th:each="o4, o4row : ${o3.orders4}">
-								<th:block th:if="${o3.o3url != 'decree' }">
-									<div class="h4" th:id="${o3.o3url}+'-'+${o4.id}" th:text="${o4.name}"></div>
-									<div th:text="${o4.annotation}"></div>
-								</th:block>
-								<th:block th:if="${o3.o3url == 'decree' }">
-								<!-- 
+					<th:block th:if="${o2['orders3'] == null}">
+						Місце для збору інформації корисної для роботи відділення.
+						Передує в заповнені цього розділу сайту
+						відділення реанімації.
+					</th:block>
+					<th:block th:if="${o2['orders3'] != null}">
+						<th:block th:each="o3,o3row : ${o2.orders3}">
+							<h1 th:id="${o3.o3url}" class="page-header" th:text="${o3.name}"></h1>
+							<th:block th:if="${o3['orders4'] != null }">
+								<div th:each="o4, o4row : ${o3.orders4}">
+									<th:block th:if="${o3.o3url != 'decree' }">
+										<div class="h4" th:id="${o3.o3url}+'-'+${o4.id}"
+											th:text="${o4.name}"></div>
+										<div th:text="${o4.annotation}"></div>
+									</th:block>
+									<th:block th:if="${o3.o3url == 'decree' }">
+										<!-- 
 										th:id="${o3.o3url}+'-'+${o4.decreeNr}+'-'+${o4.decreeDate}"></b>
 								 -->
-									<b th:text="'Наказ № '+${o4.decreeNr}"
-										th:id="${o3.o3url}+'-'+${o4.decreeNr}"></b>
-									<span th:text="'від '+${o4.decreeDate}"></span>
-									<span class="h4" th:if="${o4['short']}" th:text="${o4.short}"></span> «<i
-										th:text="${o4.name}"></i>» 
+										<b th:text="'Наказ № '+${o4.decreeNr}"
+											th:id="${o3.o3url}+'-'+${o4.decreeNr}"></b>
+										<span th:text="'від '+${o4.decreeDate}"></span>
+										<span class="h4" th:if="${o4['short']}" th:text="${o4.short}"></span> «<i
+											th:text="${o4.name}"></i>» 
 								</th:block>
-								<th:block th:if="${o4['urlSource'] != null }">
-									<span class="glyphicon glyphicon-link"></span>
-									<span th:each="u,uRow : ${o4.urlSource}"> <a
-										th:href="${u}" th:text="${u}"></a><span
-										th:if="${uRow.count != uRow.size}">, </span>
-									</span>
-								</th:block>
-								<hr />
-							</div>
+									<th:block th:if="${o4['urlSource'] != null }">
+										<span class="glyphicon glyphicon-link"></span>
+										<span th:each="u,uRow : ${o4.urlSource}"> <a
+											th:href="${u}" th:text="${u}"></a><span
+											th:if="${uRow.count != uRow.size}">, </span>
+										</span>
+									</th:block>
+									<hr />
+								</div>
+							</th:block>
 						</th:block>
 					</th:block>
 				</div>
 			</div>
 	</div>
 	</div>
-	
+
+	<footer th:replace="head :: pageFooter"/>
 	<div th:replace="head :: docFooter"/>
 	
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>

@@ -14,7 +14,10 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div role="complementary" class="col-md-3">
+				<nav th:replace="head :: navPanelDepartment" />
+			</div>
+			<div class="col-md-9" role="main">
 				<div class="row">
 					<div class="col-xs-3">
 						<a href="/hol/spk/{{department.dspl[0].personal_url}}"> <img
@@ -33,8 +36,7 @@
 						</a>
 					</div>
 				</div>
-				<div
-					data-ng-repeat="personal1 in department.dpl "
+				<div data-ng-repeat="personal1 in department.dpl "
 					data-ng-init="personalIndex = $index; col = $index%4;
 				personal2 = department.dpl[personalIndex +1];
 				personal3 = department.dpl[personalIndex +2];
@@ -50,7 +52,7 @@
 						<div class="col-xs-3" data-ng-show="personal2">
 							<a href="/hol/spk/{{personal2.personal_url}}"><img
 								class="img-circle" src="/img/spk/{{personal2.personal_url}}.jpg" />
-							<div class="h4">{{personal2.personal_username}}</div></a>
+								<div class="h4">{{personal2.personal_username}}</div></a>
 						</div>
 						<div class="col-xs-3" data-ng-show="personal3">
 							<a href="/hol/spk/{{personal3.personal_url}}"> <img
@@ -68,6 +70,7 @@
 		</div>
 	</div>
 
+	<footer th:replace="head :: pageFooter"/>
 	<div th:replace="head :: docFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
