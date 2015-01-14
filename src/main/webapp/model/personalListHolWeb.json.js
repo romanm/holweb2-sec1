@@ -2196,8 +2196,8 @@
 	"personal_url" : "LevitskijVM",
 	"p1" : "Л"
 }, {
-	"personal_username" : "Щербіна Н.В.",
-	"personal_surname" : "Щербіна",
+	"personal_username" : "Щербина Н.В.",
+	"personal_surname" : "Щербина",
 	"personal_name" : "Наталія",
 	"personal_patronymic" : "Володимирівна",
 	"personal_id" : 134,

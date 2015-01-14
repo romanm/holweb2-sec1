@@ -4,29 +4,20 @@
 	<div th:replace="head :: metaLink"/>
 </head>
 <body>
-<!-- 
-	<div class="bs-docs-header head-img head-img-vids">
-		<div class="container">
-			<h2 class="departmentsHead" >
-				Відділення <small> Хмельницької обласної лікарні </small>
-			</h2>
-		</div>
-	</div>
- -->
 	
 	<div th:replace="navbar :: holHead" />
 
 	<nav th:replace="navbar :: topNavBar"/>
-	<ol th:replace="navbar :: breadcrumb"/>
 
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">3</div>
 			<div role="complementary" class="col-md-9">
+				<ol th:replace="navbar :: breadcrumb" />
 				<div class="row">
 					<div class="col-md-6">
 						<h3 id="profile">
-							Відділення 
+							Відділення
 							<!-- 
 							<small>За профілем</small>
 							 -->
@@ -64,27 +55,28 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6"><h4>Хірургічні</h4>
+					<div class="col-md-6">
+						<h4>Хірургічні</h4>
 						<ul class="nav bs-docs-sidenav">
 							<li
 								data-ng-repeat="v in vids.departments | filter:{type:'chirurgiae'} "><a
 								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
 						</ul>
 					</div>
-					<div class="col-md-6"><h4>Терапевтичні</h4>
+					<div class="col-md-6">
+						<h4>Терапевтичні</h4>
 						<ul class="nav bs-docs-sidenav">
 							<li
 								data-ng-repeat="v in vids.departments | filter:{type:'therapy'} "><a
 								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
 						</ul>
-					
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<footer th:replace="head :: pageFooter"/>
 	<footer th:replace="head :: pageFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>

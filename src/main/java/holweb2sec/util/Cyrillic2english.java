@@ -8,15 +8,17 @@ public class Cyrillic2english {
 		,"Ts","Ch","Sh","Shch","","I","","E","Yu","Ya","Ye","I","Ji","G"," ",
 		"a","b","v","h","d","e","jo","zh","z","i","j","k","l","m","n","o","p","r","s","t","u","f","kh"
 		,"ts","ch","sh","shch","","i","","e","yu","ya","ye","i","ji","g"};
+
 	public static void main(String[] args) {
 		System.out.println(cyrillic);
 		final Cyrillic2english cyrillic2english = new Cyrillic2english();
-		String[] samples = {"співробітник","Їжак","Варгатая","Міщенко","Клічко"};
+		String[] samples = {"Щербіна Н.В.", "Щербина Н.В."};
 		for (String s : samples) {
 			final String convert = cyrillic2english.convert(s);
 			System.out.println(s+" > "+convert);
 		}
 	}
+
 	public String convert(String s) {
 		String e = "";
 //		System.out.print(s);

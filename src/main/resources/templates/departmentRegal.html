@@ -3,56 +3,34 @@
 <head>
 	<div th:replace="head :: metaLink"/>
 	
-	<title th:text="'ХОЛ / Відділення / '+${department.name}"></title>
+	<title th:replace="head :: departmentOrder2" />
 </head>
 <body>
 	<div th:replace="navbar :: holHead" />
 	<div th:replace="navbar :: departmentHead2"/>
 	<nav th:replace="navbar :: topNavBar" />
-	<ol th:replace="navbar :: breadcrumb" />
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">
-				<nav
-					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
-					style="">
-					<div class="h5">
-						<span th:text="${department.name}"></span>
-					</div>
-					<th:block th:each="o2 : ${department.orders2}"
-						th:if="${'regal' == o2.o2url}"
-						>
-						<small class="active" th:text="${o2.name}"></small>
-						<ul class="nav bs-docs-sidenav"
-						th:if="${o2['orders3'] != null}"
-						>
-							<li th:each="o3,o3row : ${o2.orders3}"><a
-								th:href="'#'+${o3.o3url}"
-								th:text="${o3.name}"></a>
-								<ul class="nav" th:if="${o3['orders4'] != null}">
-									<th:block th:if="${o3.o3url != 'decree' }">
-										<li th:each="o4 : ${o3.orders4}"><a
-											th:href="'#'+${o3.o3url}+'-'+${o4.id}" th:text="${o4.short}"></a></li>
-									</th:block>
-									<th:block th:if="${o3.o3url == 'decree' }">
-										<li th:each="o4 : ${o3.orders4}"><a
-											th:href="'#'+${o3.o3url}+'-'+${o4.decreeNr}"
-											th:text="'№ '+${o4.decreeNr}+' - '+${o4.decreeDate}"></a></li>
-									</th:block>
-								</ul></li>
-							
-						</ul>
-					</th:block>
-				</nav>
+				<nav th:replace="head :: navPanelDepartment" />
 			</div>
 			<div role="complementary" class="col-md-9">
+				<ol th:replace="navbar :: breadcrumb" />
 				<div class="bs-docs-section"
 					th:each="o2,o2row : ${department.orders2}"
 					th:if="${o2.o2url == 'regal'}">
 					<th:block th:if="${o2['orders3'] == null}">
-						Місце для збору інформації корисної для роботи відділення.
-						Передує в заповнені цього розділу сайту
-						відділення реанімації.
+						<h4>Полиця</h4>
+						<div class="alert alert-info">
+							<p>Місце для збору інформації корисної для роботи відділення.
+							</p>
+							<p>
+								Передує в заповнені цього розділу сайту <b> <a
+									href="/hol/v.ait/regal"> відділення реанімації.</a>
+								</b>
+
+							</p>
+						</div>
 					</th:block>
 					<th:block th:if="${o2['orders3'] != null}">
 						<th:block th:each="o3,o3row : ${o2.orders3}">
@@ -88,7 +66,7 @@
 					</th:block>
 				</div>
 			</div>
-	</div>
+		</div>
 	</div>
 
 	<footer th:replace="head :: pageFooter"/>

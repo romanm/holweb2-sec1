@@ -32,5 +32,15 @@
 			<type>1</type>
 			<location>/home/roman/research/kiborg/k2/k2.html</location>
 		</link>
+		<link>
+			<name>src/main/webapp/tmp/k6-l.html</name>
+			<type>1</type>
+			<location>/home/roman/research/kiborg/k6/k6.html</location>
+		</link>
+		<link>
+			<name>src/main/webapp/tmp/style.css</name>
+			<type>1</type>
+			<location>/home/roman/research/kiborg/k6/k6_files/style.css</location>
+		</link>
 	</linkedResources>
 </projectDescription>

@@ -8,13 +8,13 @@
 <body>
 	<div th:replace="navbar :: holHead" />
 	<nav th:replace="navbar :: topNavBar"/>
-	<ol th:replace="navbar :: breadcrumbSpk"/>
 
 <div class="container">
 	<div class="row">
 		<div role="complementary" class="col-md-3"></div>
 		<div role="complementary" class="col-md-9">
-			<h1>ХОЛ / Співпрацівники</h1>
+			<ol th:replace="navbar :: breadcrumbSpk"/>
+			<h1>Співпрацівники</h1>
 			
 			<div data-ng-repeat="personal1 in personalList.pl"
 				data-ng-init="personalIndex = $index; col = $index%4;

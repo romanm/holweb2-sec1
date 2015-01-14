@@ -11,7 +11,6 @@
 	<div th:replace="navbar :: departmentHead2"/>
 
 	<nav th:replace="navbar :: topNavBar"/>
-	<ol th:replace="navbar :: breadcrumb"/>
 
 
 	<div class="container bs-docs-container" id="ctx">
@@ -29,30 +28,10 @@
 		
 		<div class="row">
 			<div role="complementary" class="col-md-3">
-			<nav th:replace="head :: navPanelDepartment" />
-			<!-- 
-				<nav
-					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
-					>
-					<div class="h5" th:text="${department.name}"></div>
-					<ul class="nav bs-docs-sidenav">
-						<li th:each="s2,s2row : ${department.docBlock}"
-							th:if="${s2['h2']}"><a th:href="'#section-'+${s2row.index}"
-							th:text="${s2.h2}"></a>
-							<ul class="nav" th:if="${s2['docBlock'] != null}">
-								<li th:each="s3,s3row : ${s2.docBlock}" th:if="${s3['h3']}"><a
-									th:href="'#section-'+${s2row.index}+'-'+${s3row.index}"
-									th:text="${s3.h3}"></a></li>
-							</ul></li>
-						<li><a href="/hol/v.{{departmentName}}/personal"> Персонал </a></li>
-					</ul>
-					<a class="back-to-top" href="#top"> Догори <span
-						class="glyphicon glyphicon-chevron-up"></span>
-					</a>
-				</nav>
-			 -->
+				<nav th:replace="head :: navPanelDepartment" />
 			</div>
 			<div class="col-md-9" role="main">
+				<ol th:replace="navbar :: breadcrumb" />
 				<div class="bs-docs-section"
 					th:each="s2,s2row : ${department.docBlock}"
 				>

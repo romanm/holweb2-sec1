@@ -21,6 +21,17 @@ public class Holweb2secRest {
 
 	@Autowired private Holweb2secControllerImpl holweb2secController;
 
+	
+//-------------------department-------------------------------------------------
+	@RequestMapping(value="/hol/v.{departmentName}", method=RequestMethod.GET)
+	public String department(@PathVariable String departmentName, Model model) {
+		System.out.println("/hol/v-"+departmentName);
+		logger.debug("/hol/v."+departmentName);
+		addDepartment(departmentName, model);
+		addDepartmentModel(departmentName, model);
+		return "department";
+	}
+
 	@RequestMapping(value="/hol/v.{departmentName}/seek", method=RequestMethod.GET)
 	public String departmentSeek(@PathVariable String departmentName, Model model, HttpServletRequest req) {
 		System.out.println("/hol/v-"+departmentName);
@@ -58,16 +69,7 @@ public class Holweb2secRest {
 		System.out.println(department);
 		model.addAttribute("department", department);
 	}
-
-	@RequestMapping(value="/hol/v.{departmentName}", method=RequestMethod.GET)
-	public String department(@PathVariable String departmentName, Model model) {
-		System.out.println("/hol/v-"+departmentName);
-		logger.debug("/hol/v."+departmentName);
-		addDepartment(departmentName, model);
-		addDepartmentModel(departmentName, model);
-		return "department";
-	}
-
+	
 	@RequestMapping(value="/hol/e-v.{departmentName}", method=RequestMethod.GET)
 	public String departmentEdit(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol/e-v."+departmentName);
@@ -75,9 +77,19 @@ public class Holweb2secRest {
 		addDepartment(departmentName, model);
 		return "departmentEdit";
 	}
+	
+
+	@RequestMapping(value="/hol/addidx-v.{departmentName}", method=RequestMethod.GET)
+	public @ResponseBody Map<String, Object> addDepartmentIndex(@PathVariable String departmentName) {
+		logger.debug("/addidx-v."+departmentName);
+		final Map<String, Object> department = departmentModel(departmentName);
+		return holweb2secController.addDepartmentIndex(department, departmentName);
+	}
 	private void addDepartment(String departmentName, Model model) {
 		model.addAttribute("departmentName", departmentName);
 	}
+//-------------------department----------------------------------------------END
+
 
 	@RequestMapping(value="/hol/vid", method=RequestMethod.GET)
 	public String departments( Model model) {
@@ -112,12 +124,6 @@ public class Holweb2secRest {
 		return holweb2secController.personalList();
 	}
 
-	@RequestMapping(value="/hol/addidx-v.{departmentName}", method=RequestMethod.GET)
-	public @ResponseBody Map<String, Object> addDepartmentIndex(@PathVariable String departmentName) {
-		logger.debug("/addidx-v."+departmentName);
-		final Map<String, Object> department = departmentModel(departmentName);
-		return holweb2secController.addDepartmentIndex(department, departmentName);
-	}
 
 	@RequestMapping(value = "/hol/addPL", method = RequestMethod.GET)
 	public @ResponseBody Map<String, Object> addPL() {
