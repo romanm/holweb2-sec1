@@ -1,0 +1,32 @@
+.cd-fixed-bg h2 {
+	line-height: 400px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	text-shadow: 1px 2px 1px black;
+}
+
+.cd-fixed-bg {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.cd-fixed-bg.cd-bg-1 h2 {
+	line-height: 300px;
+}
+.cd-fixed-bg.cd-bg-1 {
+	background-image: url("/img/general/holwyizd.jpg");
+}
+
+.cd-fixed-bg.cd-bg-2 {
+	background-image: url("/img/general/tg-shewchenko.jpg");
+}
+
+.cd-fixed-bg.cd-bg-3 {
+	background-image: url("/img/general/bh-wokzal.jpg");
+}
+
+.cd-fixed-bg.cd-bg-4 {
+	background-image: url("/tmp/k6/cd-background-4.jpg");
+}

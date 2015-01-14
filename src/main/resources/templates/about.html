@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="aboutHolController">
+<head>
+<div th:replace="head :: metaLink" />
+	<title>ХОЛ / Про лікарню</title>
+</head>
+<body>
+	<div th:replace="navbar :: holHead" />
+	<nav th:replace="navbar :: homeNavBar" />
+
+	<div class="container">
+		<div class="row">
+			<div role="complementary" class="col-md-3">
+				<nav
+					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
+					<div class="h5">
+						<a href="/hol/about">Про лікарню</a>
+					</div>
+					<ul class="nav bs-docs-sidenav">
+						<li><a href="/hol/about"> <span
+								class="glyphicon glyphicon-leaf"></span> <span>Головна</span>
+						</a></li>
+						<li><a href="/hol/admin"> <span>Адміністрація
+									лікарні</span>
+						</a></li>
+						<li><a href="/hol/phone"> <span>Телефонний довідник</span>
+						</a></li>
+						<li><a href="/hol/history"> <span>Історія
+									становлення лікарні</span>
+						</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div role="complementary" class="col-md-9"></div>
+		</div>
+	</div>
+	
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js/scrollspy.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+	<script src='/js-vendor/textAngular.min.js'></script>
+</body>
+</html>
