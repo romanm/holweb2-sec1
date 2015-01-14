@@ -4,10 +4,9 @@
 	<div th:replace="head :: metaLink"/>
 </head>
 <body>
-	
-	<div th:replace="navbar :: holHead" />
 
-	<nav th:replace="navbar :: topNavBar"/>
+	<div th:replace="navbar :: holHead" />
+	<nav th:replace="navbar :: homeNavBar" />
 
 	<div class="container">
 		<div class="row">
@@ -77,7 +76,7 @@
 		</div>
 	</div>
 
-	<footer th:replace="head :: pageFooter"/>
+	<footer th:replace="head :: pageFooter" />
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>
@@ -88,6 +87,6 @@
 	<script src='/js-vendor/textAngular.min.js'></script>
 	<script src="/js/departments.controller.js"></script>
 	<script src="/js/scrollspy.js"></script>
-	
+
 </body>
 </html>

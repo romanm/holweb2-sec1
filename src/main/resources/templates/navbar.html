@@ -132,7 +132,14 @@
 
 	<nav class="navbar navbar-default" th:fragment="homeNavBar">
 		<div class="container-fluid">
-			<div th:replace="navbar :: iconsLinkHome"/>
+			<div th:replace="navbar :: iconsLinkHome" />
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/hol/about">Про лікарню</a></li>
+					<li><a href="/hol/vid">Відділення</a></li>
+					<li><a href="/hol/spivrobitnik">Співробітники</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 

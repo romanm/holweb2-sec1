@@ -2,11 +2,159 @@
 <html ng-app="holweb2secApp" ng-controller="departmentController">
 <head>
 <div th:replace="head :: metaLink" />
-	<title>Хмельницька обласна лікарня</title>
+<link href="/css/holhome.css" rel="stylesheet" />
+<link href="/css/cyborg.css" rel="stylesheet" />
+<title>Хмельницька обласна лікарня</title>
 </head>
 <body>
 	<div th:replace="navbar :: holHead" />
-	<nav th:replace="navbar :: homeNavBar"/>
-
+	<nav th:replace="navbar :: homeNavBar" />
+	<div class="container">
+		<div class="row">
+			<div role="complementary" class="col-md-3">3</div>
+			<div role="main" class="col-md-9">
+				<div class="cd-fixed-bg cd-bg-1">
+					<h2>Хмельницька обласна лікарня</h2>
+				</div>
+				<div class="cd-scrolling-bg cd-color-1">
+					<div class="cd-container">
+						<div class="t151">
+							<div class="wrapper">
+								<hr style="max-width: 780px"/>
+							</div>
+							<div class="centeredSection">
+								<div field="title" class="text">«</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">Сьогодні обласна лікарня – це
+								сучасний медичний і науковий заклад. На її базі працює 23
+								відділення стаціонару на 835 ліжок, консультативна поліклініка
+								на 250 відвідувань в зміну, 15 діагностичних,
+								лікувально-допоміжних та обслуговуючих служб.</div>
+							<div class="col-md-6">img</div>
+						</div>
+						<div class="t151">
+							<div class="wrapper">
+								<hr style="max-width: 780px"/>
+							</div>
+							<div class="centeredSection">
+								<div field="title" class="text">»</div>
+							</div>
+						</div>
+						<div class="lr_col_10 prefix_1" style="text-align: center;">
+							<h1 field="title">
+								<span style="font-weight: 400;">Цифри та факти</span>
+							</h1>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="t073">
+									<span field="number" class="circle">1</span>
+									<h6 field="title">
+										<span style="font-weight: 400;">Створення</span>
+									</h6>
+									<p field="descr">
+										<span style="font-weight: 300;">З жовтня 1948 року на
+											виконання наказів МОЗ СРСР № 431 та МОЗ УРСР № 413 відбулося
+											об'єднання 1-ої Радянської обласної лікарні з Проскурівською
+											міською поліклінікою, тобто офіційно була створена обласна
+											лікарня.</span>
+									</p>
+								</div>
+							</div>
+							<div class="col-md-4"><div class="t073">
+									<span field="number" class="circle">2</span>
+									<h6 field="title">
+										<span style="font-weight: 400;">Потужності в рік</span>
+									</h6>
+									<p field="descr">
+										<span style="font-weight: 300;">Щороку в лікарні
+											проходять лікування близько 25 тисяч хворих ( за 2010 рік –
+											26728 хворих), при цьому питома вага жителів районів області
+											складає понад 45 відсотків.</span>
+									</p>
+								</div></div>
+							<div class="col-md-4">
+								<div class="t073">
+									<span field="number" class="circle">3</span>
+									<h6 field="title">
+										<span style="font-weight: 400;">Хірургічна діяльність</span>
+									</h6>
+									<p field="descr">
+										<span style="font-weight: 300;">За 2010 рік виконано
+											12643 операцій. Середнє перебування хворих на ліжку у 2010
+											році - 10,3. </span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cd-fixed-bg cd-bg-2" id="patient">
+					<h2>Для Пацієнтів, відвідувачів та гостей</h2>
+				</div>
+				<div class="cd-scrolling-bg cd-color-1">
+					<div class="cd-container">
+					<div class="lr_col_10 prefix_1" style="text-align: center;">
+							<h1 field="title">
+								<span style="font-weight: 400;">Виберіть розділ який ви шукаєте</span>
+							</h1>
+						</div>
+					<div class="row">
+							<div class="col-md-4">
+								<div class="t073">
+									<span field="number" class="circle">1</span>
+									<h6 field="title">
+										<span style="font-weight: 400;">Як доїхати</span>
+									</h6>
+									<p field="descr">
+										<span style="font-weight: 300;">Маршрутки 29, 49 ...</span>
+									<div>Детальніше</div>
+									</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="t073">
+									<span field="number" class="circle">2</span>
+									<h6 field="title">
+										<span style="font-weight: 400;">Спеціалісти та служби</span>
+									</h6>
+									<p field="descr">
+										<span style="font-weight: 300;"> В поліклініці лікарні
+											кваліфіковані фахівці ведуть години прийому. </span>
+									<div>Приймальне відділення - Корпус номер 7</div>
+									</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="t073">
+									<span field="number" class="circle">3</span>
+									<h6 field="title">
+										<span style="font-weight: 400;">План лікарні</span>
+									</h6>
+									<p field="descr">
+										<span style="font-weight: 300;">На теріторії лікарні розташовано сім корпусів</span>
+									</p>
+								</div>
+							</div>
+						</div>
+						<h1 field="title">
+								<span style="font-weight: 400;">Детальніше про лікарню</span>
+							</h1>
+					</div>
+				</div>
+				<div class="cd-fixed-bg cd-bg-3">
+					<h2>Керівництво</h2>
+				</div>
+				<div class="cd-scrolling-bg cd-color-1">
+					<div class="cd-container">На теперішній час Хмельницьку
+						обласну лікарню очолює Флаксемберг Аркадій Семенович, організатор
+						охорони здоров’я вищої кваліфікаційної категорії, лікар-хірург
+						вищої кваліфікаційної категорії, Заслужений лікар України.</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

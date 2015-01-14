@@ -2759,12 +2759,31 @@
 	"position_id" : 2,
 	"position_name" : "Заступник головного лікаря з хірургічної роботи",
 	"position_name2" : "Лікар"
+		,"titles":[
+			"кандидат медичних наук"
+			,"дійсний член Європейської асоціації урологів"
+			]
+,"personal_url" : "PidmurnyakOlO",
+"p1" : "П"
+}, {
+	"personal_username" : "Бондарук Н.М.",
+	"personal_surname" : "Бондарук",
+	"personal_name" : "Наталія",
+	"personal_patronymic" : "Михайлівна",
+	"personal_id" : 119,
+	"personal_surgeon" : false,
+	"personal_anesthetist" : false,
+	"department_id" : 29,
+	"department_name" : "Поліклініка",
+	"position_id" : 3,
+	"position_name" : "Заступник головного лікаря з амбулаторно-поліклінічної роботи та ЕТН",
+	"position_name2" : "Завідуюча поліклінікою"
 	,"titles":[
 	"кандидат медичних наук"
 	,"дійсний член Європейської асоціації урологів"
 		]
-	,"personal_url" : "PidmurnyakOlO",
-	"p1" : "П"
+	,"personal_url" : "BondarukNM",
+	"p1" : "Б"
 }, {
 	"personal_username" : "Дрогоруб А.А.",
 	"personal_surname" : "Дрогоруб",

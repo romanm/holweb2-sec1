@@ -91,6 +91,12 @@ public class Holweb2secRest {
 //-------------------department----------------------------------------------END
 
 
+	@RequestMapping(value="/hol/about", method=RequestMethod.GET)
+	public String about( Model model) {
+		System.out.println("/hol/about");
+		logger.debug("/hol/v");
+		return "about";
+	}
 	@RequestMapping(value="/hol/vid", method=RequestMethod.GET)
 	public String departments( Model model) {
 		System.out.println("/hol/v");
