@@ -22,37 +22,33 @@
 				personal3 = personalList.pl[personalIndex +2];
 				personal4 = personalList.pl[personalIndex +3];
 				">
-				<div class="row" data-ng-if="col == 0">
-					<div class="col-md-3">
-						<img class="img-circle"
-							src="/img/spk/{{personal1.personal_url}}.jpg" />
-						<div class="h4">
-							<a href="/hol/spk/{{personal1.personal_url}}">{{personal1.personal_username}}</a>
+					<div class="row" data-ng-if="col == 0">
+						<div class="col-md-3">
+							<a href="/hol2/spk/{{personal1.personal_url}}"> <img
+								class="img-circle" src="/img/spk/{{personal1.personal_url}}.jpg" />
+								<div class="h4">{{personal1.personal_username}}</div>
+							</a>
+						</div>
+						<div class="col-md-3" data-ng-show="personal2">
+							<a href="/hol2/spk/{{personal2.personal_url}}"> <img
+								class="img-circle" src="/img/spk/{{personal2.personal_url}}.jpg" />
+								<div class="h4">{{personal2.personal_username}}</div>
+							</a>
+						</div>
+						<div class="col-md-3" data-ng-show="personal3">
+							<a href="/hol2/spk/{{personal3.personal_url}}"> <img
+								class="img-circle" src="/img/spk/{{personal3.personal_url}}.jpg" />
+								<div class="h4">{{personal3.personal_username}}</div>
+							</a>
+						</div>
+						<div class="col-md-3" data-ng-show="personal4">
+							<a href="/hol2/spk/{{personal4.personal_url}}"> <img
+								class="img-circle" src="/img/spk/{{personal4.personal_url}}.jpg" />
+								<div class="h4">{{personal4.personal_username}}</div>
+							</a>
 						</div>
 					</div>
-					<div class="col-md-3" data-ng-show="personal2">
-						<img class="img-circle"
-							src="/img/spk/{{personal2.personal_url}}.jpg" />
-						<div class="h4">
-							<a href="/hol/spk/{{personal2.personal_url}}">{{personal2.personal_username}}</a>
-						</div>
-					</div>
-					<div class="col-md-3" data-ng-show="personal3">
-						<img class="img-circle"
-							src="/img/spk/{{personal3.personal_url}}.jpg" />
-						<div class="h4">
-							<a href="/hol/spk/{{personal3.personal_url}}">{{personal3.personal_username}}</a>
-						</div>
-					</div>
-					<div class="col-md-3" data-ng-show="personal4">
-						<img class="img-circle"
-							src="/img/spk/{{personal4.personal_url}}.jpg" />
-						<div class="h4">
-							<a href="/hol/spk/{{personal4.personal_url}}">{{personal4.personal_username}}</a>
-						</div>
-					</div>
-				</div>
-				<div class="row" 
+					<div class="row" 
 					data-ng-if="(col == 0 ? personal1.p1 != personalList.pl[personalIndex + 4].p1 : false)">
 					<div class="col-md-12">
 						<div id="i_{{personalList.pl[personalIndex + 4].p1}}" class="page-header">{{personalList.pl[personalIndex + 4].p1}}</div>

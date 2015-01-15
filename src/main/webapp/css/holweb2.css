@@ -23,6 +23,14 @@ bbody {
 .font050 {
 	font-size: 50%;
 }
+.item-lr-more>.item
+{
+	margin: 50px 120px;
+	/*
+	margin-left: 120px;
+	*/
+}
+
 
 .departmentsHead, .departmentsHead small{
 	text-shadow: 1px 2px 1px black;

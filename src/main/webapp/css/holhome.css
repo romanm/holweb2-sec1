@@ -1,5 +1,5 @@
 .cd-fixed-bg h2 {
-	line-height: 400px;
+	line-height: 300px;
 	text-align: center;
 	font-weight: bold;
 	color: white;
@@ -7,13 +7,15 @@
 }
 
 .cd-fixed-bg {
-	background-attachment: fixed;
+	/*
+	*/
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-attachment: fixed;
 }
 
-.cd-fixed-bg.cd-bg-1 h2 {
-	line-height: 300px;
+.cd-fixed-bg.cd-bg-2 h2 {
+	line-height: 350px;
 }
 .cd-fixed-bg.cd-bg-1 {
 	background-image: url("/img/general/holwyizd.jpg");
@@ -28,5 +30,12 @@
 }
 
 .cd-fixed-bg.cd-bg-4 {
+	background-image: url("/img/general/korpus-7-foto-1.jpg");
+}
+.cd-fixed-bg.cd-bg-5 {
+	background-image: url("/img/general/poliklinik-1.jpg");
+}
+
+.cd-fixed-bg.cd-bg-44 {
 	background-image: url("/tmp/k6/cd-background-4.jpg");
 }

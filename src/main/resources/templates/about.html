@@ -14,34 +14,44 @@
 				<nav
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
 					<div class="h5">
-						<a href="/hol/about">Про лікарню</a>
+						<a href="/hol2/about">Про лікарню</a>
 					</div>
-					<ul class="nav bs-docs-sidenav">
-						<li><a href="/hol/about"> <span
-								class="glyphicon glyphicon-leaf"></span> <span>Головна</span>
+					<ul class="nav bs-docs-sidenav" th:with="s1 = ${generalInfo.about}">
+						<li th:replace="head :: docBlockNavIndex"/>
+					</ul>
+					<ul class="nav bs-docs-sidenav" th:fragment="aboutNavBar">
+						<li><a href="/hol2/about"> <span
+								class="glyphicon glyphicon-leaf"></span> Головна
 						</a></li>
-						<li><a href="/hol/admin"> <span>Адміністрація
-									лікарні</span>
-						</a></li>
-						<li><a href="/hol/phone"> <span>Телефонний довідник</span>
-						</a></li>
-						<li><a href="/hol/history"> <span>Історія
-									становлення лікарні</span>
+						<li><a href="/hol2/admin"> Адміністрація лікарні </a></li>
+						<li><a href="/hol2/telefon"> Телефонний довідник </a></li>
+						<li><a href="/hol2/history"> Історія становлення лікарні
 						</a></li>
 					</ul>
 				</nav>
 			</div>
-			<div role="complementary" class="col-md-9"></div>
+			<div role="main" class="col-md-9">
+				<ol class="breadcrumb hidden-print" id="bc-sm"
+					th:fragment="breadcrumbAbout">
+					<li th:replace="navbar :: bc-homepage" />
+					<li><a href="/hol2/about">Про лікарню</a></li>
+					<li
+						th:if="${#strings.contains(#httpServletRequest.servletPath,'telefon')}"><a
+						href="/hol2/telefon">Телефонний довідник</a></li>
+					<li
+						th:if="${#strings.contains(#httpServletRequest.servletPath,'history')}"><a
+						href="/hol2/telefon">Історія становлення лікарні</a></li>
+				</ol>
+				<div class="bs-docs-section"
+					th:each="s2 : ${generalInfo.about.docBlock}">
+					<h1 th:id="${s2.sectionIdx}" class="page-header" th:text="${s2.h2}"></h1>
+					<th:block th:replace="department :: subDocBlock2" />
+				</div>
+			</div>
 		</div>
 	</div>
 	
-	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
-	<script src="/js-vendor/bootstrap.min.js"></script>
-	<script src="/js/scrollspy.js"></script>
-	<script src="/js-vendor/angular.min.js"></script>
-	<script src="/js-vendor/angular-sanitize.min.js"></script>
-	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
-	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
-	<script src='/js-vendor/textAngular.min.js'></script>
+	<th:block th:replace="head :: pageFooterScript" />
+	
 </body>
 </html>

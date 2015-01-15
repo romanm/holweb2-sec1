@@ -11,9 +11,9 @@
 
 	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumbAjs">
 		<li th:replace="navbar :: bc-homepage" />
-		<li><a th:href="@{/hol/vid}">Відділення</a></li>
+		<li><a th:href="@{/hol2/vid}">Відділення</a></li>
 		<li class="active" data-ng-show="departmentName"><a
-			href="/hol/v.{{departmentName}}">{{department.name}}</a></li>
+			href="/hol2/v.{{departmentName}}">{{department.name}}</a></li>
 		<li data-ng-repeat="o2 in department.orders2"
 		data-ng-show="o2.o2url == orders2"
 		>{{o2.name}}</li>
@@ -21,9 +21,9 @@
 
 	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumbSpk">
 		<li th:replace="navbar :: bc-homepage" />
-		<li><a th:href="@{/hol/spivrobitnik}">Співробітники</a></li>
+		<li><a th:href="@{/hol2/spivrobitnik}">Співробітники</a></li>
 		<th:block th:if="${personalUrl}">
-			<li><a th:href="@{/hol/spivrobitnik}">Персональна сторінка 
+			<li><a th:href="@{/hol2/spivrobitnik}">Персональна сторінка 
 {{spkPersonal.personal_surname}}
 {{spkPersonal.personal_name}}
 {{spkPersonal.personal_patronymic}}
@@ -33,9 +33,9 @@
 
 	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumb">
 		<li th:replace="navbar :: bc-homepage" />
-		<li><a th:href="@{/hol/vid}">Відділення</a></li>
+		<li><a th:href="@{/hol2/vid}">Відділення</a></li>
 		<th:block th:if="${departmentName}">
-			<li class="active"><a th:href="@{'/hol/v.'+${departmentName}}"
+			<li class="active"><a th:href="@{'/hol2/v.'+${departmentName}}"
 				th:text="${department.name}"></a></li>
 			<th:block th:if="${seek != null}">
 				<li class="active">Пошук</li>
@@ -112,7 +112,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul data-ng-show="department.orders2" class="nav navbar-nav">
 					<li data-ng-repeat="o2 in department.orders2"><a
-						href="/hol/v.{{departmentName}}/{{o2.o2url}}">{{o2.name}}</a></li>
+						href="/hol2/v.{{departmentName}}/{{o2.o2url}}">{{o2.name}}</a></li>
 				</ul>
 				<th:block th:if="${seek == null}">
 					<th:block th:replace="navbar :: seekForm" />
@@ -135,10 +135,15 @@
 			<div th:replace="navbar :: iconsLinkHome" />
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/hol/about">Про лікарню</a></li>
-					<li><a href="/hol/vid">Відділення</a></li>
-					<li><a href="/hol/spivrobitnik">Співробітники</a></li>
+					<li><a href="/hol2/about">Про лікарню</a></li>
+					<li><a href="/hol2/vid">Відділення</a></li>
+					<li><a href="/hol2/spivrobitnik">Співробітники</a></li>
+					<li><a href="/hol2/lklife">Життя лікарні</a></li>
 				</ul>
+				<form class="navbar-form navbar-right" role="search"
+					th:action="'/hol2/seek'">
+					<th:block th:replace="navbar :: seekFormBody" />
+				</form>
 			</div>
 		</div>
 	</nav>
@@ -151,14 +156,14 @@
 				<th:block th:if="${department !=null}">
 					<ul th:if="${department['orders2'] != null}" class="nav navbar-nav">
 						<li th:each="o2,o2row : ${department.orders2}"><a
-							th:href="'/hol/v.'+${departmentName}+'/'+${o2.o2url}"
+							th:href="'/hol2/v.'+${departmentName}+'/'+${o2.o2url}"
 							th:text="${o2.name}" th:class="${o2['state'] != null} ? o2.state"></a></li>
 					</ul>
 				</th:block>
 				<th:block th:if="${personalUrl}">
 					<ul class="nav navbar-nav">
 						<li><a
-							href="/hol/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}/personal">
+							href="/hol2/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}/personal">
 								Персонал відділення </a></li>
 					</ul>
 				</th:block>
@@ -186,17 +191,20 @@
 		</div>
 	</nav>
 
+	<th:block th:fragment="seekFormBody">
+		<div class="form-group">
+			<span data-ng-show="seek">Пошук</span> <input type="text" name="seek"
+				data-ng-model="seek" class="form-control" placeholder="Пошук" />
+		</div>
+		<button type="submit" class="btn btn-default">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		</button>
+	</th:block>
+
 	<th:block th:fragment="seekForm">
 		<form class="navbar-form navbar-right" role="search"
-			th:action="'/hol/v.'+${departmentName}+'/seek'">
-			<div class="form-group">
-			<span data-ng-show="seek">Пошук</span>
-				<input type="text" name="seek" data-ng-model="seek"
-					class="form-control" placeholder="Пошук" />
-			</div>
-			<button type="submit" class="btn btn-default">
-				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-			</button>
+			th:action="'/hol2/v.'+${departmentName}+'/seek'">
+			<th:block th:replace="navbar :: seekFormBody" />
 		</form>
 	</th:block>
 

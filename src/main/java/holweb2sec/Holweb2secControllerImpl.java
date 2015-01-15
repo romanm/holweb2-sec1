@@ -44,25 +44,29 @@ public class Holweb2secControllerImpl {
 					}
 				}
 			}
-			s2.put("sectionIdx","section-"+s2idx);
-			List<Map<String, Object>> s3List = (List<Map<String, Object>>) s2.get("docBlock");
-			if(s3List != null)
-			for (int s3idx = 0; s3idx < s3List.size(); s3idx++) {
-				final Map<String, Object> s3 = s3List.get(s3idx);
-				s3.put("sectionIdx","section-"+s2idx+"-"+s3idx);
-				s3.put("pIdx","p-"+s2idx+"-"+s3idx);
-				List<Map<String, Object>> s4List = (List<Map<String, Object>>) s3.get("docBlock");
-//				if(!s4List.isEmpty())
-				if(s4List != null)
-				for (int s4idx = 0; s4idx < s4List.size(); s4idx++) {
-					final Map<String, Object> s4 = s4List.get(s4idx);
-					s4.put("pIdx","p-"+s2idx+"-"+s3idx+"-"+s4idx);
-				}
-			}
+			addDocBlockIndex(s2idx, s2);
 		}
 		String fullPathToFile = getDepartmentFilePath(departmentName);
 		writeToFileFullPath(department, fullPathToFile);
 		return department;
+	}
+
+	void addDocBlockIndex(int s2idx, final Map<String, Object> s2) {
+		s2.put("sectionIdx","section-"+s2idx);
+		List<Map<String, Object>> s3List = (List<Map<String, Object>>) s2.get("docBlock");
+		if(s3List != null)
+		for (int s3idx = 0; s3idx < s3List.size(); s3idx++) {
+			final Map<String, Object> s3 = s3List.get(s3idx);
+			s3.put("sectionIdx","section-"+s2idx+"-"+s3idx);
+			s3.put("pIdx","p-"+s2idx+"-"+s3idx);
+			List<Map<String, Object>> s4List = (List<Map<String, Object>>) s3.get("docBlock");
+//				if(!s4List.isEmpty())
+			if(s4List != null)
+			for (int s4idx = 0; s4idx < s4List.size(); s4idx++) {
+				final Map<String, Object> s4 = s4List.get(s4idx);
+				s4.put("pIdx","p-"+s2idx+"-"+s3idx+"-"+s4idx);
+			}
+		}
 	}
 
 	public Map<String, Object> addPL() {
@@ -128,7 +132,7 @@ public class Holweb2secControllerImpl {
 		return personalList;
 	}
 
-	private void writeToFileFullPath(Object objectForJson, String dbFullPathFile) {
+	void writeToFileFullPath(Object objectForJson, String dbFullPathFile) {
 		File file = new File(dbFullPathFile);
 		logger.debug("write to file = " + file);
 		ObjectMapper mapper = new ObjectMapper();
@@ -146,6 +150,18 @@ public class Holweb2secControllerImpl {
 		writeToFileFullPath(objectForJson, dbFullPathFile);
 	}
 
+	public Map<String, Object> readModelFile(String modelFileName) {
+		String pathToFile = getModelFileName(modelFileName);
+		File file = new File(pathToFile);
+		return readJsonDbFile2map(file);
+	}
+
+	String getModelFileName(String modelFileName) {
+		String pathToFile = Holweb2secConfig.applicationFolderPfad 
+				+ Holweb2secConfig.innerModelFolderPfad
+				+ modelFileName + ".json.js";
+		return pathToFile;
+	}
 	public Map<String, Object> readDepartment(String departmentName) {
 		String pathToFile = getDepartmentFilePath(departmentName);
 		File file = new File(pathToFile);

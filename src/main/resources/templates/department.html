@@ -2,7 +2,6 @@
 <html ng-app="holweb2secApp" ng-controller="departmentController">
 <head>
 	<div th:replace="head :: metaLink"/>
-	
 	<title th:text="'ХОЛ / Відділення / '+${department.name}"></title>
 </head>
 <body>
@@ -86,7 +85,9 @@
 					
 					
 					<th:block th:if="${s2['docBlock'] != null}" 
-					th:each="s3,s3row : ${s2['docBlock']}">
+					th:each="s3,s3row : ${s2['docBlock']}"
+					th:fragment="subDocBlock2"
+					>
 						<h3 th:id="${s3.sectionIdx}"
 						th:if="${s3['h3'] != null}"
 						 th:text="${s3.h3}"></h3>

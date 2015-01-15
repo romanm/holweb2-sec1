@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="departmentController">
+<html ng-app="holweb2secApp" ng-controller="holHomeController">
 <head>
 <div th:replace="head :: metaLink" />
 <link href="/css/holhome.css" rel="stylesheet" />
@@ -11,9 +11,27 @@
 	<nav th:replace="navbar :: homeNavBar" />
 	<div class="container">
 		<div class="row">
-			<div role="complementary" class="col-md-3">3</div>
+			<div role="complementary" class="col-md-3">
+				<nav
+					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
+					<div class="h5">
+						<a href="."> Хмельницька обласна лікарня </a>
+					</div>
+					<ul class="nav bs-docs-sidenav">
+						<li><a href="#about">Про нас</a></li>
+						<li><a href="#patient">Для Пацієнтів, відвідувачів та
+								гостей</a></li>
+						<li><a href="#admin">Керівництво</a></li>
+						<li><a href="#vid">Впровадження і досвід</a></li>
+						<li><a href="#fach">Фахівці</a></li>
+					</ul>
+					<a class="back-to-top" href="#top"> Догори <span
+						class="glyphicon glyphicon-chevron-up"></span>
+					</a>
+				</nav>
+			</div>
 			<div role="main" class="col-md-9">
-				<div class="cd-fixed-bg cd-bg-1">
+				<div class="cd-fixed-bg cd-bg-1" id="about">
 					<h2>Хмельницька обласна лікарня</h2>
 				</div>
 				<div class="cd-scrolling-bg cd-color-1">
@@ -27,12 +45,12 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">Сьогодні обласна лікарня – це
+							<div class="col-md-5">Сьогодні обласна лікарня – це
 								сучасний медичний і науковий заклад. На її базі працює 23
 								відділення стаціонару на 835 ліжок, консультативна поліклініка
 								на 250 відвідувань в зміну, 15 діагностичних,
 								лікувально-допоміжних та обслуговуючих служб.</div>
-							<div class="col-md-6">Новини</div>
+							<div class="col-md-7">Новини</div>
 						</div>
 						<div class="t151">
 							<div class="wrapper">
@@ -156,17 +174,108 @@
 						</h1>
 					</div>
 				</div>
-				<div class="cd-fixed-bg cd-bg-3">
+				<div class="cd-fixed-bg cd-bg-3" id="admin">
 					<h2>Керівництво</h2>
 				</div>
 				<div class="cd-scrolling-bg cd-color-1">
-					<div class="cd-container">На теперішній час Хмельницьку
-						обласну лікарню очолює Флаксемберг Аркадій Семенович, організатор
-						охорони здоров’я вищої кваліфікаційної категорії, лікар-хірург
-						вищої кваліфікаційної категорії, Заслужений лікар України.</div>
+					<div class="cd-container">
+						<div class="row">
+							<div class="col-md-6">
+								На теперішній час Хмельницьку обласну лікарню очолює Флаксемберг
+								Аркадій Семенович, організатор охорони здоров’я вищої
+								кваліфікаційної категорії, лікар-хірург вищої кваліфікаційної
+								категорії, Заслужений лікар України.
+								<div>Детальніше...</div>
+							</div>
+							<div class="col-md-6">
+								<img class="img-thumbnail pull-right"
+									src="/img/general/gollikar-1.jpeg" />
+							</div>
+						</div>
+						<div class="t151">
+							<div class="wrapper">
+								<hr style="max-width: 780px" />
+							</div>
+							<div class="centeredSection">
+								<div field="title" class="text">»</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="cd-fixed-bg cd-bg-4" id="vid">
+					<h2>Впровадження і досвід</h2>
+				</div>
+				<div class="cd-scrolling-bg cd-color-1">
+					<div class="cd-container">
+						<div class="t151">
+							<div class="wrapper">
+								<hr style="max-width: 780px" />
+							</div>
+							<div class="centeredSection">
+								<div field="title" class="text">«</div>
+							</div>
+						</div>
+						Серед новинок в наданні медичної допомоги населенню, є ряд
+						оптимальних і якісних технологій:
+						<div>Відділеня лікарні</div>
+						<div class="t151">
+							<div class="wrapper">
+								<hr style="max-width: 780px" />
+							</div>
+							<div class="centeredSection">
+								<div field="title" class="text">»</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div id="myCarousel" class="carousel slide" data-ride="carousel">
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner item-lr-more" role="listbox">
+										<div data-ng-repeat="x in hpVids"
+											class="item {{x.carouselActive}}">
+											<h4>{{x.name}}</h4>
+										</div>
+									</div>
+									<!-- Indicators -->
+									<ol class="carousel-indicators">
+										<li data-ng-repeat="x in hpVids" data-target="#myCarousel"
+											data-slide-to="{{$index}}" class="{{x.carouselActive}}">
+										</li>
+									</ol>
+
+									<!-- Left and right controls -->
+									<a class="left carousel-control" href="#myCarousel"
+										role="button" data-slide="prev"> <span
+										class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a> <a class="right carousel-control" href="#myCarousel"
+										role="button" data-slide="next"> <span
+										class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cd-fixed-bg cd-bg-5" id="fach">
+					<h2>Фахівці</h2>
+				</div>
+				<div class="cd-scrolling-bg cd-color-1">
+					<div class="cd-container">
+					лиця і звання
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	
+	<footer th:replace="head :: pageFooter"/>
+	<div th:replace="head :: docFooter"/>
+	<th:block th:replace="head :: pageFooterScript" />
+
 </body>
 </html>

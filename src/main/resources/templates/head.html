@@ -21,7 +21,7 @@
 	<nav th:fragment="navPanelDepartment"
 		class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
 		<div class="h5">
-			<a href="" th:href="'/hol/v.'+${departmentName}"
+			<a href="" th:href="'/hol2/v.'+${departmentName}"
 				th:text="${department.name}"></a>
 			<th:block th:each="o2 : ${department.orders2}">
 				<small th:if="${orders2 == o2.o2url}" th:text="${o2.name}"></small>
@@ -32,7 +32,7 @@
 				<th:block th:each="o2 : ${department.orders2}"
 					th:if="${'regal' == o2.o2url} ? ${o2['orders3'] != null} : false">
 					<li 
-					th:each="o3,o3row : ${o2.orders3}"><a
+					th:each="o3 : ${o2.orders3}"><a
 						th:href="'#'+${o3.o3url}" th:text="${o3.name}"></a>
 						
 						<ul class="nav" th:if="${o3['orders4'] != null}">
@@ -48,20 +48,21 @@
 						</ul></li>
 				</th:block>
 			</th:block>
-			<th:block th:if="${orders2 == null}"><!-- Головна -->
-				<li th:each="s2,s2row : ${department.docBlock}" th:if="${s2['h2']}"><a
-					th:href="'#section-'+${s2row.index}" th:text="${s2.h2}"></a>
+			<!-- Головна -->
+			<th:block th:if="${orders2 == null}" th:with="s1 = ${department}">
+				<li th:fragment="docBlockNavIndex"
+					th:each="s2,s2row : ${s1.docBlock}" th:if="${s2['h2']}"><a
+					th:href="'#'+${s2.sectionIdx}" th:text="${s2.h2}"></a>
 					<ul class="nav" th:if="${s2['docBlock'] != null}">
 						<li th:each="s3,s3row : ${s2.docBlock}" th:if="${s3['h3']}"><a
 							th:href="'#section-'+${s2row.index}+'-'+${s3row.index}"
-							th:text="${s3.h3}"></a>
-							</li>
+							th:text="${s3.h3}"></a></li>
 					</ul></li>
 			</th:block>
 			<th:block th:if="${orders2 == 'regal'}">
 			</th:block>
 			<li th:each="o2,o2row : ${department.orders2}"><a
-				th:href="'/hol/v.'+${departmentName}+'/'+${o2.o2url}"
+				th:href="'/hol2/v.'+${departmentName}+'/'+${o2.o2url}"
 				th:class="${o2['state'] != null} ? o2.state"> <span
 					th:if="${o2.name == 'Головна'}" class="glyphicon glyphicon-leaf"></span>
 					<span th:text="${o2.name}"></span>
@@ -83,7 +84,7 @@
 				{{spkPersonal.personal_name}} {{spkPersonal.personal_patronymic}}</h2>
 			<div>
 				Відділення <a
-					href="/hol/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}">
+					href="/hol2/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}">
 					{{spkPersonal.department_name}} </a>
 			</div>
 			<div>{{spkPersonal.position_name}}</div>
@@ -103,7 +104,7 @@
 					<div class="navbar-right">
 						<hr/>
 						<small> Редакція сайту: <a
-							href="mailto:roman.mishchenko@gmail.com?Subject=/hol/ :  Побажання до зміни сторінки"
+							href="mailto:roman.mishchenko@gmail.com?Subject=/hol2/ :  Побажання до зміни сторінки"
 							target="_top"> roman.mishchenko@gmail.com </a> Ваші відгуки та
 							побажання будуть враховані.
 						</small>
@@ -118,7 +119,18 @@
 		<input type="hidden" th:value="${orders2}" id="orders2" />
 		<input type="hidden" th:value="${seek}" id="seekParam" />
 	</div>
-	
-	
+
+	<th:block th:fragment="pageFooterScript">
+		<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+		<script src="/js-vendor/bootstrap.min.js"></script>
+		<script src="/js/scrollspy.js"></script>
+		<script src="/js-vendor/angular.min.js"></script>
+		<script src="/js-vendor/angular-sanitize.min.js"></script>
+		<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+		<script src='/js-vendor/textAngular-sanitize.min.js'></script>
+		<script src='/js-vendor/textAngular.min.js'></script>
+		<script src="/js/moresmall.controller.js"></script>
+	</th:block>
+
 </body>
 </html>
