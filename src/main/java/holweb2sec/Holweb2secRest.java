@@ -30,20 +30,8 @@ public class Holweb2secRest {
 		System.out.println("/hol2/v-"+departmentName);
 		logger.debug("/hol2/v."+departmentName);
 		addDepartment(departmentName, model);
-		addDepartmentModel(departmentName, model);
+		addModelDepartment(model, departmentName);
 		return "department";
-	}
-
-	@RequestMapping(value="/hol2/v.{departmentName}/seek", method=RequestMethod.GET)
-	public String departmentSeek(@PathVariable String departmentName, Model model, HttpServletRequest req) {
-		System.out.println("/hol2/v-"+departmentName);
-		logger.debug("/hol2/v."+departmentName);
-		final String seek = req.getParameter("seek");
-		System.out.println("seek = "+seek);
-		model.addAttribute("seek", seek);
-		addDepartment(departmentName, model);
-		addDepartmentModel(departmentName, model);
-		return "dSeek";
 	}
 
 	@RequestMapping(value="/hol2/v.{departmentName}/personal", method=RequestMethod.GET)
@@ -53,7 +41,7 @@ public class Holweb2secRest {
 		logger.debug(url);
 		model.addAttribute("orders2", "personal");
 		addDepartment(departmentName, model);
-		addDepartmentModel(departmentName, model);
+		addModelDepartment(model, departmentName);
 		return "departmentPersonal";
 	}
 
@@ -63,10 +51,10 @@ public class Holweb2secRest {
 		logger.debug("/hol2/v."+departmentName);
 		model.addAttribute("orders2", "regal");
 		addDepartment(departmentName, model);
-		addDepartmentModel(departmentName, model);
+		addModelDepartment(model, departmentName);
 		return "departmentRegal";
 	}
-	private void addDepartmentModel(String departmentName, Model model) {
+	private void addModelDepartment(Model model, String departmentName) {
 		final Map<String, Object> department = departmentModel(departmentName);
 		System.out.println(department);
 		model.addAttribute("department", department);
@@ -90,7 +78,38 @@ public class Holweb2secRest {
 	private void addDepartment(String departmentName, Model model) {
 		model.addAttribute("departmentName", departmentName);
 	}
+	@RequestMapping(value="/model/v.{departmentName}", method=RequestMethod.GET)
+	public @ResponseBody Map<String, Object> departmentModel(@PathVariable String departmentName) {
+		logger.debug("/model/department/v."+departmentName);
+		return holweb2secController.readDepartment(departmentName);
+	}
+//----------------------------seek----------------------------------------------
+	@RequestMapping(value="/hol2/v.{departmentName}/seek", method=RequestMethod.GET)
+	public String departmentSeek(@PathVariable String departmentName, Model model, HttpServletRequest req) {
+		System.out.println("/hol2/v-"+departmentName);
+		logger.debug("/hol2/v."+departmentName);
+		addModelSeek(model, req);
+		addDepartment(departmentName, model);
+		addModelDepartment(model, departmentName);
+		return "seekInDepartment";
+	}
+
 //-------------------department----------------------------------------------END
+
+	@RequestMapping(value="/hol2/seek", method=RequestMethod.GET)
+	public String seekInAll( Model model, HttpServletRequest req) {
+		System.out.println("/hol2/seek");
+		logger.debug("/hol2/seek");
+		addModelSeek(model, req);
+		return "seekInAll";
+	}
+//----------------------------seek-------------------------------------------END
+
+	private void addModelSeek(Model model, HttpServletRequest req) {
+		final String seek = req.getParameter("seek");
+		System.out.println("seek = "+seek);
+		model.addAttribute("seek", seek);
+	}
 
 	@RequestMapping(value="/hol2/addidx-about", method=RequestMethod.GET)
 	public @ResponseBody Map<String, Object> addIdxAbout() {
@@ -112,7 +131,7 @@ public class Holweb2secRest {
 		holweb2secController.writeToFileFullPath(generalInfo, modelFileName);
 		return generalInfo;
 	}
-
+//------------------------------про лікарню------------------------------------
 	@RequestMapping(value="/hol2/about", method=RequestMethod.GET)
 	public String about( Model model) {
 		System.out.println("/hol2/about");
@@ -134,6 +153,7 @@ public class Holweb2secRest {
 		getGeneralInfo(model);
 		return "telefon";
 	}
+//------------------------------про лікарню----------------------------------END
 
 	private void getGeneralInfo(Model model) {
 		final Map<String, Object> generalInfo = holweb2secController.readModelFile("generalInfo");
@@ -164,12 +184,6 @@ public class Holweb2secRest {
 		logger.debug("/hol2/spk/"+personalUrl);
 		addDepartment(personalUrl, model);
 		return "spkPersonal";
-	}
-
-	@RequestMapping(value="/model/v.{departmentName}", method=RequestMethod.GET)
-	public @ResponseBody Map<String, Object> departmentModel(@PathVariable String departmentName) {
-		logger.debug("/model/department/v."+departmentName);
-		return holweb2secController.readDepartment(departmentName);
 	}
 
 	@RequestMapping(value = "/hol2/personalList", method = RequestMethod.GET)

@@ -24,20 +24,20 @@
 				<div data-ng-repeat="o2 in department.orders2 | filter: seek ">
 					<hr data-ng-show="{{$first}}" />
 					{{department.short}} <a
-						href="/hol/v.{{departmentName}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
+						href="/hol2/v.{{departmentName}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
 					<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
 						<span class="h2"> <a
-							href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}"
+							href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}"
 							target="_blank">{{o3.name}}</a>
 						</span>
 						<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
 							<span data-ng-if="o3.o3url != 'decree'"> <a
-								href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span
+								href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span
 									class="glyphicon glyphicon-link"></span>{{o4.name}} </a> <span
 								id="{{o3.o3url}}-{{o4.id}}"> </span>
 								<div>{{o4.annotation}}</div>
 							</span> <span data-ng-if="o3.o3url == 'decree'"> <a
-								href="/hol/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}"
+								href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}"
 								target="_blank"> <span class="glyphicon glyphicon-link"></span>
 									<b>Наказ № {{o4.decreeNr}}</b> від {{o4.decreeDate}}
 							</a> «<i>{{o4.name}}</i>»
@@ -46,45 +46,22 @@
 					</div>
 				</div>
 				<div data-ng-repeat="s2 in department.docBlock | filter: seek "
-				>
+					ng-init="pageUrl = 'v.' + departmentName">
 					<hr data-ng-show="{{$first}}" />
 					<div>
-						{{department.short}} <a href="/hol/v.{{departmentName}}"
+						{{department.short}} <a href="/hol2/v.{{departmentName}}"
 							target="_blank">Головна</a>
 					</div>
-					<span class="h2"> <a
-						href="/hol/v.{{departmentName}}#{{s2.sectionIdx}}" target="_blank">
-							{{s2.h2}} </a>
-					</span>
-					<div data-ng-show="s2.shef" 
-						data-ng-init="spkPersonal = s2.spkPersonal"
-					>
+					
+					<span th:replace="seekInAll :: seek-s2h2link" />
+					
+					<div data-ng-show="s2.shef"
+						data-ng-init="spkPersonal = s2.spkPersonal">
 						<div th:replace="head :: showPersonal" />
 					</div>
-					<div data-ng-repeat="s3 in s2.docBlock | filter: seek ">
-						<div data-ng-show="s3.h3">
-							<span class="h3"> <a
-								href="/hol/v.{{departmentName}}#{{s3.sectionIdx}}" target="_blank">{{s3.h3}}
-							</a>
-							</span>
-							<div data-ng-repeat="s4 in s3.docBlock | filter: seek ">
-								<div data-ng-show="s4.p">
-									<p data-ng-bind-html="s4.p"></p>
-									<a href="/hol/v.{{departmentName}}#{{s4.pIdx}}" target="_blank">
-										<span class="glyphicon glyphicon-link"></span>
-									</a>
-									<hr />
-								</div>
-							</div>
-						</div>
-						<div data-ng-show="s3.p">
-							<p data-ng-bind-html="s3.p"></p>
-							<a href="/hol/v.{{departmentName}}#{{s3.pIdx}}" target="_blank">
-								<span class="glyphicon glyphicon-link"></span>
-							</a>
-							<hr />
-						</div>
-					</div>
+					
+					<div th:replace="seekInAll :: seek-s2Innerlink" />
+					
 				</div>
 				<div data-ng-repeat="spkPersonal in department.dspl | filter: seek ">
 					<hr data-ng-show="{{$first}}" />
@@ -110,8 +87,9 @@
 	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
 	<script src='/js-vendor/textAngular-sanitize.min.js'></script>
 	<script src='/js-vendor/textAngular.min.js'></script>
-	<script src="/js/department.controller.js"></script>
 	<script src="/js/scrollspy.js"></script>
+	<script src="/js/holweb2secApp.directive.js"></script>
+	<script src="/js/department.controller.js"></script>
 	
 </body>
 
