@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="seekInAllController">
+<head>
+<div th:replace="head :: metaLink" />
+<link href="/css/holhome.css" rel="stylesheet" />
+<link href="/css/cyborg.css" rel="stylesheet" />
+<title>Хмельницька обласна лікарня</title>
+</head>
+<body>
+	<div th:replace="navbar :: holHead" />
+	<nav th:replace="navbar :: homeNavBar" />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<th:block th:if="${seek != null}">
+					<form th:replace="navbar :: seekInAll"></form>
+				</th:block>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" data-ng-if="seek == null || seek == ''">Тут буде пошук</div>
+			<div class="col-md-12" data-ng-if="seek != ''">
+				<div data-ng-repeat="giKey in generalInfoKeys"
+						data-ng-init="pageDoc = generalInfo[giKey]"
+				>
+					<table data-ng-if="giKey == 'telefon'" class="table">
+						<tr
+							data-ng-repeat-start="building in pageDoc.buildings | filter: seek">
+						</tr>
+						<tr data-ng-repeat-end=""
+							data-ng-repeat="telefon in building.telefonListe | filter: seek">
+							<th>{{building.building}}</th>
+							<td>{{telefon.position}}</td>
+							<td>{{telefon.telefonInner}}</td>
+							<td>{{telefon.telefonStationary}}</td>
+							<td></td>
+						</tr>
+					</table>
+					<div data-ng-if="generalInfo[giKey]['docBlock']">
+						<div data-ng-repeat="s2 in pageDoc.docBlock | filter: seek"
+							data-ng-init="pageUrl = pageDoc.pageUrl">
+							<div data-ng-show="{{$first}}">
+								<a href="/hol2/{{pageDoc.pageUrl}}"> {{pageDoc.pageName}} </a>
+								<hr />
+							</div>
+
+							<span class="h2" th:fragment="seek-s2h2link"> <a
+								href="/hol2/{{pageUrl}}#{{s2.sectionIdx}}" target="_blank">
+									{{s2.h2}} </a>
+							</span>
+
+							<div th:fragment="seek-s2Innerlink"
+								data-ng-repeat="s3 in s2.docBlock | filter: seek ">
+								<div data-ng-show="s3.h3">
+									<span class="h3"> <a
+										href="/hol2/{{pageUrl}}#{{s3.sectionIdx}}" target="_blank">{{s3.h3}}
+									</a>
+									</span>
+									<div data-ng-repeat="s4 in s3.docBlock | filter: seek ">
+										<div data-ng-show="s4.p">
+											<p data-ng-bind-html="s4.p"></p>
+											<a href="/hol2/{{pageUrl}}#{{s4.pIdx}}" target="_blank">
+												<span class="glyphicon glyphicon-link"></span>
+											</a>
+											<hr />
+										</div>
+									</div>
+								</div>
+								<div data-ng-show="s3.p">
+									<p data-ng-bind-html="s3.p"></p>
+									<a href="/hol2/{{pageUrl}}#{{s3.pIdx}}" target="_blank"> <span
+										class="glyphicon glyphicon-link"></span>
+									</a>
+									<hr />
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<footer th:replace="head :: pageFooter"/>
+	<div th:replace="head :: docFooter"/>
+	<th:block th:replace="head :: pageFooterScript" />
+	
+</body>
+</html>
