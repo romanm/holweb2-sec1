@@ -18,22 +18,37 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12" data-ng-if="seek == null || !(seek.length > 1)">Тут буде пошук</div>
-			<div class="col-md-12" data-ng-if="seek != '' ? seek.length > 1 : false">
+			<div class="col-md-3">
+				<nav th:fragment="navPanelDepartment"
+					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
+					<ul class="nav bs-docs-sidenav">
+						<li data-ng-repeat="vid in vids.departments | filter: seek"
+							data-ng-init="department = vid.model; pageUrl = 'v.'+vid.vUrl; vidId = '#page_'+pageUrl; vidName = vid.name">
+							<a href="{{vidId}}"> {{ vidName }} </a>
+						</li>
+					</ul>
+					<a class="back-to-top" href="#top"> Догори <span
+						class="glyphicon glyphicon-chevron-up"></span>
+					</a>
+				</nav>
+			</div>
+			<div class="col-md-9" data-ng-if="seek == null || !(seek.length > 1)">Тут буде пошук</div>
+			<div class="col-md-9" data-ng-if="seek != '' ? seek.length > 1 : false">
 				<div data-ng-repeat="vid in vids.departments | filter: seek"
-						data-ng-init="department = vid.model; departmentName = vid.vUrl"
-				>
-					<div data-ng-show="{{$first}}">
-						§ <a href="/hol2/vid">Відділення лікарні</a>
-						<hr />
-					</div>
-					<div>
-						<a href="/hol2/v.{{ vid.vUrl }}"> {{ vid.name }} </a>
-					</div>
+					data-ng-init="department = vid.model; departmentName = vid.vUrl; pageUrl = 'v.'+vid.vUrl; vidName = vid.name">
+					<hr data-ng-show="$first" />
+					<h4 id="page_{{ pageUrl }}">
+						<span th:fragment="seek-department-breadcrumb"> 
+						<span data-ng-show="vidName">
+								<a href="/hol2/vid">Відділення лікарні</a> /
+						</span> <a href="/hol2/{{ pageUrl }}"> {{ vidName }} </a>
+						</span>
+					</h4>
+
 					<th:block th:replace="seekInDepartment :: seekInDepartment" />
 				</div>
 				<div data-ng-repeat="giKey in generalInfoKeys"
-						data-ng-init="pageDoc = generalInfo[giKey]"
+					data-ng-init="pageDoc = generalInfo[giKey]"
 				>
 					<table data-ng-if="giKey == 'telefon'" class="table">
 						<tr
@@ -50,41 +65,43 @@
 					</table>
 					<div data-ng-if="generalInfo[giKey]['docBlock']">
 						<div data-ng-repeat="s2 in pageDoc.docBlock | filter: seek"
-							data-ng-init="pageUrl = pageDoc.pageUrl">
-							<div data-ng-show="{{$first}}">
-								§ <a href="/hol2/{{pageDoc.pageUrl}}"> {{pageDoc.pageName}}
-								</a>
-								<hr />
-							</div>
+							data-ng-init="pageUrl = pageDoc.pageUrl; pageName = pageDoc.pageName">
+							<hr data-ng-show="$first" />
+							<h4 data-ng-show="$first">
+								<span th:fragment="seek-s2DocAndh2link"> <a
+									href="/hol2/{{ pageUrl }}"> {{pageName}} </a> <span
+									th:fragment="seek-s2h2link"> § <span class="h4" id="{{pageUrl}}-{{s2.sectionIdx}}">
+											<a href="/hol2/{{pageUrl}}#{{s2.sectionIdx}}" target="_blank">
+												{{s2.h2}} </a>
+									</span>
+								</span>
+								</span>
+							</h4>
 
-							<span class="h2" th:fragment="seek-s2h2link"> <a
-								href="/hol2/{{pageUrl}}#{{s2.sectionIdx}}" target="_blank">
-									{{s2.h2}} </a>
-							</span>
-
-							<div th:fragment="seek-s2Innerlink"
+							<div th:fragment="seek-s2Innerlinks"
 								data-ng-repeat="s3 in s2.docBlock | filter: seek ">
 								<div data-ng-show="s3.h3">
-									<span class="h3"> <a
-										href="/hol2/{{pageUrl}}#{{s3.sectionIdx}}" target="_blank">{{s3.h3}}
-									</a>
-									</span>
+
 									<div data-ng-repeat="s4 in s3.docBlock | filter: seek ">
-										<div data-ng-show="s4.p">
-											<p data-ng-bind-html="s4.p"></p>
-											<a href="/hol2/{{pageUrl}}#{{s4.pIdx}}" target="_blank">
-												<span class="glyphicon glyphicon-link"></span>
-											</a>
-											<hr />
+										<div data-ng-show="s4.p" data-ng-init="modelElement = s4">
+											<th:block th:replace="seekInAll :: link2findElement" />
 										</div>
 									</div>
 								</div>
-								<div data-ng-show="s3.p">
-									<p data-ng-bind-html="s3.p"></p>
-									<a href="/hol2/{{pageUrl}}#{{s3.pIdx}}" target="_blank"> <span
-										class="glyphicon glyphicon-link"></span>
-									</a>
-									<hr />
+								<div data-ng-show="s3.p" data-ng-init="modelElement = s3">
+									<th:block th:fragment="link2findElement">
+										<span th:replace="seekInAll :: seek-department-breadcrumb" />
+										<span th:replace="seekInAll :: seek-s2DocAndh2link" /> / <span
+											class="h5"> <a
+											href="/hol2/{{pageUrl}}#{{s3.sectionIdx}}" target="_blank">{{s3.h3}}
+										</a>
+										</span>
+										<a href="/hol2/{{pageUrl}}#{{modelElement.pIdx}}"
+											target="_blank"><span class="glyphicon glyphicon-link"></span>
+											Посилання </a>
+										<p data-ng-bind-html="modelElement.p"></p>
+										<hr />
+									</th:block>
 								</div>
 							</div>
 
