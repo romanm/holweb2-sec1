@@ -21,58 +21,62 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12" data-ng-if="seek != ''">
-				<div data-ng-repeat="o2 in department.orders2 | filter: seek ">
-					<hr data-ng-show="{{$first}}" />
-					{{department.short}} <a
-						href="/hol2/v.{{departmentName}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
-					<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
-						<span class="h2"> <a
-							href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}"
-							target="_blank">{{o3.name}}</a>
-						</span>
-						<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
-							<span data-ng-if="o3.o3url != 'decree'"> <a
-								href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span
-									class="glyphicon glyphicon-link"></span>{{o4.name}} </a> <span
-								id="{{o3.o3url}}-{{o4.id}}"> </span>
-								<div>{{o4.annotation}}</div>
-							</span> <span data-ng-if="o3.o3url == 'decree'"> <a
-								href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}"
-								target="_blank"> <span class="glyphicon glyphicon-link"></span>
-									<b>Наказ № {{o4.decreeNr}}</b> від {{o4.decreeDate}}
-							</a> «<i>{{o4.name}}</i>»
+				<th:block th:fragment="seekInDepartment">
+					<div data-ng-repeat="o2 in department.orders2 | filter: seek ">
+						<hr data-ng-show="{{$first}}" />
+						§ {{department.short}} <a
+							href="/hol2/v.{{departmentName}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
+						<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
+							<span class="h2"> <a
+								href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}"
+								target="_blank">{{o3.name}}</a>
 							</span>
+							<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
+								<span data-ng-if="o3.o3url != 'decree'"> <a
+									href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span
+										class="glyphicon glyphicon-link"></span>{{o4.name}} </a> <span
+									id="{{o3.o3url}}-{{o4.id}}"> </span>
+									<div>{{o4.annotation}}</div>
+								</span> <span data-ng-if="o3.o3url == 'decree'"> <a
+									href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}"
+									target="_blank"> <span class="glyphicon glyphicon-link"></span>
+										<b>Наказ № {{o4.decreeNr}}</b> від {{o4.decreeDate}}
+								</a> «<i>{{o4.name}}</i>»
+								</span>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div data-ng-repeat="s2 in department.docBlock | filter: seek "
-					ng-init="pageUrl = 'v.' + departmentName">
-					<hr data-ng-show="{{$first}}" />
-					<div>
-						{{department.short}} <a href="/hol2/v.{{departmentName}}"
-							target="_blank">Головна</a>
+					<div data-ng-repeat="s2 in department.docBlock | filter: seek "
+						ng-init="pageUrl = 'v.' + departmentName"
+						>
+						<hr data-ng-show="{{$first}}" />
+						<div>
+							{{department.short}} <a href="/hol2/v.{{departmentName}}"
+								target="_blank">Головна</a>
+						</div>
+
+						<span th:replace="seekInAll :: seek-s2h2link" />
+
+						<div data-ng-show="s2.shef"
+							data-ng-init="spkPersonal = s2.spkPersonal">
+							<div th:replace="head :: showPersonal" />
+						</div>
+
+						<div th:replace="seekInAll :: seek-s2Innerlink" />
+
 					</div>
-					
-					<span th:replace="seekInAll :: seek-s2h2link" />
-					
-					<div data-ng-show="s2.shef"
-						data-ng-init="spkPersonal = s2.spkPersonal">
+					<div
+						data-ng-repeat="spkPersonal in department.dspl | filter: seek ">
+						<hr data-ng-show="{{$first}}" />
+						<div data-ng-show="{{$first}}">Персонал адміністративний</div>
 						<div th:replace="head :: showPersonal" />
 					</div>
-					
-					<div th:replace="seekInAll :: seek-s2Innerlink" />
-					
-				</div>
-				<div data-ng-repeat="spkPersonal in department.dspl | filter: seek ">
-					<hr data-ng-show="{{$first}}" />
-					<div data-ng-show="{{$first}}">Персонал адміністративний</div>
-					<div th:replace="head :: showPersonal" />
-				</div>
-				<div data-ng-repeat="spkPersonal in department.dpl | filter: seek ">
-					<hr data-ng-show="{{$first}}" />
-					<div data-ng-show="{{$first}}">Персонал</div>
-					<div th:replace="head :: showPersonal" />
-				</div>
+					<div data-ng-repeat="spkPersonal in department.dpl | filter: seek ">
+						<hr data-ng-show="{{$first}}" />
+						<div data-ng-show="{{$first}}">Персонал</div>
+						<div th:replace="head :: showPersonal" />
+					</div>
+				</th:block>
 			</div>
 		</div>
 	</div>

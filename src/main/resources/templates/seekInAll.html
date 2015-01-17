@@ -18,8 +18,20 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12" data-ng-if="seek == null || seek == ''">Тут буде пошук</div>
-			<div class="col-md-12" data-ng-if="seek != ''">
+			<div class="col-md-12" data-ng-if="seek == null || !(seek.length > 1)">Тут буде пошук</div>
+			<div class="col-md-12" data-ng-if="seek != '' ? seek.length > 1 : false">
+				<div data-ng-repeat="vid in vids.departments | filter: seek"
+						data-ng-init="department = vid.model; departmentName = vid.vUrl"
+				>
+					<div data-ng-show="{{$first}}">
+						§ <a href="/hol2/vid">Відділення лікарні</a>
+						<hr />
+					</div>
+					<div>
+						<a href="/hol2/v.{{ vid.vUrl }}"> {{ vid.name }} </a>
+					</div>
+					<th:block th:replace="seekInDepartment :: seekInDepartment" />
+				</div>
 				<div data-ng-repeat="giKey in generalInfoKeys"
 						data-ng-init="pageDoc = generalInfo[giKey]"
 				>
@@ -40,7 +52,8 @@
 						<div data-ng-repeat="s2 in pageDoc.docBlock | filter: seek"
 							data-ng-init="pageUrl = pageDoc.pageUrl">
 							<div data-ng-show="{{$first}}">
-								<a href="/hol2/{{pageDoc.pageUrl}}"> {{pageDoc.pageName}} </a>
+								§ <a href="/hol2/{{pageDoc.pageUrl}}"> {{pageDoc.pageName}}
+								</a>
 								<hr />
 							</div>
 
