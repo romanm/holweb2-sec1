@@ -53,7 +53,38 @@
 								зміну, 15 діагностичних, лікувально-допоміжних та обслуговуючих
 								служб.
 							</div>
-							<div class="col-md-7">Новини</div>
+							<div class="col-md-7">
+								<a href="/hol2/news">
+								Новини
+								</a>
+								<div id="newsCarousel" class="carousel slide"
+									data-ride="carousel">
+									<!-- 
+									<div class="item-lr-more" role="listbox">
+									 -->
+									<div class="carousel-inner item-lr-more" role="listbox">
+										<div data-ng-repeat="x in generalInfo.news.news"
+											style="height: {{generalInfo.news.carouselHeight}};" class="item {{x.carouselActive}}">
+											<div data-ng-bind-html="x.textHtml"></div>
+										</div>
+									</div>
+									<ol class="carousel-indicators">
+										<li data-ng-repeat="x in generalInfo.news.news"
+											data-target="#newsCarousel" data-slide-to="{{$index}}"
+											class="{{x.carouselActive}}"></li>
+									</ol>
+									<a class="left carousel-control" href="#newsCarousel"
+										role="button" data-slide="prev"> <span
+										class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a> <a class="right carousel-control" href="#newsCarousel"
+										role="button" data-slide="next"> <span
+										class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>
+
+							</div>
 						</div>
 						<div class="t151">
 							<div class="wrapper">
@@ -232,27 +263,28 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div id="myCarousel" class="carousel slide" data-ride="carousel">
+								<div id="departmentCarousel" class="carousel slide" data-ride="carousel">
 									<!-- Wrapper for slides -->
 									<div class="carousel-inner item-lr-more" role="listbox">
-										<div data-ng-repeat="x in hpVids"
+										<div data-ng-repeat="x in generalInfo.hpVids"
+										style="height: 80px;"
 											class="item {{x.carouselActive}}">
 											<h4>{{x.name}}</h4>
 										</div>
 									</div>
 									<!-- Indicators -->
 									<ol class="carousel-indicators">
-										<li data-ng-repeat="x in hpVids" data-target="#myCarousel"
+										<li data-ng-repeat="x in generalInfo.hpVids" data-target="#departmentCarousel"
 											data-slide-to="{{$index}}" class="{{x.carouselActive}}">
 										</li>
 									</ol>
 
 									<!-- Left and right controls -->
-									<a class="left carousel-control" href="#myCarousel"
+									<a class="left carousel-control" href="#departmentCarousel"
 										role="button" data-slide="prev"> <span
 										class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 										<span class="sr-only">Previous</span>
-									</a> <a class="right carousel-control" href="#myCarousel"
+									</a> <a class="right carousel-control" href="#departmentCarousel"
 										role="button" data-slide="next"> <span
 										class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 										<span class="sr-only">Next</span>

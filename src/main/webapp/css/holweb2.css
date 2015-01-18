@@ -31,6 +31,20 @@ bbody {
 	*/
 }
 
+.hol-news-head {
+	font-size: 75%;
+	margin-bottom: 10px;
+}
+.hol-news-calendar {
+	color: rgba(85, 85, 85, 0.75);
+}
+.hol-news-comment {
+	color: rgba(204, 51, 0, 0.75);
+}
+.hol-news-author {
+	color: #4183c4;
+}
+
 
 .departmentsHead, .departmentsHead small{
 	text-shadow: 1px 2px 1px black;

@@ -1,5 +1,45 @@
 {
 	"s2pages":["about","admin","telefon","history"]
+	,"hpVids" : 
+		[{
+			"vUrl":"cardiacsurgery"
+			,"name":"Кардіоендоваскулярна хірургія"
+			,"type":"chirurgiae"
+			,"carouselActive":"active"
+		} ,{
+			"vUrl":"urology"
+			,"name":"Урологічне"
+			,"type":"chirurgiae"
+		} ,{
+			"vUrl":"abdominal"
+			,"type":"chirurgiae"
+			,"name":"Реконструктивної хірургії і гнійних перитонітів з центром гострих шлунково - кишкових кровотеч "
+		} ,{
+			"vUrl":"ait"
+			,"name":"Анестезіологія та інтенсивна терапія"
+			,"type":"chirurgiae"
+		}]
+	,"news" : {
+		"carouselHeight" :"150px" 
+		,"news" : 
+			[{
+			"timesTheNews":"01 Листопада 2014 / 24.09.2014 | 16:12"
+				,"textHtml":"<a href='http://www.unian.net/society/988649-donetskiy-natsionalnyiy-universitet-budet-pereveden-v-vinnitsu.html'> Донецкий национальный университет будет переведен в Винницу </a>"
+			},{
+			"timesTheNews":"24 Жовтня 2014 09:28"
+				,"textHtml":" <a href='http://censor.net.ua/news/308627/rektor_donetskogo_meduniversiteta_otkazalsya_podchinyatsya_okkupantam_ya_vsegda_budu_grajdaninom_ukrainy'> Ректор Донецкого медуниверситета отказался подчиняться оккупантам: «Я всегда буду гражданином Украины» </a>"
+			},{
+				"timesTheNews":"17 Жовтня 2014"
+					,"textHtml":"Створено: <a href='http://sah.km.ua/'> «Сайт анестезіологів Хмельниччини» </a>"
+			},{
+				"timesTheNews":"16.01.2015 22:33"
+					,"textHtml":"<img width='50' title='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' alt='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' src='http://www.amn.net.ua/img/item/2015-01/1421439481.jpg'/> О.Квіташвілі <a href='http://www.amn.net.ua/ukr/news/events/33035'  target='_blank' >стверджує, що для медреформи потрібна консолідація</a> усіх гілок держвлади "
+						,"carouselActive":"active"
+			},{
+				"timesTheNews":"16.01.2015"
+					,"textHtml":"<a href='http://amn.net.ua/'><img width='50' src='http://lh6.googleusercontent.com/-ZDeEykS0-jk/AAAAAAAAAAI/AAAAAAAAADg/X3sJlgfac3g/photo.jpg' />Інформаційне агентство «<span style='color: rgb(165, 42, 42);'><strong>Медичні новини</strong></span>» (<span style='color:#a52a2a;'><strong>АМН</strong></span>)</a>  – перше в Україні спеціалізоване агентство медичної інформації, засноване Міністерством охорони здоров’я та трудовим колективом редакції. "
+			}]
+	}
 	,"policlinic" : {
 		"specialists" : 
 			[{

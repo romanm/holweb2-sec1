@@ -133,6 +133,14 @@ public class Holweb2secRest {
 
 //------------------------------про лікарню------------------------------------
 
+	@RequestMapping(value="/hol2/news", method=RequestMethod.GET)
+	public String news( Model model) {
+		System.out.println("/hol2/news");
+		logger.debug("/hol2/news");
+		getGeneralInfo(model);
+		return "news";
+	}
+
 	@RequestMapping(value="/hol2/policlinic", method=RequestMethod.GET)
 	public String policlinic( Model model) {
 		System.out.println("/hol2/policlinic");
