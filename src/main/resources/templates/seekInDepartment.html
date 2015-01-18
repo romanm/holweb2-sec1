@@ -28,6 +28,7 @@
 
 						<hr data-ng-show="$first" />
 						<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
+
 							<span>§d§</span><span
 								th:replace="seekInAll :: seek-department-breadcrumb"> / <a
 								 id="{{pageUrl}}-{{o2.o2url}}"
@@ -36,6 +37,7 @@
 								href="/hol2/{{pageUrl}}/{{o2.o2url}}#{{o3.o3url}}"
 								target="_blank">{{o3.name}}</a>
 							</span>
+
 							<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
 								<span data-ng-if="o3.o3url != 'decree'"> <a
 									href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span

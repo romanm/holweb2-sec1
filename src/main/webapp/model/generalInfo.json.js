@@ -1,5 +1,137 @@
 {
 	"s2pages":["about","admin","telefon","history"]
+	,"policlinic" : {
+		"specialists" : 
+			[{
+				"specialist" : "Пульмонолог"
+				,"hours" : "9:00 - 15:36"
+				,"cabinet" : 3
+			},{
+				"specialist" : "Ортопед-травматолог"
+				,"hours" : "9:00 - 12:18, 12:18 - 15:36 "
+				,"cabinet" : 4
+			},{
+			"specialist" : "Торакальний хірург"
+			,"hours" : "9:00 - 12:48"
+			,"cabinet" : 5
+			},{
+				"specialist" : "Складна корекція зору"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 6
+			},{
+				"specialist" : "Нефролог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 7
+			},{
+				"specialist" : "Нейрохірург"
+					,"hours" : "11:00 - 14:18"
+						,"cabinet" : 9
+			},{
+				"specialist" : "Гематолог"
+					,"hours" : "11:00 - 14:18"
+						,"cabinet" : 11
+			},{
+				"specialist" : "Каб. ЕЕГ"
+					,"hours" : "11:00 - 16:42"
+						,"cabinet" : 12
+			},{
+				"specialist" : "Нефропатолог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 14
+			},{
+				"specialist" : "Гінеколог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 16
+			},{
+				"specialist" : "Уролог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 17
+			},{
+				"specialist" : "Кабінет мануальної терапії"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 19
+			},{
+				"specialist" : "Кардіолог"
+					,"hours" : "Пн,Вт,Чт - 9:00 - 11:45 9:00 - 15:36 "
+						,"cabinet" : 22
+			},{
+				"specialist" : "ЛОР"
+					,"hours" : "10:00 - 13:18"
+						,"cabinet" : 24
+			},{
+				"specialist" : "Ендокринолог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 25
+			},{
+				"specialist" : "Гастроентеролог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 26
+			},{
+				"specialist" : "Хірург"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 28
+			},{
+				"specialist" : "Щелепно-лицевий хірург / хірург-стоматолог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 24
+			},{
+				"specialist" : "Судиний хірург"
+					,"hours" : "9:00 - 12:18, 12:18 - 15:36"
+						,"cabinet" : 28
+			},{
+				"specialist" : "Офтальмолог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 30
+			},{
+				"specialist" : "Глаукомний офтальмолог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 31
+			},{
+				"specialist" : "Каб. ендоскопії"
+					,"hours" : "9:00 - 15:00"
+						,"cabinet" : 33
+			},{
+				"specialist" : "Імунолог"
+					,"hours" : "10:00 - 13:18"
+						,"cabinet" : 34
+			},{
+				"specialist" : "Алерголог"
+					,"hours" : "9:00 - 12:18, 12:18 - 15:36 "
+						,"cabinet" : 34
+			},{
+				"specialist" : "Проктолог"
+					,"hours" : "13:00 - 14:39"
+						,"cabinet" : 35
+			},{
+				"specialist" : "Ревматолог"
+					,"hours" : "9:00 - 15:36 "
+						,"cabinet" : 37
+			},{
+				"specialist" : "Профпатолог"
+					,"hours" : "10:00 - 13:18"
+						,"cabinet" : 39
+			},{
+				"specialist" : "Офтальмолог"
+					,"hours" : "9:00 - 12:18 "
+						,"cabinet" : 40
+			},{
+				"specialist" : "Кардіолог"
+					,"hours" : "9:00 - 15:36, 9:00 - 12:18"
+						,"cabinet" : "36 20"
+			},{
+				"specialist" : "Сексопатолог"
+					,"hours" : "9:00 - 15:36"
+						,"cabinet" : 42
+			},{
+				"specialist" : "Стоматолог"
+					,"hours" : "9:00 - 15:36"
+						,"cabinet" : 43
+			},{
+				"specialist" : "Контактра корекція зору"
+					,"hours" : "9:00 - 15:36"
+						,"cabinet" : 46
+			}]
+	}
 	,"telefon" : {
 		"pageUrl":"telefon"
 		,"pageName":"Телефонний довідник"

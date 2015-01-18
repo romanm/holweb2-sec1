@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="historyHolController">
+<html ng-app="holweb2secApp" ng-controller="policlinicHolController">
 <head>
 <div th:replace="head :: metaLink" />
-	<title>ХОЛ / Історія нашої лікарні</title>
+	<title>ХОЛ / Історія лікарню</title>
 </head>
 <body>
 	<div th:replace="navbar :: holHead" />
@@ -25,11 +25,23 @@
 			</div>
 			<div role="main" class="col-md-9">
 				<ol th:replace="about :: breadcrumbAbout" />
-				<div class="bs-docs-section"
-					th:each="s2 : ${generalInfo.history.docBlock}">
-					<h1 th:id="${s2.sectionIdx}" class="page-header" th:text="${s2.h2}"></h1>
-					<th:block th:replace="department :: subDocBlock2" />
-				</div>
+				<h2>Поліклініка</h2>
+				<table class="table">
+					<tr>
+						<th>Кабінет</th>
+						<th>Спеціальність</th>
+						<th>Години прийому</th>
+					</tr>
+					<th:block
+						th:each="specialist : ${generalInfo.policlinic.specialists}">
+						<tr>
+							<td th:text="${specialist.cabinet}"></td>
+							<td th:text="${specialist.specialist}"></td>
+							<td th:text="${specialist.hours}"></td>
+							<td></td>
+						</tr>
+					</th:block>
+				</table>
 			</div>
 		</div>
 	</div>

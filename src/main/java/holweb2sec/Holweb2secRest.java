@@ -1,6 +1,5 @@
 package holweb2sec;
 
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -131,7 +130,17 @@ public class Holweb2secRest {
 		holweb2secController.writeToFileFullPath(generalInfo, modelFileName);
 		return generalInfo;
 	}
+
 //------------------------------про лікарню------------------------------------
+
+	@RequestMapping(value="/hol2/policlinic", method=RequestMethod.GET)
+	public String policlinic( Model model) {
+		System.out.println("/hol2/policlinic");
+		logger.debug("/hol2/policlinic");
+		getGeneralInfo(model);
+		return "policlinic";
+	}
+
 	@RequestMapping(value="/hol2/about", method=RequestMethod.GET)
 	public String about( Model model) {
 		System.out.println("/hol2/about");
@@ -139,6 +148,7 @@ public class Holweb2secRest {
 		getGeneralInfo(model);
 		return "about";
 	}
+
 	@RequestMapping(value="/hol2/history", method=RequestMethod.GET)
 	public String history( Model model) {
 		System.out.println("/hol2/history");
@@ -146,13 +156,17 @@ public class Holweb2secRest {
 		getGeneralInfo(model);
 		return "history";
 	}
+
 	@RequestMapping(value="/hol2/telefon", method=RequestMethod.GET)
-	public String telefon( Model model) {
+	public String telefon( Model model, HttpServletRequest req) {
 		System.out.println("/hol2/telefon");
+		final String remoteAddr = req.getRemoteAddr();
+		System.out.println(remoteAddr);
 		logger.debug("/hol2/telefon");
 		getGeneralInfo(model);
 		return "telefon";
 	}
+
 //------------------------------про лікарню----------------------------------END
 
 	private void getGeneralInfo(Model model) {
