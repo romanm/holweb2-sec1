@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="departmentController">
 <head>
-	<div th:replace="head :: metaLink"/>
+	<div th:replace="hol2/head :: metaLink"/>
 	<title th:text="'ХОЛ / Відділення / '+${department.name}"></title>
 </head>
 <body>
 
-	<div th:replace="navbar :: holHead" />
-	<div th:replace="navbar :: departmentHead2"/>
+	<div th:replace="hol2/navbar :: holHead" />
+	<div th:replace="hol2/navbar :: departmentHead2"/>
 
-	<nav th:replace="navbar :: topNavBar"/>
+	<nav th:replace="hol2/navbar :: topNavBar"/>
 
 	<div class="container bs-docs-container" id="ctx">
 		<div class="row" data-ng-show="error.error">
@@ -26,10 +26,10 @@
 		
 		<div class="row">
 			<div role="complementary" class="col-md-3">
-				<nav th:replace="head :: navPanelDepartment" />
+				<nav th:replace="hol2/head :: navPanelDepartment" />
 			</div>
 			<div class="col-md-9" role="main">
-				<ol th:replace="navbar :: breadcrumb" />
+				<ol th:replace="hol2/navbar :: breadcrumb" />
 				<div class="bs-docs-section"
 					th:each="s2,s2row : ${department.docBlock}"
 				>
@@ -105,8 +105,8 @@
 		</div>
 	</div>
 
-	<footer th:replace="head :: pageFooter"/>
-	<div th:replace="head :: docFooter"/>
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>

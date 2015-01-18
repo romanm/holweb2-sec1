@@ -21,7 +21,7 @@
 	<nav th:fragment="navPanelDepartment"
 		class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
 		<div class="h5">
-			<a href="" th:href="'/hol2/v.'+${departmentName}"
+			<a href="" th:href="'{{devProdUrlPrefix}}v.'+${departmentName}"
 				th:text="${department.name}"></a>
 			<th:block th:each="o2 : ${department.orders2}">
 				<small th:if="${orders2 == o2.o2url}" th:text="${o2.name}"></small>
@@ -62,7 +62,7 @@
 			<th:block th:if="${orders2 == 'regal'}">
 			</th:block>
 			<li th:each="o2,o2row : ${department.orders2}"><a
-				th:href="'/hol2/v.'+${departmentName}+'/'+${o2.o2url}"
+				th:href="'{{devProdUrlPrefix}}v.'+${departmentName}+'/'+${o2.o2url}"
 				th:class="${o2['state'] != null} ? o2.state"> <span
 					th:if="${o2.name == 'Головна'}" class="glyphicon glyphicon-leaf"></span>
 					<span th:text="${o2.name}"></span>
@@ -79,12 +79,12 @@
 				src="/img/spk/{{spkPersonal.personal_url}}.jpg" />
 		</div>
 		<div role="complementary" class="col-md-9">
-			<ol th:replace="navbar :: breadcrumbSpk" />
+			<ol th:replace="hol2/navbar :: breadcrumbSpk" />
 			<h2>{{spkPersonal.personal_surname}}
 				{{spkPersonal.personal_name}} {{spkPersonal.personal_patronymic}}</h2>
 			<div>
 				Відділення <a
-					href="/hol2/v.{{personalList.departmentsUrl[spkPersonal.department_name]}}">
+					href="{{devProdUrlPrefix}}v.{{personalList.departmentsUrl[spkPersonal.department_name]}}">
 					{{spkPersonal.department_name}} </a>
 			</div>
 			<div>{{spkPersonal.position_name}}</div>
@@ -104,7 +104,7 @@
 					<div class="navbar-right">
 						<hr/>
 						<small> Редакція сайту: <a
-							href="mailto:roman.mishchenko@gmail.com?Subject=/hol2/ :  Побажання до зміни сторінки"
+							href="mailto:roman.mishchenko@gmail.com?Subject={{devProdUrlPrefix}} :  Побажання до зміни сторінки"
 							target="_top"> roman.mishchenko@gmail.com </a> Ваші відгуки та
 							побажання будуть враховані.
 						</small>

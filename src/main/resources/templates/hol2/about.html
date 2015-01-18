@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="aboutHolController">
 <head>
-<div th:replace="head :: metaLink" />
+<div th:replace="hol2/head :: metaLink" />
 	<title>ХОЛ / Про лікарню</title>
 </head>
 <body>
-	<div th:replace="navbar :: holHead" />
-	<nav th:replace="navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: holHead" />
+	<nav th:replace="hol2/navbar :: homeNavBar" />
 
 	<div class="container">
 		<div class="row">
@@ -14,18 +14,18 @@
 				<nav
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
 					<div class="h5">
-						<a href="/hol2/about">Про лікарню</a>
+						<a href="{{devProdUrlPrefix}}about">Про лікарню</a>
 					</div>
 					<ul class="nav bs-docs-sidenav" th:with="s1 = ${generalInfo.about}">
-						<li th:replace="head :: docBlockNavIndex"/>
+						<li th:replace="hol2/head :: docBlockNavIndex"/>
 					</ul>
 					<ul class="nav bs-docs-sidenav" th:fragment="aboutNavBar">
-						<li><a href="/hol2/about"> <span
+						<li><a href="{{devProdUrlPrefix}}about"> <span
 								class="glyphicon glyphicon-leaf"></span> Головна
 						</a></li>
-						<li><a href="/hol2/admin"> Адміністрація лікарні </a></li>
-						<li><a href="/hol2/telefon"> Телефонний довідник </a></li>
-						<li><a href="/hol2/history"> Історія становлення лікарні
+						<li><a href="{{devProdUrlPrefix}}admin"> Адміністрація лікарні </a></li>
+						<li><a href="{{devProdUrlPrefix}}telefon"> Телефонний довідник </a></li>
+						<li><a href="{{devProdUrlPrefix}}history"> Історія становлення лікарні
 						</a></li>
 					</ul>
 				</nav>
@@ -33,25 +33,25 @@
 			<div role="main" class="col-md-9">
 				<ol class="breadcrumb hidden-print" id="bc-sm"
 					th:fragment="breadcrumbAbout">
-					<li th:replace="navbar :: bc-homepage" />
-					<li><a href="/hol2/about">Про лікарню</a></li>
+					<li th:replace="hol2/navbar :: bc-homepage" />
+					<li><a href="{{devProdUrlPrefix}}about">Про лікарню</a></li>
 					<li
 						th:if="${#strings.contains(#httpServletRequest.servletPath,'telefon')}"><a
-						href="/hol2/telefon">Телефонний довідник</a></li>
+						href="{{devProdUrlPrefix}}telefon">Телефонний довідник</a></li>
 					<li
 						th:if="${#strings.contains(#httpServletRequest.servletPath,'history')}"><a
-						href="/hol2/telefon">Історія становлення лікарні</a></li>
+						href="{{devProdUrlPrefix}}telefon">Історія становлення лікарні</a></li>
 				</ol>
 				<div class="bs-docs-section"
 					th:each="s2 : ${generalInfo.about.docBlock}">
 					<h1 th:id="${s2.sectionIdx}" class="page-header" th:text="${s2.h2}"></h1>
-					<th:block th:replace="department :: subDocBlock2" />
+					<th:block th:replace="hol2/department :: subDocBlock2" />
 				</div>
 			</div>
 		</div>
 	</div>
 	
-	<th:block th:replace="head :: pageFooterScript" />
+	<th:block th:replace="hol2/head :: pageFooterScript" />
 	
 </body>
 </html>

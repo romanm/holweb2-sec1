@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="seekInAllController">
 <head>
-<div th:replace="head :: metaLink" />
+<div th:replace="hol2/head :: metaLink" />
 <link href="/css/holhome.css" rel="stylesheet" />
 <link href="/css/cyborg.css" rel="stylesheet" />
 <title>Хмельницька обласна лікарня</title>
 </head>
 <body>
-	<div th:replace="navbar :: holHead" />
-	<nav th:replace="navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: holHead" />
+	<nav th:replace="hol2/navbar :: homeNavBar" />
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
 				<th:block th:if="${seek != null}">
-					<form th:replace="navbar :: seekInAll"></form>
+					<form th:replace="hol2/navbar :: seekInAll"></form>
 				</th:block>
 			</div>
 		</div>
@@ -40,12 +40,12 @@
 					<h4 id="page_{{ pageUrl }}">
 						<span th:fragment="seek-department-breadcrumb"> 
 						<span data-ng-show="vidName">
-								<a href="/hol2/vid">Відділення лікарні</a> /
-						</span> <a href="/hol2/{{ pageUrl }}"> {{ vidName }} </a>
+								<a href="{{devProdUrlPrefix}}vid">Відділення лікарні</a> /
+						</span> <a href="{{devProdUrlPrefix}}{{ pageUrl }}"> {{ vidName }} </a>
 						</span>
 					</h4>
 
-					<th:block th:replace="seekInDepartment :: seekInDepartment" />
+					<th:block th:replace="hol2/seekInDepartment :: seekInDepartment" />
 				</div>
 				<div data-ng-repeat="giKey in generalInfoKeys"
 					data-ng-init="pageDoc = generalInfo[giKey]"
@@ -69,9 +69,9 @@
 							<hr data-ng-show="$first" />
 							<h4 data-ng-show="$first">
 								<span th:fragment="seek-s2DocAndh2link"> <a
-									href="/hol2/{{ pageUrl }}"> {{pageName}} </a> <span
+									href="{{devProdUrlPrefix}}{{ pageUrl }}"> {{pageName}} </a> <span
 									th:fragment="seek-s2h2link"> § <span class="h4" id="{{pageUrl}}-{{s2.sectionIdx}}">
-											<a href="/hol2/{{pageUrl}}#{{s2.sectionIdx}}" target="_blank">
+											<a href="{{devProdUrlPrefix}}{{pageUrl}}#{{s2.sectionIdx}}" target="_blank">
 												{{s2.h2}} </a>
 									</span>
 								</span>
@@ -84,19 +84,19 @@
 
 									<div data-ng-repeat="s4 in s3.docBlock | filter: seek ">
 										<div data-ng-show="s4.p" data-ng-init="modelElement = s4">
-											<th:block th:replace="seekInAll :: link2findElement" />
+											<th:block th:replace="hol2/seekInAll :: link2findElement" />
 										</div>
 									</div>
 								</div>
 								<div data-ng-show="s3.p" data-ng-init="modelElement = s3">
 									<th:block th:fragment="link2findElement">
-										<span th:replace="seekInAll :: seek-department-breadcrumb" />
-										<span th:replace="seekInAll :: seek-s2DocAndh2link" /> / <span
+										<span th:replace="hol2/seekInAll :: seek-department-breadcrumb" />
+										<span th:replace="hol2/seekInAll :: seek-s2DocAndh2link" /> / <span
 											class="h5"> <a
-											href="/hol2/{{pageUrl}}#{{s3.sectionIdx}}" target="_blank">{{s3.h3}}
+											href="{{devProdUrlPrefix}}{{pageUrl}}#{{s3.sectionIdx}}" target="_blank">{{s3.h3}}
 										</a>
 										</span>
-										<a href="/hol2/{{pageUrl}}#{{modelElement.pIdx}}"
+										<a href="{{devProdUrlPrefix}}{{pageUrl}}#{{modelElement.pIdx}}"
 											target="_blank"><span class="glyphicon glyphicon-link"></span>
 											Посилання </a>
 										<p data-ng-bind-html="modelElement.p"></p>
@@ -112,9 +112,9 @@
 		</div>
 	</div>
 	
-	<footer th:replace="head :: pageFooter"/>
-	<div th:replace="head :: docFooter"/>
-	<th:block th:replace="head :: pageFooterScript" />
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
+	<th:block th:replace="hol2/head :: pageFooterScript" />
 	
 </body>
 </html>

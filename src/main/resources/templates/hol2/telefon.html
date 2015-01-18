@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="telefonHolController">
 <head>
-<div th:replace="head :: metaLink" />
+<div th:replace="hol2/head :: metaLink" />
 	<title>ХОЛ / Телефоний довідник</title>
 </head>
 <body>
-	<div th:replace="navbar :: holHead" />
-	<nav th:replace="navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: holHead" />
+	<nav th:replace="hol2/navbar :: homeNavBar" />
 
 	<div class="container">
 		<div class="row">
@@ -14,17 +14,18 @@
 				<nav
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
 					<div class="h5">
-						<a href="/hol2/about">Про лікарню</a>
+						<a href="{{devProdUrlPrefix}}about">Про лікарню</a>
+						ff
 					</div>
 					<ul class="nav bs-docs-sidenav" th:fragment="aboutNavBar">
-						<li><a href="/hol2/phone"> <span>Т----к</span>
+						<li><a href="{{devProdUrlPrefix}}phone"> <span>Т----к</span>
 						</a></li>
 					</ul>
-					<ul th:replace="about :: aboutNavBar" />
+					<ul th:replace="hol2/about :: aboutNavBar" />
 				</nav>
 			</div>
 			<div role="complementary" class="col-md-9">
-				<ol th:replace="about :: breadcrumbAbout" />
+				<ol th:replace="hol2/about :: breadcrumbAbout" />
 				<h2>Телефоний довідник</h2>
 				<table class="table">
 					<th:block th:each="building : ${generalInfo.telefon.buildings}">
@@ -48,7 +49,7 @@
 		</div>
 	</div>
 	
-	<th:block th:replace="head :: pageFooterScript" />
+	<th:block th:replace="hol2/head :: pageFooterScript" />
 
 </body>
 </html>

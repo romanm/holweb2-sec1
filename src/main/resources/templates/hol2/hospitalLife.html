@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="holHomeController">
+<head>
+<div th:replace="head :: metaLink" />
+<link href="/css/holhome.css" rel="stylesheet" />
+<link href="/css/cyborg.css" rel="stylesheet" />
+<title>ХОЛ / Життя лікарні</title>
+</head>
+<body>
+	<div th:replace="navbar :: holHead" />
+	<nav th:replace="navbar :: homeNavBar" />
+	<div class="container">
+		<div class="row">
+			<div role="complementary" class="col-md-3"></div>
+		</div>
+	</div>
+	
+		<th:block th:replace="head :: pageFooterScript" />
+	
+</body>
+</html>

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="departmentController">
 <head>
-	<div th:replace="head :: metaLink"/>
+	<div th:replace="hol2/head :: metaLink"/>
 	
 	<title>ХОЛ / Відділення / {{department.name}}</title>
 </head>
 <body>
-	<div th:replace="navbar :: holHead" />
-	<div th:replace="navbar :: departmentHead2"/>
-	<nav th:replace="navbar :: topNavBar"/>
-	<ol th:replace="navbar :: breadcrumb"/>
+	<div th:replace="hol2/navbar :: holHead" />
+	<div th:replace="hol2/navbar :: departmentHead2"/>
+	<nav th:replace="hol2/navbar :: topNavBar"/>
+	<ol th:replace="hol2/navbar :: breadcrumb"/>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
 				<th:block th:if="${seek != null}">
-					<th:block th:replace="navbar :: seekForm" />
+					<th:block th:replace="hol2/navbar :: seekForm" />
 				</th:block>
 			</div>
 		</div>
@@ -30,22 +30,22 @@
 						<div data-ng-repeat="o3 in o2.orders3 | filter: seek ">
 
 							<span>§d§</span><span
-								th:replace="seekInAll :: seek-department-breadcrumb"> / <a
+								th:replace="hol2/seekInAll :: seek-department-breadcrumb"> / <a
 								 id="{{pageUrl}}-{{o2.o2url}}"
-								href="/hol2/{{pageUrl}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
+								href="{{devProdUrlPrefix}}{{pageUrl}}/{{o2.o2url}}" target="_blank">{{o2.name}}</a>
 							</span> / <span class="h4" id="{{pageUrl}}-{{o2.o2url}}-{{o3.o3url}}"> <a
-								href="/hol2/{{pageUrl}}/{{o2.o2url}}#{{o3.o3url}}"
+								href="{{devProdUrlPrefix}}{{pageUrl}}/{{o2.o2url}}#{{o3.o3url}}"
 								target="_blank">{{o3.name}}</a>
 							</span>
 
 							<div data-ng-repeat="o4 in o3.orders4 | filter: seek ">
 								<span data-ng-if="o3.o3url != 'decree'"> <a
-									href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span
+									href="{{devProdUrlPrefix}}v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.id}}"><span
 										class="glyphicon glyphicon-link"></span>{{o4.name}} </a> <span
 									id="{{o3.o3url}}-{{o4.id}}"> </span>
 									<div>{{o4.annotation}}</div>
 								</span> <span data-ng-if="o3.o3url == 'decree'"> <a
-									href="/hol2/v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}"
+									href="{{devProdUrlPrefix}}v.{{departmentName}}/{{o2.o2url}}#{{o3.o3url}}-{{o4.decreeNr}}"
 									target="_blank"> <span class="glyphicon glyphicon-link"></span>
 										<b>Наказ № {{o4.decreeNr}}</b> від {{o4.decreeDate}}
 								</a> «<i>{{o4.name}}</i>»
@@ -58,35 +58,35 @@
 						<!-- 
 						<hr data-ng-show="$first" />
 						<span>§g§</span><span
-							th:replace="seekInAll :: seek-department-breadcrumb" /> <span
-							th:replace="seekInAll :: seek-s2h2link" />
+							th:replace="hol2/seekInAll :: seek-department-breadcrumb" /> <span
+							th:replace="hol2/seekInAll :: seek-s2h2link" />
 						 -->
 
 						<div data-ng-show="s2.shef"
 							data-ng-init="spkPersonal = s2.spkPersonal">
-							<div th:replace="head :: showPersonal" />
+							<div th:replace="hol2/head :: showPersonal" />
 						</div>
-						<span th:replace="seekInAll :: seek-s2Innerlinks" />
+						<span th:replace="hol2/seekInAll :: seek-s2Innerlinks" />
 
 					</div>
 					<div
 						data-ng-repeat="spkPersonal in department.dspl | filter: seek ">
 						<hr data-ng-show="$first" />
 						<div data-ng-show="$first">Персонал адміністративний</div>
-						<div th:replace="head :: showPersonal" />
+						<div th:replace="hol2/head :: showPersonal" />
 					</div>
 					<div data-ng-repeat="spkPersonal in department.dpl | filter: seek ">
 						<hr data-ng-show="$first" />
 						<div data-ng-show="$first">Персонал</div>
-						<div th:replace="head :: showPersonal" />
+						<div th:replace="hol2/head :: showPersonal" />
 					</div>
 				</th:block>
 			</div>
 		</div>
 	</div>
 
-	<footer th:replace="head :: pageFooter"/>
-	<div th:replace="head :: docFooter"/>
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="personalController">
 <head>
-<div th:replace="head :: metaLink" />
+<div th:replace="hol2/head :: metaLink" />
 
 <title>ХОЛ / {{spkPersonal.personal_username}}</title>
 </head>
 <body>
 
-	<div th:replace="navbar :: holHead" />
+	<div th:replace="hol2/navbar :: holHead" />
 
-	<nav th:replace="navbar :: topNavBar" />
+	<nav th:replace="hol2/navbar :: topNavBar" />
 
 	<div class="container">
-		<div th:replace="head :: showPersonal" />
+		<div th:replace="hol2/head :: showPersonal" />
 	</div>
 
 	<input type="hidden" th:value="${personalUrl}" id="personalUrl" />

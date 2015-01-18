@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 
 @Component("Holweb2secController")
 public class Holweb2secControllerImpl {
-	private static final Logger logger = LoggerFactory.getLogger(Holweb2secRest.class);
+	private static final Logger logger = LoggerFactory.getLogger(Holweb2secControllerImpl.class);
 	
 	@Autowired private HolEihJdbc holEihJdbc;
 	

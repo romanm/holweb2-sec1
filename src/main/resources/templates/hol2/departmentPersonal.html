@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="departmentController">
 <head>
-	<div th:replace="head :: metaLink" />
+	<div th:replace="hol2/head :: metaLink" />
 
-	<title th:replace="head :: departmentOrder2" />
+	<title th:replace="hol2/head :: departmentOrder2" />
 	
 </head>
 <body>
-	<div th:replace="navbar :: holHead" />
-	<div th:replace="navbar :: departmentHead2"/>
+	<div th:replace="hol2/navbar :: holHead" />
+	<div th:replace="hol2/navbar :: departmentHead2"/>
 
-	<nav th:replace="navbar :: topNavBarAjs"/>
+	<nav th:replace="hol2/navbar :: topNavBarAjs"/>
 
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">
-				<nav th:replace="head :: navPanelDepartment" />
+				<nav th:replace="hol2/head :: navPanelDepartment" />
 			</div>
 			<div class="col-md-9" role="main">
-				<ol th:replace="navbar :: breadcrumbAjs" />
+				<ol th:replace="hol2/navbar :: breadcrumbAjs" />
 				<div class="row">
 					<div class="col-xs-3">
-						<a href="/hol2/spk/{{department.dspl[0].personal_url}}"> <img
+						<a href="{{devProdUrlPrefix}}spk/{{department.dspl[0].personal_url}}"> <img
 							class="img-circle"
 							src="/img/spk/{{department.dspl[0].personal_url}}.jpg" />
 							<div class="h4">{{department.dspl[0].personal_username}}</div>
@@ -29,7 +29,7 @@
 						</a>
 					</div>
 					<div class="col-xs-3" data-ng-show="department.dspl[1]">
-						<a href="/hol2/spk/{{department.dspl[1].personal_url}}"> <img
+						<a href="{{devProdUrlPrefix}}spk/{{department.dspl[1].personal_url}}"> <img
 							class="img-circle"
 							src="/img/spk/{{department.dspl[1].personal_url}}.jpg" />
 							<div class="h4">{{department.dspl[1].personal_username}}</div>
@@ -45,23 +45,23 @@
 				">
 					<div class="row" data-ng-if="col == 0">
 						<div class="col-xs-3">
-							<a href="/hol2/spk/{{personal1.personal_url}}"> <img
+							<a href="{{devProdUrlPrefix}}spk/{{personal1.personal_url}}"> <img
 								class="img-circle" src="/img/spk/{{personal1.personal_url}}.jpg" />
 								<div class="h4">{{personal1.personal_username}}</div>
 							</a>
 						</div>
 						<div class="col-xs-3" data-ng-show="personal2">
-							<a href="/hol2/spk/{{personal2.personal_url}}"><img
+							<a href="{{devProdUrlPrefix}}spk/{{personal2.personal_url}}"><img
 								class="img-circle" src="/img/spk/{{personal2.personal_url}}.jpg" />
 								<div class="h4">{{personal2.personal_username}}</div></a>
 						</div>
 						<div class="col-xs-3" data-ng-show="personal3">
-							<a href="/hol2/spk/{{personal3.personal_url}}"> <img
+							<a href="{{devProdUrlPrefix}}spk/{{personal3.personal_url}}"> <img
 								class="img-circle" src="/img/spk/{{personal3.personal_url}}.jpg" />
 								<div class="h4">{{personal3.personal_username}}</div></a>
 						</div>
 						<div class="col-xs-3" data-ng-show="personal4">
-							<a href="/hol2/spk/{{personal4.personal_url}}"> <img
+							<a href="{{devProdUrlPrefix}}spk/{{personal4.personal_url}}"> <img
 								class="img-circle" src="/img/spk/{{personal4.personal_url}}.jpg" />
 								<div class="h4">{{personal4.personal_username}}</div></a>
 						</div>
@@ -71,8 +71,8 @@
 		</div>
 	</div>
 
-	<footer th:replace="head :: pageFooter"/>
-	<div th:replace="head :: docFooter"/>
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="departmentsController">
 <head>
-	<div th:replace="head :: metaLink"/>
+	<div th:replace="hol2/head :: metaLink"/>
 </head>
 <body>
 
-	<div th:replace="navbar :: holHead" />
-	<nav th:replace="navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: holHead" />
+	<nav th:replace="hol2/navbar :: homeNavBar" />
 
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">3</div>
 			<div role="complementary" class="col-md-9">
-				<ol th:replace="navbar :: breadcrumb" />
+				<ol th:replace="hol2/navbar :: breadcrumb" />
 				<div class="row">
 					<div class="col-md-6">
 						<h3 id="profile">
@@ -76,7 +76,7 @@
 		</div>
 	</div>
 
-	<footer th:replace="head :: pageFooter" />
+	<footer th:replace="hol2/head :: pageFooter" />
 
 	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
 	<script src="/js-vendor/bootstrap.min.js"></script>

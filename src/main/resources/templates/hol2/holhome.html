@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="holHomeController">
 <head>
-<div th:replace="head :: metaLink" />
+<div th:replace="hol2/head :: metaLink" />
 <link href="/css/holhome.css" rel="stylesheet" />
 <link href="/css/cyborg.css" rel="stylesheet" />
 <title>Хмельницька обласна лікарня</title>
 </head>
 <body>
-	<div th:replace="navbar :: holHead" />
-	<nav th:replace="navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: holHead" />
+	<nav th:replace="hol2/navbar :: homeNavBar" />
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">
@@ -47,14 +47,14 @@
 						<div class="row">
 							<div class="col-md-5">
 								Сьогодні обласна лікарня – це сучасний медичний і науковий
-								заклад. На її базі працює 23 <a href="/hol2/vid"> відділення
+								заклад. На її базі працює 23 <a href="{{devProdUrlPrefix}}vid"> відділення
 								</a> стаціонару на 835 ліжок, консультативна <a
-									href="/hol2/policlinic">поліклініка</a> на 250 відвідувань в
+									href="{{devProdUrlPrefix}}policlinic">поліклініка</a> на 250 відвідувань в
 								зміну, 15 діагностичних, лікувально-допоміжних та обслуговуючих
 								служб.
 							</div>
 							<div class="col-md-7">
-								<a href="/hol2/news">
+								<a href="{{devProdUrlPrefix}}news">
 								Новини
 								</a>
 								<div id="newsCarousel" class="carousel slide"
@@ -308,9 +308,9 @@
 	</div>
 	
 	
-	<footer th:replace="head :: pageFooter"/>
-	<div th:replace="head :: docFooter"/>
-	<th:block th:replace="head :: pageFooterScript" />
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
+	<th:block th:replace="hol2/head :: pageFooterScript" />
 
 </body>
 </html>
