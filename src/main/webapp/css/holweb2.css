@@ -22,6 +22,7 @@ bbody {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
+
 .ccontainer{
 	background-color: white;
 }
@@ -100,10 +101,17 @@ bbody {
 	position: fixed;
 }
 
+.hol-margin{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 /* sidebar */
 .bs-docs-sidebar {
 	padding-left: 20px;
+	/*
 	margin-top: 20px;
+	*/
 	margin-bottom: 20px;
 }
 

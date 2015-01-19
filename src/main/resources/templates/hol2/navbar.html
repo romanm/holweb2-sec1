@@ -75,14 +75,18 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-10">
-				<small class="font075"> Відділення </small>
 				<!-- 
+				<small class="font075"> Відділення </small>
 				<small class="font050"> Відділення </small>
 				<small data-ng-class="{'font050': departmentName != 'abdominal'}">
 					Відділення </small>
 					 -->
 				<div
-					data-ng-class="{'h2': departmentName == 'abdominal', 'h1':departmentName != 'abdominal'}">{{department.name}}</div>
+					data-ng-class="{'h2': departmentName == 'abdominal', 'h2':departmentName != 'abdominal'}">
+					<!-- 
+				<small class="font050"> Відділення </small>
+					 -->
+					{{department.name}}</div>
 			</div>
 		</div>
 	</div>
@@ -129,8 +133,13 @@
 			</a>
 		</div>
 	</div>
-
-	<nav class="navbar navbar-default" th:fragment="homeNavBar">
+<!-- 
+	class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
+	 class="navbar navbar-default" 
+ -->
+	<nav th:fragment="homeNavBar"
+	 class="navbar navbar-default hol-margin" 
+	>
 		<div class="container-fluid">
 			<div th:replace="hol2/navbar :: iconsLinkHome" />
 			<div class="collapse navbar-collapse">
@@ -150,8 +159,10 @@
 			</div>
 		</div>
 	</nav>
-
-	<nav class="navbar navbar-default" id="nav" th:fragment="topNavBar">
+<!-- 
+	<nav class="navbar navbar-default hol-margin" id="nav" th:fragment="topNavBar">
+ -->
+	<nav class="navbar navbar-default hol-margin" th:fragment="topNavBar">
 		<div class="container-fluid">
 			<div th:replace="hol2/navbar :: iconsLinkHome"/>
 			<div class="collapse navbar-collapse"

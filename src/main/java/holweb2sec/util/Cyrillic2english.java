@@ -12,7 +12,7 @@ public class Cyrillic2english {
 	public static void main(String[] args) {
 		System.out.println(cyrillic);
 		final Cyrillic2english cyrillic2english = new Cyrillic2english();
-		String[] samples = {"Щербіна Н.В.", "Щербина Н.В."};
+		String[] samples = {"Демидюк", "Щербина Н.В."};
 		for (String s : samples) {
 			final String convert = cyrillic2english.convert(s);
 			System.out.println(s+" > "+convert);

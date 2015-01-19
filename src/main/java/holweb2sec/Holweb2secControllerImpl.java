@@ -35,7 +35,9 @@ public class Holweb2secControllerImpl {
 			if(s2.containsKey("chief"))
 			{
 				final Integer personalId = (Integer) s2.get("personal_id");
+				System.out.println("personalId = "+personalId);
 				for (Map<String, Object> personal : pl) {
+					System.out.println("personal = "+personal);
 					final Integer personalIdFromPL = (Integer) personal.get("personal_id");
 					if(personalId.equals(personalIdFromPL))
 					{

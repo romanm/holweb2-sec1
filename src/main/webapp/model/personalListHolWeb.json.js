@@ -2,6 +2,16 @@
 	"departmentsUrl":{
 		"Пульмонологічне":"pulmo"
 		,"Реанімаційне":"ait"
+		,"ЕГ реанімація доросла":"ait"
+		,"Торакальної хірургії":"thorax"
+		,"Щелепно-лицьової хірургії":"maxillofacial"
+		,"Гінекологічне":"gynecology"
+		,"ЕГПВ та Н":"puerperium"
+		,"Приймальне":"reception"
+		,"Гастроентерологічне":"gastro"
+		,"Нефрологічне":"nephro"
+		,"Фізіотерапія":"physiotherapy"
+		,"Ревматологічне":"rheuma"
 		,"Нейрохірургічне":"neurosurgery"
 		,"Опікове":"burnsurgery"
 		,"Ортопедичне":"orthopaedic"
@@ -13,7 +23,6 @@
 		,"Детоксикації":"detox"
 		,"Кардіохірургічне":"cardiacsurgery"
 		,"Урологічне":"urology"
-		,"ЕГ реанімація доросла":"ait"
 		,"Хірургічне":"abdominal"
 	}
 	,"pl" : [ {
@@ -2777,6 +2786,20 @@
 ,"personal_url" : "PidmurnyakOlO",
 "p1" : "П"
 }, {
+	"personal_username" : "Демидюк",
+	"personal_surname" : "Демидюк",
+	"personal_name" : "",
+	"personal_patronymic" : "",
+	"personal_id" : 999,
+	"personal_surgeon" : false,
+	"personal_anesthetist" : false,
+	"department_id" : 1999,
+	"department_name" : "Фізіотерапія",
+	"position_id" : 3,
+	"position_name" : "Завідуючий відділеням"
+		,"personal_url" : "Demidyuk",
+		"p1" : "Д"
+}, {
 	"personal_username" : "Бондарук Н.М.",
 	"personal_surname" : "Бондарук",
 	"personal_name" : "Наталія",
@@ -2789,10 +2812,6 @@
 	"position_id" : 3,
 	"position_name" : "Заступник головного лікаря з амбулаторно-поліклінічної роботи та ЕТН",
 	"position_name2" : "Завідуюча поліклінікою"
-	,"titles":[
-	"кандидат медичних наук"
-	,"дійсний член Європейської асоціації урологів"
-		]
 	,"personal_url" : "BondarukNM",
 	"p1" : "Б"
 }, {

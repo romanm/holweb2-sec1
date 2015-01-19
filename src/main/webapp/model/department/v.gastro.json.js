@@ -32,7 +32,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Дунець Орися Дмитрівна",
+    "chief" : "Дунець Орися Дмитрівна",
     "personal_id" : 129,
     "img111" : "/img/karnauch-20140924.png",
     "spkPersonal" : {

@@ -19,9 +19,11 @@
 
 </head>
 <body>
-
+<!-- 
+ -->
 	<nav th:fragment="navPanelDepartment"
-		class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
+		class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well hol-margin"
+		>
 		<div class="h5">
 			<a href="" th:href="'{{devProdUrlPrefix}}v.'+${departmentName}"
 				th:text="${department.name}"></a>
@@ -99,12 +101,18 @@
 		</div>
 	</div>
 
-	<footer  th:fragment="pageFooter" role="contentinfo" class="bs-footer hidden-print">
-		<div class="container">
+	<footer th:fragment="pageFooter" role="contentinfo"
+		class="bs-footer hidden-print">
+		<div class="container" style="background-color: #f5f5f5;">
+			<div class="row">
+				<div class="col-md-10">
+					<h5>Карта сайта</h5>
+				</div>
+				<div class="col-md-2">Контакт</div>
+			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="navbar-right">
-						<hr/>
 						<small class="font050"> Редакція сайту: <a
 							href="mailto:roman.mishchenko@gmail.com?Subject={{devProdUrlPrefix}} :  Побажання до зміни сторінки"
 							target="_top"> roman.mishchenko@gmail.com </a> Ваші відгуки та

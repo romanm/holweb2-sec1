@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="personalController">
+<head>
+<div th:replace="hol2/head :: metaLink" />
+
+<title>ХОЛ / Адміністрація лікарні </title>
+</head>
+<body>
+
+	<div th:replace="hol2/navbar :: holHead" />
+
+	<nav th:replace="hol2/navbar :: topNavBar" />
+
+	<div class="container">
+		<div class="row">
+		<div role="complementary" class="col-md-3">
+			nav
+		</div>
+		<div role="main" class="col-md-9">
+			<ol th:replace="hol2/navbar :: breadcrumbSpk" />
+			
+		</div>
+	</div>
+	</div>
+
+
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
+	<th:block th:replace="hol2/head :: pageFooterScript" />
+	
+</body>
+</html>
