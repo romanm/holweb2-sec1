@@ -11,18 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">
-				<nav
-					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
-					<div class="h5">
-						<a href="{{devProdUrlPrefix}}about">Про лікарню</a>
-						ff
-					</div>
-					<ul class="nav bs-docs-sidenav" th:fragment="aboutNavBar">
-						<li><a href="{{devProdUrlPrefix}}phone"> <span>Т----к</span>
-						</a></li>
-					</ul>
-					<ul th:replace="hol2/about :: aboutNavBar" />
-				</nav>
+				<nav th:replace="hol2/about :: aboutNavBarContainer" />
 			</div>
 			<div role="complementary" class="col-md-9">
 				<ol th:replace="hol2/about :: breadcrumbAbout" />

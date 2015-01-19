@@ -1,26 +1,64 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="personalController">
+<html ng-app="holweb2secApp" ng-controller="aboutHolController">
 <head>
 <div th:replace="hol2/head :: metaLink" />
-
+<link href="/css/holhome.css" rel="stylesheet" />
 <title>ХОЛ / Адміністрація лікарні </title>
 </head>
 <body>
 
 	<div th:replace="hol2/navbar :: holHead" />
-
-	<nav th:replace="hol2/navbar :: topNavBar" />
+	<nav th:replace="hol2/navbar :: homeNavBar" />
+	
 
 	<div class="container">
 		<div class="row">
 		<div role="complementary" class="col-md-3">
-			nav
+			<nav th:replace="hol2/about :: aboutNavBarContainer" />
 		</div>
-		<div role="main" class="col-md-9">
-			<ol th:replace="hol2/navbar :: breadcrumbSpk" />
-			
+			<div role="main" class="col-md-9">
+				<ol th:replace="hol2/about :: breadcrumbAbout" />
+				<div class="adminHead">
+					<h2>Адміністрація лікарні</h2>
+				</div>
+				<div th:replace="hol2/holhome :: adminHead" />
+				<h2 id="deputys">Заступники</h2>
+				<div class="row" id="deputy-surgery">
+					<div class="col-md-4">
+						<img class="img-thumbnail" width="250" height="334"
+							title="Підмурняк Олексій Олексійович"
+							src="/img/pidmurnyak_small.jpg" />
+					</div>
+					<div class="col-md-8">
+						<b> Заступник головного лікаря з хірургічної роботи: </b> кандидат
+						медичних наук, дійсний член Європейської асоціації урологів <b>Підмурняк
+							Олексій Олексійович</b>
+					</div>
+				</div>
+				<div class="t151">
+					<div class="wrapper">
+						<hr style="max-width: 780px" />
+					</div>
+					<div class="centeredSection">
+						<div field="title" class="text">«</div>
+					</div>
+				</div>
+				<div class="row" id="deputy-therapy">
+					<div class="col-md-8">
+						<b> Заступник головного лікаря з медичної частини: </b> кандидат
+						медичних наук <b>Шаренко Марія Григорівна</b> – організатор
+						охорони здоров’я вищої кваліфікаційної категорії, лікар вищої
+						кваліфікаційної категорії, Заслужений лікар України, відмінник
+						охорони здоров’я, нагородження орденами Княгині Ольги ІІІ та ІІ
+						ступеню.
+					</div>
+					<div class="col-md-4">
+						<img class="img-thumbnail" align="right" width="250" height="334"
+							title="Шаренко Марія Григорівна" src="/img/sharenko_small.jpg" />
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 	</div>
 
 

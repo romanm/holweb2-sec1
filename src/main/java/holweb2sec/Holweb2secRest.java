@@ -156,8 +156,7 @@ public class Holweb2secRest {
 	public String news( Model model) {
 		System.out.println("/hol2/news");
 		logger.debug("/hol2/news");
-		getGeneralInfo(model);
-		addModelAll(model);
+		addGeneralInfoModel(model);
 		return "hol2/news";
 	}
 
@@ -165,8 +164,7 @@ public class Holweb2secRest {
 	public String policlinic( Model model) {
 		System.out.println("/hol2/policlinic");
 		logger.debug("/hol2/policlinic");
-		getGeneralInfo(model);
-		addModelAll(model);
+		addGeneralInfoModel(model);
 		return "hol2/policlinic";
 	}
 
@@ -174,17 +172,26 @@ public class Holweb2secRest {
 	public String about( Model model) {
 		System.out.println("/hol2/about");
 		logger.debug("/hol2/about");
-		getGeneralInfo(model);
-		addModelAll(model);
+		addGeneralInfoModel(model);
 		return "hol2/about";
 	}
+	@RequestMapping(value="/hol2/admin", method=RequestMethod.GET)
+	public String admin( Model model) {
+		System.out.println("/hol2/admin");
+		logger.debug("/hol2/admin");
+		addGeneralInfoModel(model);
+		return "hol2/admin";
+	}
 
+	private void addGeneralInfoModel(Model model) {
+		getGeneralInfo(model);
+		addModelAll(model);
+	}
 	@RequestMapping(value="/hol2/history", method=RequestMethod.GET)
 	public String history( Model model) {
 		System.out.println("/hol2/history");
 		logger.debug("/hol2/history");
-		getGeneralInfo(model);
-		addModelAll(model);
+		addGeneralInfoModel(model);
 		return "hol2/history";
 	}
 
@@ -194,8 +201,7 @@ public class Holweb2secRest {
 		final String remoteAddr = req.getRemoteAddr();
 		System.out.println(remoteAddr);
 		logger.debug("/hol2/telefon");
-		getGeneralInfo(model);
-		addModelAll(model);
+		addGeneralInfoModel(model);
 		return "hol2/telefon";
 	}
 
@@ -205,13 +211,7 @@ public class Holweb2secRest {
 		final Map<String, Object> generalInfo = holweb2secController.readModelFile("generalInfo");
 		model.addAttribute("generalInfo", generalInfo);
 	}
-	@RequestMapping(value="/hol2/admin", method=RequestMethod.GET)
-	public String admin( Model model) {
-		System.out.println("/hol2/admin");
-		logger.debug("/hol2/admin");
-		addModelAll(model);
-		return "hol2/admin";
-	}
+	
 	@RequestMapping(value="/hol2/liklife", method=RequestMethod.GET)
 	public String hospitalLife( Model model) {
 		System.out.println("/hol2/liklife");

@@ -224,15 +224,17 @@
 				<div class="cd-fixed-bg cd-bg-3" id="admin">
 					<h2>Керівництво</h2>
 				</div>
-				<div class="cd-scrolling-bg cd-color-1">
+				<div class="cd-scrolling-bg cd-color-1" th:fragment="adminHead">
 					<div class="cd-container">
-						<div class="row">
+						<div class="row" id="hospital-chief">
 							<div class="col-md-6">
 								На теперішній час Хмельницьку обласну лікарню очолює Флаксемберг
 								Аркадій Семенович, організатор охорони здоров’я вищої
 								кваліфікаційної категорії, лікар-хірург вищої кваліфікаційної
 								категорії, Заслужений лікар України.
-								<div>
+								<div
+								th:if="${not #strings.contains(#httpServletRequest.servletPath,'admin')}"
+								>
 									<a href="{{devProdUrlPrefix}}admin" 
 									role="button" class="btn btn-default">Детальніше на адмін сторінці...</a>
 								</div>

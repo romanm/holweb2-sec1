@@ -11,23 +11,42 @@
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">
-				<nav
+				<nav th:fragment="aboutNavBarContainer"
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
 					<div class="h5">
 						<a href="{{devProdUrlPrefix}}about">Про лікарню</a>
 					</div>
+					<!-- 
 					<ul class="nav bs-docs-sidenav" th:with="s1 = ${generalInfo.about}">
-						<li th:replace="hol2/head :: docBlockNavIndex"/>
+						<li th:replace="hol2/head :: docBlockNavIndex" />
 					</ul>
+					 -->
+					<ul
+						th:if="${#strings.contains(#httpServletRequest.servletPath,'admin')}"
+						class="nav bs-docs-sidenav">
+						<li><a href="#hospital-chief"> Головний лікар </a></li>
+						<li><a href="#deputys"> Заступники </a>
+							<ul class="nav">
+								<li><a href="#deputy-surgery"> хіріргія </a></li>
+								<li><a href="#deputy-therapy"> терапія </a></li>
+							</ul></li>
+					</ul>
+					<hr/>
 					<ul class="nav bs-docs-sidenav" th:fragment="aboutNavBar">
-						<li><a href="{{devProdUrlPrefix}}about"> <span
-								class="glyphicon glyphicon-leaf"></span> Головна
-						</a></li>
-						<li><a href="{{devProdUrlPrefix}}admin"> Адміністрація лікарні </a></li>
-						<li><a href="{{devProdUrlPrefix}}telefon"> Телефонний довідник </a></li>
-						<li><a href="{{devProdUrlPrefix}}history"> Історія становлення лікарні
-						</a></li>
+						<li><a
+							data-ng-class="{'chouse-nav-item' : isPage('admin') }"
+							href="{{devProdUrlPrefix}}admin"> Адміністрація лікарні </a></li>
+						<li><a href="{{devProdUrlPrefix}}telefon"
+							data-ng-class="{'chouse-nav-item' : isPage('telefon') }">
+								Телефонний довідник 
+								</a></li>
+						<li><a href="{{devProdUrlPrefix}}history"
+							data-ng-class="{'chouse-nav-item' : isPage('history') }">
+								Історія становлення лікарні </a></li>
 					</ul>
+					<a class="back-to-top" href="#top"> Догори <span
+						class="glyphicon glyphicon-chevron-up"></span>
+					</a>
 				</nav>
 			</div>
 			<div role="main" class="col-md-9">
@@ -36,12 +55,16 @@
 					<li th:replace="hol2/navbar :: bc-homepage" />
 					<li><a href="{{devProdUrlPrefix}}about">Про лікарню</a></li>
 					<li
+						th:if="${#strings.contains(#httpServletRequest.servletPath,'admin')}"><a
+						href="{{devProdUrlPrefix}}admin">Адміністрація лікарні</a></li>
+					<li
 						th:if="${#strings.contains(#httpServletRequest.servletPath,'telefon')}"><a
 						href="{{devProdUrlPrefix}}telefon">Телефонний довідник</a></li>
 					<li
 						th:if="${#strings.contains(#httpServletRequest.servletPath,'history')}"><a
 						href="{{devProdUrlPrefix}}telefon">Історія становлення лікарні</a></li>
 				</ol>
+
 				<div class="bs-docs-section"
 					th:each="s2 : ${generalInfo.about.docBlock}">
 					<h1 th:id="${s2.sectionIdx}" class="page-header" th:text="${s2.h2}"></h1>

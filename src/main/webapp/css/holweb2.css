@@ -13,6 +13,9 @@ bbody {
 	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg") 0 -60px;
 	*/
 }
+.chouse-nav-item {
+	font-weight: bold !important;;
+}
 .head-img {
 	height: 160px;
 	opacity: 0.8;
@@ -22,7 +25,17 @@ bbody {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
-
+.adminHead{
+	background-image: url("/img/general/bh-wokzal.jpg");
+	background-position: 100% 20%; 
+}
+.adminHead h2{
+	line-height: 100px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	text-shadow: 1px 2px 1px black;
+}
 .ccontainer{
 	background-color: white;
 }
