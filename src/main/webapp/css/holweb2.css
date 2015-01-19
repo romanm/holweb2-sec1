@@ -1,3 +1,6 @@
+body {
+	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg");
+}
 bbody {
 	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg");
 }
@@ -13,6 +16,11 @@ bbody {
 .head-img {
 	height: 160px;
 	opacity: 0.8;
+}
+.container{
+	background-color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 }
 .ccontainer{
 	background-color: white;

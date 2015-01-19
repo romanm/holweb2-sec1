@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html ng-app="holweb2secApp" ng-controller="holHomeController">
 <head>
-<div th:replace="hol2/head :: metaLink" />
-<link href="/css/holhome.css" rel="stylesheet" />
-<link href="/css/cyborg.css" rel="stylesheet" />
-<title>Хмельницька обласна лікарня</title>
+	<meta name="google-site-verification" content="n6zpUyDIKxJrFRhAoY7SCGb_nNFC3ZMTFaHuZiB_cJ8" />
+	<div th:replace="hol2/head :: metaLink" />
+	<link href="/css/holhome.css" rel="stylesheet" />
+	<!-- 
+	<link href="/css/cyborg.css" rel="stylesheet" />
+	<base href="http://hol.khmelnitskiy.ua/" />
+	 -->
+	<meta name="robots" content="index, follow" />
+	<meta name="keywords" content="Лікарня Хмельницький " />
+	<meta name="keywords" content="Хмельницька Обласна Лікарня" />
+	<meta name="rights" content="Хмельницька обласна лікарня" />
+	<meta name="robots" content="Хмельницька обласна лікарня" />
+	<meta name="googlebot" content="Хмельницька обласна лікарня" />
+	<meta name="google" content="Хмельницька обласна лікарня" />
+	<meta name="description" content="Хмельницька Обласна Лікарня" />
+	<meta name="description" content="Сайт Хмельницької обласної лікарні: інформація про види діяльності, відділення." />
+	<title>Хмельницька обласна лікарня</title>
 </head>
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
@@ -219,7 +232,10 @@
 								Аркадій Семенович, організатор охорони здоров’я вищої
 								кваліфікаційної категорії, лікар-хірург вищої кваліфікаційної
 								категорії, Заслужений лікар України.
-								<div>Детальніше...</div>
+								<div>
+									<a href="{{devProdUrlPrefix}}policlinic" 
+									role="button" class="btn btn-default">Детальніше...</a>
+								</div>
 							</div>
 							<div class="col-md-6">
 								<img class="img-thumbnail pull-right"

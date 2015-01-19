@@ -205,10 +205,17 @@ public class Holweb2secRest {
 		final Map<String, Object> generalInfo = holweb2secController.readModelFile("generalInfo");
 		model.addAttribute("generalInfo", generalInfo);
 	}
-	@RequestMapping(value="/hol2/lklife", method=RequestMethod.GET)
+	@RequestMapping(value="/hol2/admin", method=RequestMethod.GET)
+	public String admin( Model model) {
+		System.out.println("/hol2/admin");
+		logger.debug("/hol2/admin");
+		addModelAll(model);
+		return "hol2/admin";
+	}
+	@RequestMapping(value="/hol2/liklife", method=RequestMethod.GET)
 	public String hospitalLife( Model model) {
-		System.out.println("/hol2/lklife");
-		logger.debug("/hol2/lklife");
+		System.out.println("/hol2/liklife");
+		logger.debug("/hol2/liklife");
 		addModelAll(model);
 		return "hol2/hospitalLife";
 	}

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<div th:fragment="metaLink" th:remove="tag">
-		<meta charset="utf-8"/>
-		<link href="/css-vendor/bootstrap.css" rel="stylesheet" />
-		<link href="/css/scrollspy.css" rel="stylesheet" />
-		<link href="/css/holweb2.css" rel="stylesheet" />
-	</div>
+
+<div th:fragment="metaLink" th:remove="tag">
+	<meta charset="utf-8"/>
+	<link href="/css-vendor/bootstrap.css" rel="stylesheet" />
+	<link href="/css/scrollspy.css" rel="stylesheet" />
+	<link href="/css/holweb2.css" rel="stylesheet" />
+</div>
 
 <title th:fragment="departmentOrder2">ХОЛ / <th:block
 		th:text="''+${department.name}+' / '" /> <th:block
@@ -78,7 +79,7 @@
 			<img class="img-thumbnail pull-right"
 				src="/img/spk/{{spkPersonal.personal_url}}.jpg" />
 		</div>
-		<div role="complementary" class="col-md-9">
+		<div role="main" class="col-md-9">
 			<ol th:replace="hol2/navbar :: breadcrumbSpk" />
 			<h2>{{spkPersonal.personal_surname}}
 				{{spkPersonal.personal_name}} {{spkPersonal.personal_patronymic}}</h2>
@@ -118,6 +119,7 @@
 		<input type="hidden" th:value="${departmentName}" id="departmentName" />
 		<input type="hidden" th:value="${orders2}" id="orders2" />
 		<input type="hidden" th:value="${seek}" id="seekParam" />
+		<input type="hidden" th:value="${personalUrl}" id="personalUrl" />
 	</div>
 
 	<th:block th:fragment="pageFooterScript">

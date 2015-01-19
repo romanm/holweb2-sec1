@@ -19,15 +19,15 @@
 		>{{o2.name}}</li>
 	</ol>
 
-	<ol class="breadcrumb hidden-print" id="bc-sm" th:fragment="breadcrumbSpk">
+	<ol class="breadcrumb hidden-print" id="bc-sm"
+		th:fragment="breadcrumbSpk">
 		<li th:replace="hol2/navbar :: bc-homepage" />
-		<li><a th:href="@{{{devProdUrlPrefix}}spivrobitnik}">Співробітники</a></li>
+		<li><a href="{{devProdUrlPrefix}}spivrobitnik">Співробітники
+		</a></li>
 		<th:block th:if="${personalUrl}">
-			<li><a th:href="@{{{devProdUrlPrefix}}spivrobitnik}">Персональна сторінка 
-{{spkPersonal.personal_surname}}
-{{spkPersonal.personal_name}}
-{{spkPersonal.personal_patronymic}}
-			</a></li>
+			<li><a href="{{devProdUrlPrefix}}spivrobitnik">Персональна
+					сторінка {{spkPersonal.personal_surname}}
+					{{spkPersonal.personal_name}} {{spkPersonal.personal_patronymic}} </a></li>
 		</th:block>
 	</ol>
 
@@ -55,16 +55,16 @@
 			<div class="col-md-10">
 				<table>
 					<tr>
-						<td style="padding-right: 22px;"><a href="/"> <img
-								src="/img/hol-kh-95.jpg" /></a></td>
+						<td style="padding-right: 22px;"><a href="//hol.in.ua"> <img
+								src="//hol.in.ua/img/hol-kh-95.jpg" /></a></td>
 						<td><h2>
-								<a href="/"> Хмельницька обласна лікарня </a>
+								<a href="//hol.in.ua"> Хмельницька обласна лікарня </a>
 							</h2>
 							<p>вул. Пілотская 1, 29010 м.Хмельницкий, Хмельницька обл.</p>
 							<small class="pull-right font075"><i>Ми робим медицину</i></small>
 							</td>
-						<td class="hidden-print"><a href="/"> <img
-								src="/img/hol-bg-95.jpg" /></a></td>
+						<td class="hidden-print"><a href="//hol.in.ua"> <img
+								src="//hol.in.ua/img/hol-bg-95.jpg" /></a></td>
 					</tr>
 				</table>
 			</div>
@@ -138,7 +138,7 @@
 					<li><a href="{{devProdUrlPrefix}}about">Про лікарню</a></li>
 					<li><a href="{{devProdUrlPrefix}}vid">Відділення</a></li>
 					<li><a href="{{devProdUrlPrefix}}spivrobitnik">Співробітники</a></li>
-					<li><a href="{{devProdUrlPrefix}}lklife">Життя лікарні</a></li>
+					<li><a href="{{devProdUrlPrefix}}liklife">Життя лікарні</a></li>
 				</ul>
 				<th:block th:if="${seek == null}">
 					<form class="navbar-form navbar-right" role="search"
@@ -167,7 +167,9 @@
 					<ul class="nav navbar-nav">
 						<li><a
 							href="{{devProdUrlPrefix}}v.{{personalList.departmentsUrl[spkPersonal.department_name]}}/personal">
-								Персонал відділення </a></li>
+								Персонал відділення 
+								: {{spkPersonal.department_name}}
+								</a></li>
 					</ul>
 				</th:block>
 				<th:block th:if="${departmentName == 'ait'}">

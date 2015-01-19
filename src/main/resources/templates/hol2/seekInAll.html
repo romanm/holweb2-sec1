@@ -32,8 +32,8 @@
 					</a>
 				</nav>
 			</div>
-			<div class="col-md-9" data-ng-if="seek == null || !(seek.length > 1)">Тут буде пошук</div>
-			<div class="col-md-9" data-ng-if="seek != '' ? seek.length > 1 : false">
+			<div class="col-md-9" data-ng-if="seek == null || !(seek.length > 0)">Тут буде пошук</div>
+			<div class="col-md-9" data-ng-if="seek != '' ? seek.length > 0 : false">
 				<div data-ng-repeat="vid in vids.departments | filter: seek"
 					data-ng-init="department = vid.model; departmentName = vid.vUrl; pageUrl = 'v.'+vid.vUrl; vidName = vid.name">
 					<hr data-ng-show="$first" />
