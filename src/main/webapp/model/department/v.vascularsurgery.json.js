@@ -24,7 +24,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Міщенко Євген Миколайович",
+    "chief" : "Міщенко Євген Миколайович",
     "personal_id" : 239,
     "img" : "/img/likarnya_small.jpg",
     "spkPersonal" : {

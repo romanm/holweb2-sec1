@@ -34,15 +34,19 @@
 					th:each="s2,s2row : ${department.docBlock}"
 				>
 					<h1 th:id="${s2.sectionIdx}" class="page-header" th:text="${s2.h2}"></h1>
-					<th:block th:if="${s2['shef'] != null}">
+					<th:block th:if="${s2['chief'] != null}">
 						<table>
 							<tr>
 								<td style="padding-right: 22px;"><img class="img-circle"
 									src="/img/spk/{{department.dspl[0].personal_url}}.jpg" /></td>
 								<td>
-									<h4>{{department.dspl[0].personal_surname}}
-										{{department.dspl[0].personal_name}}
-										{{department.dspl[0].personal_patronymic}}</h4>
+									<h4>
+										<a
+											href="{{devProdUrlPrefix}}spk/{{department.dspl[0].personal_url}}">
+											{{department.dspl[0].personal_surname}}
+											{{department.dspl[0].personal_name}}
+											{{department.dspl[0].personal_patronymic}} </a>
+									</h4>
 									<div data-ng-if="department.dspl[0].titles">
 										-
 										<div data-ng-repeat="title in department.dspl[0].titles">
@@ -60,9 +64,9 @@
 							/>
 					 -->
 					
-					<th:block th:if="${s2['shef'] != null}">
+					<th:block th:if="${s2['chief'] != null}">
 					<!-- 
-						<i th:text="${s2.shef}"></i>
+						<i th:text="${s2.chief}"></i>
 					 -->
 						<div th:if="${s2['telefon'] != null}" th:text="${'тел. '+s2.telefon}"></div>
 						<div th:if="${s2['fax'] != null}" th:text="${'fax: '+s2.fax}"></div>

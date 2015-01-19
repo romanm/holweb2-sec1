@@ -32,7 +32,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Компанієць Ганна Панасівна",
+    "chief" : "Компанієць Ганна Панасівна",
     "personal_id" : 2646,
     "iiimg" : "/img/foto_medicina_oleksan.jpg",
     "spkPersonal" : {

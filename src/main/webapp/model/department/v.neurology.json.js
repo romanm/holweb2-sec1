@@ -27,7 +27,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Костюк Олександ Володимирович",
+    "chief" : "Костюк Олександ Володимирович",
     "personal_id" : 294,
     "img" : "/img/kostuk_small.jpg",
     "spkPersonal" : {

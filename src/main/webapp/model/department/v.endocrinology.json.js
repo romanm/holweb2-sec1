@@ -27,7 +27,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Мукомела Людмила Іванівна",
+    "chief" : "Мукомела Людмила Іванівна",
     "personal_id" : 2689,
     "img" : "/img/mukomela_small.jpg",
     "spkPersonal" : {

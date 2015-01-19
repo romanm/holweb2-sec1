@@ -23,7 +23,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Балицький Віталій Вікторович",
+    "chief" : "Балицький Віталій Вікторович",
     "personal_id" : 280,
     "img" : "/img/proctology_zav_small.jpg",
     "spkPersonal" : {

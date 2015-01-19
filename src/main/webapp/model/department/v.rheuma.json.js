@@ -23,7 +23,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Борисенко Ірина Дмитрівна",
+    "chief" : "Борисенко Ірина Дмитрівна",
     "personal_id" : 125,
     "spkPersonal" : {
       "personal_username" : "Борисенко І.Д.",

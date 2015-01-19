@@ -24,7 +24,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Франковський Раймонд Броніславович",
+    "chief" : "Франковський Раймонд Броніславович",
     "personal_id" : 2658,
     "img" : "/img/frankovskiy_small.jpg",
     "spkPersonal" : {

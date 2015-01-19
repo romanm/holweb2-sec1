@@ -27,7 +27,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Павлішен Юрій Іванович",
+    "chief" : "Павлішен Юрій Іванович",
     "personal_id" : 252,
     "img" : "/img/pavlishen_moroz_small.jpg",
     "spkPersonal" : {

@@ -32,7 +32,7 @@ public class Holweb2secControllerImpl {
 		List<Map<String, Object>> s2List = (List<Map<String, Object>>) department.get("docBlock");
 		for (int s2idx = 0; s2idx < s2List.size(); s2idx++) {
 			final Map<String, Object> s2 = s2List.get(s2idx);
-			if(s2.containsKey("shef"))
+			if(s2.containsKey("chief"))
 			{
 				final Integer personalId = (Integer) s2.get("personal_id");
 				for (Map<String, Object> personal : pl) {

@@ -233,8 +233,8 @@
 								кваліфікаційної категорії, лікар-хірург вищої кваліфікаційної
 								категорії, Заслужений лікар України.
 								<div>
-									<a href="{{devProdUrlPrefix}}policlinic" 
-									role="button" class="btn btn-default">Детальніше...</a>
+									<a href="{{devProdUrlPrefix}}admin" 
+									role="button" class="btn btn-default">Детальніше на адмін сторінці...</a>
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -283,9 +283,10 @@
 									<!-- Wrapper for slides -->
 									<div class="carousel-inner item-lr-more" role="listbox">
 										<div data-ng-repeat="x in generalInfo.hpVids"
-										style="height: 80px;"
-											class="item {{x.carouselActive}}">
-											<h4>{{x.name}}</h4>
+											style="height: 80px;" class="item {{x.carouselActive}}">
+											<h4>
+												<a href="{{devProdUrlPrefix}}v.{{x.vUrl}}"> {{x.name}} </a>
+											</h4>
 										</div>
 									</div>
 									<!-- Indicators -->

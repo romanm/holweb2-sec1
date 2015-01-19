@@ -24,7 +24,7 @@ cuwyApp.controller('departmentController', [ '$scope', '$http', '$filter', funct
 			if($scope.department.department_id === personal.department_id
 				|| $scope.department.department_id2 === personal.department_id
 			){
-				if(personal.position_id == 3){//sheff
+				if(personal.position_id == 3){//chief
 					$scope.department.dspl.splice(0,0,personal);
 				}else if(personal.position_id == 2){//admin
 					$scope.department.dspl.push(personal);

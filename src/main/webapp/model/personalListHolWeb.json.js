@@ -2,6 +2,17 @@
 	"departmentsUrl":{
 		"Пульмонологічне":"pulmo"
 		,"Реанімаційне":"ait"
+		,"Нейрохірургічне":"neurosurgery"
+		,"Опікове":"burnsurgery"
+		,"Ортопедичне":"orthopaedic"
+		,"Офтальмологічне":"ophthalmology"
+		,"Судинної хірургії":"vascularsurgery"
+		,"Неврологічне":"neurology"
+		,"Ендокринологія":"endocrinology"
+		,"Проктологічне":"proctology"
+		,"Детоксикації":"detox"
+		,"Кардіохірургічне":"cardiacsurgery"
+		,"Урологічне":"urology"
 		,"ЕГ реанімація доросла":"ait"
 		,"Хірургічне":"abdominal"
 	}

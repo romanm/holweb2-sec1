@@ -23,8 +23,9 @@
 		"carouselHeight" :"150px" 
 		,"news" : 
 			[{
-			"timesTheNews":"01 Листопада 2014 / 24.09.2014 | 16:12"
-				,"textHtml":"<a href='http://www.unian.net/society/988649-donetskiy-natsionalnyiy-universitet-budet-pereveden-v-vinnitsu.html'> Донецкий национальный университет будет переведен в Винницу </a>"
+				"timesTheNews":"16.01.2015 22:33"
+					,"textHtml":"<img width='50' title='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' alt='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' src='http://www.amn.net.ua/img/item/2015-01/1421439481.jpg'/> О.Квіташвілі <a href='http://www.amn.net.ua/ukr/news/events/33035'  target='_blank' >стверджує, що для медреформи потрібна консолідація</a> усіх гілок держвлади "
+						,"carouselActive":"active"
 			},{
 			"timesTheNews":"24 Жовтня 2014 09:28"
 				,"textHtml":" <a href='http://censor.net.ua/news/308627/rektor_donetskogo_meduniversiteta_otkazalsya_podchinyatsya_okkupantam_ya_vsegda_budu_grajdaninom_ukrainy'> Ректор Донецкого медуниверситета отказался подчиняться оккупантам: «Я всегда буду гражданином Украины» </a>"
@@ -32,12 +33,11 @@
 				"timesTheNews":"17 Жовтня 2014"
 					,"textHtml":"Створено: <a href='http://sah.km.ua/'> «Сайт анестезіологів Хмельниччини» </a>"
 			},{
-				"timesTheNews":"16.01.2015 22:33"
-					,"textHtml":"<img width='50' title='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' alt='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' src='http://www.amn.net.ua/img/item/2015-01/1421439481.jpg'/> О.Квіташвілі <a href='http://www.amn.net.ua/ukr/news/events/33035'  target='_blank' >стверджує, що для медреформи потрібна консолідація</a> усіх гілок держвлади "
-						,"carouselActive":"active"
-			},{
 				"timesTheNews":"16.01.2015"
 					,"textHtml":"<a href='http://amn.net.ua/'><img width='50' src='http://lh6.googleusercontent.com/-ZDeEykS0-jk/AAAAAAAAAAI/AAAAAAAAADg/X3sJlgfac3g/photo.jpg' />Інформаційне агентство «<span style='color: rgb(165, 42, 42);'><strong>Медичні новини</strong></span>» (<span style='color:#a52a2a;'><strong>АМН</strong></span>)</a>  – перше в Україні спеціалізоване агентство медичної інформації, засноване Міністерством охорони здоров’я та трудовим колективом редакції. "
+			},{
+			"timesTheNews":"01 Листопада 2014 / 24.09.2014 | 16:12"
+				,"textHtml":"<a href='http://www.unian.net/society/988649-donetskiy-natsionalnyiy-universitet-budet-pereveden-v-vinnitsu.html'> Донецкий национальный университет будет переведен в Винницу </a>"
 			}]
 	}
 	,"policlinic" : {
@@ -353,11 +353,11 @@
 		}, {
 			"h2" : "Провідні лікарі",
 			"docBlock" : [ {
-				"p" : "Серед провідних лікарів – доктори медичних наук: обласний хірург А.І. Суходоля, завідувач відділення хірургії <a href='abdominal#HeadOfDepartment'>Підмурняк О.О.</a> ,  хірург В.В. Власов. В лікарні працюють кандидати медичних наук <a href='admin#sharenko'> Шаренко М.Г.</a> – заступник головного лікаря з лікувальної роботи, <a href='admin#hospital_surgery_chief'>Підмурняк О.О.</a> – заступник головного лікаря з хірургічної роботи, Павлішен Ю.І. – завідуючий ортопедичним відділенням, Шаталюк Б.П. – лікар-хірург торокальної хірургії, Алешко А.П. – завідуючий пульмонологічним відділенням, Пискливець З.С. – лікар відділення кардіохірургії, Чорнобровий П.М. – завідувач відділення алергології, Костюк О.В. – завідуючий неврологічним відділенням, Глубоченко Л.Л. – лікар-гінеколог, Урсол Н. Б. завідуюча ревматологічним відділенням, Могильницька Л.А. – лікар-ендокринолог,  Балицький В.В. – лікар-проктолог, , Середа І.В. – лікар-анестезіолог відділення детоксикації.",
+							"p" : "Серед провідних лікарів – доктори медичних наук: обласний хірург <a href='spk/SukhodolyaAI'>А.І. Суходоля</a>, завідувач відділення <a href='{{devProdUrlPrefix}}v.abdominal'>хірургії</a> – <a href='spk/PidmurnyakOrO'>Підмурняк О.О.</a> ,  хірург <a href='spk/VlasovVV'>В.В. Власов</a>. В лікарні працюють кандидати медичних наук Шаренко М.Г. – <a href='{{devProdUrlPrefix}}admin'>заступник головного лікаря з лікувальної роботи</a>, <a href='spk/PidmurnyakOlO'>Підмурняк О.О.</a> – <a href='{{devProdUrlPrefix}}admin'>заступник головного лікаря з хірургічної роботи</a>, <a href='spk/PavlishenYuI'>Павлішен Ю.І.</a> – завідуючий <a href='{{devProdUrlPrefix}}v.orthopaedic'>ортопедичним</a> відділенням, Шаталюк Б.П. – лікар-хірург торокальної хірургії, <a href='spk/AleshkoAP'>Алешко А.П.</a> – завідуючий <a href='{{devProdUrlPrefix}}v.pulmo'>пульмонологічним</a> відділенням, <a href='spk/PisklivetsZSt'>Пискливець З.С.</a> – лікар відділення <a href='{{devProdUrlPrefix}}v.cardiacsurgery'>кардіохірургії</a>, <a href='spk/ChornobrovijPM'>Чорнобровий П.М.</a> – завідувач відділення алергології, <a href='spk/KostyukOV'>Костюк О.В.</a> – завідуючий <a href='{{devProdUrlPrefix}}v.neurology'>неврологічним</a> відділенням, Глубоченко Л.Л. – лікар-гінеколог, <a href='spk/UrsolNB'>Урсол Н. Б.</a> завідуюча <a href='{{devProdUrlPrefix}}v.rheuma'>ревматологічним</a> відділенням, <a href='spk/MohilnitskaLA'>Могильницька Л.А.</a> – лікар-<a href='{{devProdUrlPrefix}}v.endocrinology'>ендокринолог</a>,  <a href='spk/BalitskijVV'>Балицький В.В.</a> – лікар-<a href='{{devProdUrlPrefix}}v.proctology'>проктолог</a>, <a href='spk/SeredaIV'>Середа І.В.</a> – лікар-анестезіолог відділення <a href='{{devProdUrlPrefix}}v.detox'>детоксикації</a>.",
 				"sectionIdx" : "section-3-0",
 				"pIdx" : "p-3-0"
 			}, {
-				"p" : "За значний особистий внесок у розвиток практичної медицини, високе звання «Заслужений лікар України» мають Шаренко М.Г. – заступник головного лікаря з лікувальної роботи, Попік В.Т. – кардіолог поліклініки, Бодько Є.О. – лікар-уролог, <a href='urology#HeadOfDepartment'>Собчинський С.А.</a> – завідуючий урологічним відділенням, Бесараба М.Д. – головний анестезіолого області, Власов В.В. – лікар-хірург, Павлішен Ю.І. – завідуючий ортопедичним відділенням, <a href='admin#hospital_chief'> Флаксемберг А.С.</a> – головний лікар.",
+				"p" : "За значний особистий внесок у розвиток практичної медицини, високе звання «Заслужений лікар України» мають Шаренко М.Г. – <a href='{{devProdUrlPrefix}}admin#'>заступник головного лікаря</a> з лікувальної роботи, Попік В.Т. – кардіолог поліклініки, <a href='spk/BodkoOYe'>Бодько Є.О.</a> – лікар-<a href='{{devProdUrlPrefix}}v.urology'>уролог</a>, <a href='spk/SobchinskijSA'>Собчинський С.А.</a> – завідуючий <a href='{{devProdUrlPrefix}}v.urology'>урологічним</a> відділенням, <a href='spk/BesarabaMD'>Бесараба М.Д.</a> – головний анестезіолого області, <a href='spk/VlasovVV'>Власов В.В.</a> – лікар-хірург, <a href='spk/PavlishenYuI'>Павлішен Ю.І.</a> – завідуючий <a href='{{devProdUrlPrefix}}v.orthopaedic'>ортопедичним</a> відділенням, <a href='{{devProdUrlPrefix}}admin#hospital_chief'>Флаксемберг А.С.</a> – головний лікар.",
 				"sectionIdx" : "section-3-1",
 				"pIdx" : "p-3-1"
 			}, {

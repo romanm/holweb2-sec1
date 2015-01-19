@@ -23,7 +23,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Гринчук Олександр Петрович",
+    "chief" : "Гринчук Олександр Петрович",
     "personal_id" : 249,
     "img" : "/img/grinchuk_small.jpg",
     "spkPersonal" : {

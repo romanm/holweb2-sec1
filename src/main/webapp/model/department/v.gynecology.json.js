@@ -27,7 +27,7 @@
     "sectionIdx" : "section-0"
   }, {
     "h2" : "Завідуючий відділенням",
-    "shef" : "Корандо Наталія Вікторівна",
+    "chief" : "Корандо Наталія Вікторівна",
     "personal_id" : 2667,
     "spkPersonal" : {
       "personal_username" : "Корандо Н.В.",
