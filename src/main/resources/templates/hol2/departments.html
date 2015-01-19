@@ -11,30 +11,44 @@
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">
-			<!-- 
-					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
-			 -->
 				<nav th:fragment="navPanelDepartment"
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well hol-margin">
-					<div class="h5">Відділення</div>
+					<div class="h5">
+						<a href="{{devProdUrlPrefix}}vid">Відділення</a>
+					</div>
 					<ul class="nav bs-docs-sidenav">
+						<li><a href="#surgery"> Хіріргія </a>
+							<ul class="nav">
+								<li
+									data-ng-repeat="v in vids.departments | filter:{type:'chirurgiae'} "
+									data-ng-init="vidId = '#'+v.vUrl"><a href="{{vidId}}">
+										{{v.name}} </a></li>
+							</ul></li>
+						<li><a href="#therapy"> Терапія </a>
+							<ul class="nav">
+								<li
+									data-ng-repeat="v in vids.departments | filter:{type:'therapy'} "
+									data-ng-init="vidId = '#'+v.vUrl"><a href="{{vidId}}">
+										{{v.name}} </a></li>
+							</ul></li>
+						<li><a href="#obstetrics"> Акуше́рство </a>
+							<ul class="nav">
+								<li
+									data-ng-repeat="v in vids.departments | filter:{type:'obstetrical-gynecological'} "
+									data-ng-init="vidId = '#'+v.vUrl"><a href="{{vidId}}">
+										{{v.name}} </a></li>
+							</ul></li>
 					</ul>
+					<a class="back-to-top" href="#top"> Догори <span
+						class="glyphicon glyphicon-chevron-up"></span>
+					</a>
 				</nav>
 			</div>
 			<div role="complementary" class="col-md-9">
 				<ol th:replace="hol2/navbar :: breadcrumb" />
-						<h3 id="profile">
-							Відділення
-							<!-- 
-							<small>За профілем</small>
-							 -->
-						</h3>
+				<h3 id="profile">Відділення</h3>
 				<div class="row">
 					<div class="col-md-6">
-					<!-- 
-					
-						<ul class="nav navbar-nav navbar-right">
-					 -->
 						<ul class="nav navbar-nav">
 							<li><a href="policlinic"> Поліклініка </a></li>
 						</ul>
@@ -47,11 +61,8 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-					<!-- 
-						<ul class="list-inline">
-					 -->
 						<ul class="nav bs-docs-sidenav">
-							<li class="h4">Діагностичні</li>
+							<li class="h3">Діагностичні</li>
 							<!-- 
 							<li>Item 1</li>
 							<li>Item 2</li>
@@ -62,39 +73,50 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<h4>Хірургічні</h4>
+						<div class="h3" id="surgery">Хірургічні</div>
 						<ul class="nav bs-docs-sidenav">
 							<li
-								data-ng-repeat="v in vids.departments | filter:{type:'chirurgiae'} "><a
-								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
+								data-ng-repeat="v in vids.departments | filter:{type:'chirurgiae'} "
+								id="{{v.vUrl}}"><a href="v.{{v.vUrl}}"> {{v.name}} </a>
+								<div data-ng-repeat="s4 in v.model.docBlock[0].docBlock">
+									<p data-ng-show="s4.p" data-ng-bind-html="s4.p"
+										id="{{s4.pIdx}}"></p>
+								</div>
+								<hr /></li>
 						</ul>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<h4>Акушерсько-гінекологічні</h4>
-					<!-- 
-						<ul class="nav navbar-nav">
-							<li class="h4">Акушерсько-гінекологічні</li>
-					 -->
+						<div class="h3" id="therapy">Терапевтичні</div>
 						<ul class="nav bs-docs-sidenav">
 							<li
-								data-ng-repeat="v in vids.departments | filter:{type:'obstetrical-gynecological'} "><a
-								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
+								data-ng-repeat="v in vids.departments | filter:{type:'therapy'} "
+								id="{{v.vUrl}}"><a href="v.{{v.vUrl}}"> {{v.name}} </a>
+								<div data-ng-repeat="s4 in v.model.docBlock[0].docBlock">
+									<p data-ng-show="s4.p" data-ng-bind-html="s4.p"
+										id="{{s4.pIdx}}"></p>
+								</div>
+								<hr /></li>
 						</ul>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
-						<h4>Терапевтичні</h4>
+					<div class="col-md-12">
+						<div class="h3" id="obstetrics">Акушерсько-гінекологічні</div>
 						<ul class="nav bs-docs-sidenav">
 							<li
-								data-ng-repeat="v in vids.departments | filter:{type:'therapy'} "><a
-								href="v.{{v.vUrl}}"> {{v.name}} </a></li>
+								data-ng-repeat="v in vids.departments | filter:{type:'obstetrical-gynecological'} "
+								id="{{v.vUrl}}"><a href="v.{{v.vUrl}}"> {{v.name}} </a>
+								<div data-ng-repeat="s4 in v.model.docBlock[0].docBlock">
+									<p data-ng-show="s4.p" data-ng-bind-html="s4.p"
+										id="{{s4.pIdx}}"></p>
+								</div>
+								<hr /></li>
 						</ul>
-
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

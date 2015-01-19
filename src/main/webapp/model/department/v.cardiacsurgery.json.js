@@ -24,7 +24,7 @@
   }, {
     "h2" : "Завідуючий відділенням",
     "personal_id" : 264,
-    "shef" : "Кланца Андрій Іванович",
+    "chief" : "Кланца Андрій Іванович",
     "spkPersonal" : {
       "personal_username" : "Кланца А.І.",
       "personal_surname" : "Кланца",

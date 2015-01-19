@@ -151,8 +151,7 @@
 				</ul>
 				<th:block th:if="${seek == null}">
 					<form class="navbar-form navbar-right" role="search"
-					th:fragment="seekInAll"
-						th:action="${devProdUrlPrefix}+'seek'">
+						th:fragment="seekInAll" th:action="${devProdUrlPrefix}+'seek'">
 						<th:block th:replace="hol2/navbar :: seekFormBody" />
 					</form>
 				</th:block>
@@ -219,7 +218,7 @@
 
 	<th:block th:fragment="seekForm">
 		<form class="navbar-form navbar-right" role="search"
-			th:action="${devProdUrlPrefix}+'v.'+${departmentName}+'/seek'">
+			th:action="${devProdUrlPrefix}+'/seek'">
 			<th:block th:replace="hol2/navbar :: seekFormBody" />
 		</form>
 	</th:block>

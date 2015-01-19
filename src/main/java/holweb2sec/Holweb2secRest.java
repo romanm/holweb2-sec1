@@ -37,7 +37,7 @@ public class Holweb2secRest {
 	public String department(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol2/v-"+departmentName);
 		logger.debug("/hol2/v."+departmentName);
-		addModelAll(model, departmentName);
+		addModelDepartmentModel(model, departmentName);
 		return "hol2/department";
 	}
 
@@ -47,7 +47,7 @@ public class Holweb2secRest {
 		System.out.println(url);
 		logger.debug(url);
 		model.addAttribute("orders2", "personal");
-		addModelAll(model, departmentName);
+		addModelDepartmentModel(model, departmentName);
 		return "hol2/departmentPersonal";
 	}
 
@@ -56,10 +56,10 @@ public class Holweb2secRest {
 		System.out.println("/hol2/v-"+departmentName);
 		logger.debug("/hol2/v."+departmentName);
 		model.addAttribute("orders2", "regal");
-		addModelAll(model, departmentName);
+		addModelDepartmentModel(model, departmentName);
 		return "hol2/departmentRegal";
 	}
-	private void addModelAll(Model model, String departmentName) {
+	private void addModelDepartmentModel(Model model, String departmentName) {
 		final Map<String, Object> department = departmentModel(departmentName);
 		System.out.println(department);
 		model.addAttribute("department", department);
@@ -74,7 +74,7 @@ public class Holweb2secRest {
 	public String departmentEdit(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol2/e-v."+departmentName);
 		logger.debug("/hol2/e-v."+departmentName);
-		addModelAll(model,departmentName);
+		addModelDepartmentModel(model,departmentName);
 		return "hol2/departmentEdit";
 	}
 	
@@ -106,7 +106,7 @@ public class Holweb2secRest {
 		System.out.println("/hol2/v-"+departmentName);
 		logger.debug("/hol2/v."+departmentName);
 		addModelSeek(model, req);
-		addModelAll(model, departmentName);
+		addModelDepartmentModel(model, departmentName);
 		return "hol2/seekInDepartment";
 	}
 
@@ -232,7 +232,9 @@ public class Holweb2secRest {
 	public String personalUrl(@PathVariable String personalUrl, Model model) {
 		System.out.println("/hol2/spk/"+personalUrl);
 		logger.debug("/hol2/spk/"+personalUrl);
-		addModelAll(model,personalUrl);
+		//помилка шукає відділення з іменем лікаря
+//		addModelDepartmentModel(model,personalUrl);
+		addModelAll(model);
 		return "hol2/spkPersonal";
 	}
 

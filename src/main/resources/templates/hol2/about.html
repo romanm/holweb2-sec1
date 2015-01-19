@@ -21,14 +21,15 @@
 						<li th:replace="hol2/head :: docBlockNavIndex" />
 					</ul>
 					 -->
-					<ul
-						th:if="${#strings.contains(#httpServletRequest.servletPath,'admin')}"
-						class="nav bs-docs-sidenav">
+					<ul class="nav bs-docs-sidenav"
+						th:if="${#strings.contains(#httpServletRequest.servletPath,'admin')}">
 						<li><a href="#hospital-chief"> Головний лікар </a></li>
 						<li><a href="#deputys"> Заступники </a>
 							<ul class="nav">
-								<li><a href="#deputy-surgery"> хіріргія </a></li>
-								<li><a href="#deputy-therapy"> терапія </a></li>
+								<li><a href="#surgery"> Хіріргія </a></li>
+								<li><a href="#therapy"> Терапія </a></li>
+								<li><a href="#policlinic"> Поліклініка </a></li>
+								<li><a href="#obstetrics"> Акуше́рство </a></li>
 							</ul></li>
 					</ul>
 					<hr/>

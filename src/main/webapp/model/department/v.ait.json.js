@@ -178,7 +178,7 @@
 		"sectionIdx" : "section-0"
 	}, {
 		"h2" : "Завідуючий відділенням",
-		"shef" : "Карнаух Костянтит Володимирович",
+		"chief" : "Карнаух Костянтит Володимирович",
 		"personal_id" : 166,
 		"img" : "/img/karnauch-20140924.png",
 		"sectionIdx" : "section-1",
