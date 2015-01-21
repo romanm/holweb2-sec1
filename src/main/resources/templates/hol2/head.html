@@ -90,7 +90,8 @@
 					href="{{devProdUrlPrefix}}v.{{personalList.departmentsUrl[spkPersonal.department_name]}}">
 					{{spkPersonal.department_name}} </a>
 			</div>
-			<div>{{spkPersonal.position_name}}</div>
+			<div data-ng-if="!isLikarInTitles(spkPersonal)">
+				{{spkPersonal.position_name}}</div>
 			<div data-ng-if="spkPersonal.titles">
 				-
 				<div data-ng-repeat="title in spkPersonal.titles">

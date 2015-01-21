@@ -88,9 +88,9 @@ public class Holweb2secRest {
 	}
 	
 
-	@RequestMapping(value="/hol2/addidx-v.{departmentName}", method=RequestMethod.GET)
+	@RequestMapping(value="/hol2/v.{departmentName}-addidx", method=RequestMethod.GET)
 	public @ResponseBody Map<String, Object> addDepartmentIndex(@PathVariable String departmentName, Model model) {
-		logger.debug("/addidx-v."+departmentName);
+		logger.debug("/v."+departmentName+"-addidx");
 		final Map<String, Object> department = departmentModel(departmentName);
 		addModelAll(model);
 		return holweb2secController.addDepartmentIndex(department, departmentName);

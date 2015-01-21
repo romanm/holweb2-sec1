@@ -21,6 +21,7 @@
 		,"Ендокринологія":"endocrinology"
 		,"Проктологічне":"proctology"
 		,"Детоксикації":"detox"
+		,"Гематологічне":"detox"
 		,"Кардіохірургічне":"cardiacsurgery"
 		,"Урологічне":"urology"
 		,"Хірургічне":"abdominal"
@@ -38,6 +39,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "SkakalskaLI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Камінська О.Я.",
@@ -52,6 +54,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KaminskaOYa",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Чорнобровий П.М.",
@@ -66,6 +69,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ChornobrovijPM",
+	"titles":["кандидит медичних наук" ,"лікар вищої категорії"],
 	"p1" : "Ч"
 }, {
 	"personal_username" : "Флаксемберг М.А.",
@@ -80,6 +84,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "FlaksemberhMA",
+	"titles":["лікар І категорії"],
 	"p1" : "Ф"
 }, {
 	"personal_username" : "Антонецька Н.Б.",
@@ -94,6 +99,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "AntonetskaNB",
+	"titles":["кандидит медичних наук", "лікар вищої категорії"],
 	"p1" : "А"
 }, {
 	"personal_username" : "Щепкіна Т.М.",
@@ -150,6 +156,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "AfijchukLV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "А"
 }, {
 	"personal_username" : "Мацишина Л.В.",
@@ -164,6 +171,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MatsishinaLV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Олешко Л.В.",
@@ -206,6 +214,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PovkhVV",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Мацишена Л.Д.",
@@ -233,6 +242,7 @@
 	"department_name" : "Гастроентерологічне",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар вищої категорії" ],
 	"personal_url" : "AleshkoLV",
 	"p1" : "А"
 }, {
@@ -247,6 +257,7 @@
 	"department_name" : "Гематологічне",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар вищої категорії"],
 	"personal_url" : "BobrovnikAO",
 	"p1" : "Б"
 }, {
@@ -262,6 +273,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PidmurnyakNM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Пещинська Н.С.",
@@ -276,6 +288,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PeshchinskaNS",
+	"titles":["лікар І категорії" ],
 	"p1" : "П"
 }, {
 	"personal_username" : "Мороз Л.П.",
@@ -290,21 +303,9 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MorozLP",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
-}, {
-	"personal_username" : "Бобровник А.О.",
-	"personal_surname" : "Бобровник",
-	"personal_name" : "Андрій",
-	"personal_patronymic" : "Олександрович",
-	"personal_id" : 2675,
-	"personal_surgeon" : false,
-	"personal_anesthetist" : false,
-	"department_id" : 4,
-	"department_name" : "Гематологічне",
-	"position_id" : 1,
-	"position_name" : "Лікар",
-	"personal_url" : "BobrovnikAO",
-	"p1" : "Б"
+
 }, {
 	"personal_username" : "Щепіна Т.М.",
 	"personal_surname" : "Щепіна",
@@ -318,6 +319,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ShchepinaTM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Щ"
 }, {
 	"personal_username" : "Онуфран В.І.",
@@ -332,6 +334,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "OnufranVI",
+	"titles":["лікар І категорії"],
 	"p1" : "О"
 }, {
 	"personal_username" : "Педосюк Т.О.",
@@ -346,6 +349,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PedosyukTO",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Жила Н.В.",
@@ -360,6 +364,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ZhilaNV",
+	"titles":["лікар І категорії"],
 	"p1" : "Ж"
 }, {
 	"personal_username" : "Бондарук О.З.",
@@ -388,6 +393,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ShcherbatyukMI",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "Щ"
 }, {
 	"personal_username" : "Волошина І.М.",
@@ -416,6 +422,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KostashVM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Гончарук В.М.",
@@ -430,6 +437,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "HoncharukVM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Середа І.В.",
@@ -471,6 +479,7 @@
 	"department_name" : "Детоксикації",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар І категорії"],
 	"personal_url" : "BilobritskijVH",
 	"p1" : "Б"
 }, {
@@ -486,6 +495,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "DmitrishinMA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Д"
 }, {
 	"personal_username" : "Кожановська А.В.",
@@ -528,6 +538,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "HrachOI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Литовка В.О.",
@@ -542,6 +553,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "LitovkaVO",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Л"
 }, {
 	"personal_username" : "Іванюк С.В.",
@@ -570,6 +582,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "DanilyukSV",
+	"titles":["лікар І категорії"],
 	"p1" : "Д"
 }, {
 	"personal_username" : "Чолій В.М.",
@@ -584,6 +597,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "CholijVM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Ч"
 }, {
 	"personal_username" : "Осадчий В.В.",
@@ -598,6 +612,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "OsadchijVV",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "О"
 }, {
 	"personal_username" : "Поліщук І.В.",
@@ -612,6 +627,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PolishchukIV",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Паляниця Н.М.",
@@ -626,6 +642,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PalyanitsyaNM",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Мельник Л.І.",
@@ -640,6 +657,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MelnikLI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Рубас Л.В.",
@@ -668,6 +686,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MohilnitskaLA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Путасевич Н.М.",
@@ -696,6 +715,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "FilikMA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Ф"
 }, {
 	"personal_username" : "Кононенко В.Х.",
@@ -710,6 +730,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KononenkoVKh",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Заярнюк С.С.",
@@ -752,6 +773,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KobunkoVM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Кутсевич Н.М.",
@@ -780,6 +802,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KutasevichNM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Сухарєв В.А.",
@@ -794,6 +817,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "SukharyevVA",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Сич О.О.",
@@ -808,6 +832,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "SichOO",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Шимків А.П.",
@@ -822,6 +847,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ShimkivAP",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "Ш"
 }, {
 	"personal_username" : "Швець С.В.",
@@ -836,6 +862,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ShvetsSV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Ш"
 }, {
 	"personal_username" : "Пискливець З.Ст.",
@@ -850,6 +877,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PisklivetsZSt",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Мазур Л.М.",
@@ -864,6 +892,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MazurLM",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Мельник Л.М.",
@@ -878,6 +907,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MelnikLM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Киричук О.В.",
@@ -962,6 +992,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "StepanyukLV",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Григор'єва П.В.",
@@ -976,6 +1007,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "HrihoryevaPV",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Кравчук В.О.",
@@ -1004,6 +1036,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "HavlovskijVK",
+	"titles":["лікар І категорії" ],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Євдохович З.В.",
@@ -1018,6 +1051,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "YevdokhovichZV",
+	"titles":["лікар І категорії"],
 	"p1" : "Є"
 }, {
 	"personal_username" : "Білоус Г.А.",
@@ -1032,6 +1066,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "BilousHA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Б"
 }, {
 	"personal_username" : "Ковтун О.П.",
@@ -1046,6 +1081,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KovtunOP",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Верхола І.В.",
@@ -1060,6 +1096,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "VerkholaIV",
+	"titles":["лікар І категорії"],
 	"p1" : "В"
 }, {
 	"personal_username" : "Бальжик Т.Л.",
@@ -1074,6 +1111,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "BalzhikTL",
+	"titles":["лікар І категорії"],
 	"p1" : "Б"
 }, {
 	"personal_username" : "Омелянчук А.Г.",
@@ -1102,6 +1140,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "LisovaNYa",
+	"titles":["лікар І категорії"],
 	"p1" : "Л"
 }, {
 	"personal_username" : "Літучий В.М.",
@@ -1116,6 +1155,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "LituchijVM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Л"
 }, {
 	"personal_username" : "Тарнович Ю.М.",
@@ -1130,6 +1170,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "TarnovichYuM",
+	"titles":["лікар І категорії"],
 	"p1" : "Т"
 }, {
 	"personal_username" : "Ткач Б.В.",
@@ -1144,6 +1185,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "TkachBV",
+	"titles":["лікар І категорії"],
 	"p1" : "Т"
 }, {
 	"personal_username" : "Сарнацький В.В.",
@@ -1158,6 +1200,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "SarnatskijVV",
+	"titles":["лікар І категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Кримський В.С.",
@@ -1172,6 +1215,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KrimskijVS",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Мороз О.А.",
@@ -1200,6 +1244,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ChernetskijVV",
+	"titles":["лікар І категорії"],
 	"p1" : "Ч"
 }, {
 	"personal_username" : "Лозинський А.В.",
@@ -1228,6 +1273,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "StetskivTP",
+	"titles":["лікар вищої категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Білоус Л.М.",
@@ -1256,6 +1302,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KushnirNI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Тоцька О.Л.",
@@ -1270,6 +1317,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "TotskaOL",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Т"
 }, {
 	"personal_username" : "Грановська Г.В.",
@@ -1284,6 +1332,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "HranovskaHV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Алешко Н.Ю.",
@@ -1312,6 +1361,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MaksimovSL",
+	"titles":["лікар І категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Каритун Н.П.",
@@ -1326,6 +1376,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KaritunNP",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Кабачинський М.К.",
@@ -1340,6 +1391,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KabachinskijMK",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Вакулено В.О.",
@@ -1368,6 +1420,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ProzorskijIV",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Пацаранюк О.Д.",
@@ -1382,6 +1435,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PatsaranyukOD",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Хуторцова О.А.",
@@ -1396,6 +1450,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KhutortsovaOA",
+	"titles":["лікар І категорії"],
 	"p1" : "Х"
 }, {
 	"personal_username" : "Марущак В.П.",
@@ -1410,6 +1465,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MarushchakVP",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Кикилик В.М.",
@@ -1438,6 +1494,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ZavyaletsIT",
+	"titles":["лікар вищої категорії"],
 	"p1" : "З"
 }, {
 	"personal_username" : "Машевський А.С.",
@@ -1452,6 +1509,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MashevskijAS",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Марущак В.В.",
@@ -1466,6 +1524,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MarushchakVV",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Зав'ялець Л.І.",
@@ -1494,6 +1553,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "HabinetVD",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Витвицький В.Б.",
@@ -1578,6 +1638,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MelnikLP",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Дарманська І.А.",
@@ -1592,6 +1653,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "DarmanskaIA",
+	"titles":["лікар вищої категорії" ],
 	"p1" : "Д"
 }, {
 	"personal_username" : "Кульбаба О.Г.",
@@ -1606,6 +1668,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KulbabaOH",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Козак І.І.",
@@ -1620,6 +1683,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KozakII",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Каплінська Л.В.",
@@ -1634,6 +1698,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KaplinskaLV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Кириченко О.В.",
@@ -1662,6 +1727,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ShamarinaIYu",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "Ш"
 }, {
 	"personal_username" : "Філатова Т.В.",
@@ -1676,6 +1742,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "FilatovaTV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Ф"
 }, {
 	"personal_username" : "Коломієць О.В.",
@@ -1690,6 +1757,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KolomiyetsOV",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Ференс Т.В.",
@@ -1704,6 +1772,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "FerensTV",
+	"titles":["лікар І категорії" ],
 	"p1" : "Ф"
 }, {
 	"personal_username" : "Пірожок  Л.І.",
@@ -1718,6 +1787,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PirozhokLI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Пірожок Л.І.",
@@ -1746,6 +1816,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "IvakhovPYu",
+	"titles":["лікар ІІ категорії" ],
 	"p1" : "І"
 }, {
 	"personal_username" : "Михайленко Ю.О.",
@@ -1760,6 +1831,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MikhajlenkoYuO",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Кушнір І.А.",
@@ -1802,6 +1874,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "HalushkoVM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Керничний В.В.",
@@ -1830,6 +1903,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "YanchukMA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Я"
 }, {
 	"personal_username" : "Пискливець М.В.",
@@ -1844,6 +1918,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PisklivetsMV",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Решетова Л.Д.",
@@ -1858,6 +1933,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ReshetovaLD",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Р"
 }, {
 	"personal_username" : "Ігнатова Л.Б.",
@@ -1900,6 +1976,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "BilyakovaLA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Б"
 }, {
 	"personal_username" : "Бесараба М.Д.",
@@ -1914,8 +1991,7 @@
 	"position_id" : 2,
 	"position_name" : "Головний позаштатний анестезіолог ДОЗ ХОДА"
 	,"position_name2" : "Лікар"
-	,"titles":["Лікар вищої категорії"
-		]
+	,"titles":["лікар вищої категорії" ]
 	,"personal_url" : "BesarabaMD",
 	"p1" : "Б"
 }, {
@@ -1931,6 +2007,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KaritunVV",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Тоцький С.М.",
@@ -1959,6 +2036,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "RomanovskijVP",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Р"
 }, {
 	"personal_username" : "Погурало П.А.",
@@ -1973,6 +2051,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PohuraloPA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Бахмацький І.Ф.",
@@ -1986,6 +2065,7 @@
 	"department_name" : "Реанімаційне",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар вищої категорії"],
 	"personal_url" : "BakhmatskijIF",
 	"p1" : "Б"
 }, {
@@ -2001,6 +2081,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ZahorujkoVK",
+	"titles":["лікар вищої категорії"],
 	"p1" : "З"
 }, {
 	"personal_username" : "Бойчук П.А.",
@@ -2014,6 +2095,7 @@
 	"department_name" : "Реанімаційне",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар І категорії"],
 	"personal_url" : "BojchukPA",
 	"p1" : "Б"
 }, {
@@ -2029,6 +2111,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "TsekhmisterKYu",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Ц"
 }, {
 	"personal_username" : "Ніколенко П.Є.",
@@ -2043,6 +2126,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "NikolenkoPYe",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Н"
 }, {
 	"personal_username" : "Машевський М.Й.",
@@ -2085,6 +2169,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "KorandoNV",
+	"titles":["кандидит медичних наук" ,"лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Дунець О.Д.",
@@ -2099,6 +2184,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "DunetsOD",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Д"
 }, {
 	"personal_username" : "Рехтман Г.Б.",
@@ -2113,6 +2199,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "RekhtmanHB",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Р"
 }, {
 	"personal_username" : "Одолінський С.С.",
@@ -2127,6 +2214,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "OdolinskijSeS",
+	"titles":["лікар вищої категорії"],
 	"p1" : "О"
 }, {
 	"personal_username" : "Карнаух К.В.",
@@ -2140,8 +2228,7 @@
 	"department_name" : "ЕГ реанімація доросла",
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення"
-	,"titles":["Лікар вищої категорії"
-		]
+	,"titles":["лікар вищої категорії"]
 	,"personal_url" : "KarnaukhKV",
 	"p1" : "К"
 }, {
@@ -2157,6 +2244,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "PritulyakLV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Мукомела Л.І.",
@@ -2171,6 +2259,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "MukomelaLI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Кланца А.І.",
@@ -2186,6 +2275,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "KlantsaAI",
+	"titles":["кандидит медичних наук" ,"лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Костюк О.В.",
@@ -2200,6 +2290,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "KostyukOV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Левицький В.М.",
@@ -2214,6 +2305,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "LevitskijVM",
+	"titles":["лікар вищої категорії","заслужений лікар України"],
 	"p1" : "Л"
 }, {
 	"personal_username" : "Щербина Н.В.",
@@ -2242,6 +2334,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "HrinchukOP",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Г"
 }, {
 	"personal_username" : "Павлішен Ю.І.",
@@ -2256,6 +2349,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "PavlishenYuI",
+	"titles":["кандидит медичних наук" ,"лікар вищої категорії" ],
 	"p1" : "П"
 }, {
 	"personal_username" : "Чернецький В.С.",
@@ -2270,6 +2364,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "ChernetskijVS",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Ч"
 }, {
 	"personal_username" : "Довгань Л.І.",
@@ -2284,6 +2379,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "DovhanLI",
+	"titles":["лікар І категорії"],
 	"p1" : "Д"
 }, {
 	"personal_username" : "Балицький В.В.",
@@ -2297,6 +2393,7 @@
 	"department_name" : "Проктологічне",
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
+	"titles":["кандидит медичних наук" ,"лікар вищої категорії" ],
 	"personal_url" : "BalitskijVV",
 	"p1" : "Б"
 }, {
@@ -2311,11 +2408,8 @@
 	"department_name" : "Пульмонологічне",
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення"
-	,"titles":["к.м.н."
-		,"вища категорія"
-		,"заслужений лікар України"
-		,"1955 р.н."
-		]
+	,"titles":["кандидит медичних наук" ,"лікар вищої категорії" ,"заслужений лікар України" ]
+		,"1955 р.н.":""
 	,"personal_url" : "AleshkoAP",
 	"p1" : "А"
 }, {
@@ -2373,6 +2467,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ZahorujkoVV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "З"
 }, {
 	"personal_username" : "Маркова В.М.",
@@ -2387,6 +2482,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MarkovaVM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Крушельницький С.В.",
@@ -2401,6 +2497,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KrushelnitskijSV",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Кирик Р.В.",
@@ -2415,6 +2512,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KirikRV",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Мельник А.В.",
@@ -2429,6 +2527,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MelnikAV",
+	"titles":["лікар І категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Дема О.І.",
@@ -2443,6 +2542,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "DemaOI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Д"
 }, {
 	"personal_username" : "Вакулено В.О.",
@@ -2485,6 +2585,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "AndrukhovaNP",
+	"titles":["лікар І категорії"],
 	"p1" : "А"
 }, {
 	"personal_username" : "Каритун(мол) В.В.",
@@ -2515,8 +2616,8 @@
 	"personal_url" : "KirikRV",
 	"p1" : "К"
 }, {
-	"personal_username" : "Криньов К.Ю.",
-	"personal_surname" : "Криньов",
+	"personal_username" : "Креньов К.Ю.",
+	"personal_surname" : "Креньов",
 	"personal_name" : "Костянтин",
 	"personal_patronymic" : "Юрійович",
 	"personal_id" : 319,
@@ -2526,7 +2627,8 @@
 	"department_name" : "Реанімаційне",
 	"position_id" : 1,
 	"position_name" : "Лікар",
-	"personal_url" : "KrinovKYu",
+	"personal_url" : "KrenovKYu",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Борисенко І.Д.",
@@ -2555,6 +2657,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ZakrevskaVO",
+	"titles":["лікар вищої категорії"],
 	"p1" : "З"
 }, {
 	"personal_username" : "Шалавінська А.М.",
@@ -2569,6 +2672,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ShalavinskaAM",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "Ш"
 }, {
 	"personal_username" : "Тарасюк М.І.",
@@ -2583,6 +2687,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "TarasyukMI",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Т"
 }, {
 	"personal_username" : "Лящук І.А.",
@@ -2611,6 +2716,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PisklivetsZS",
+	"titles":["кандидит медичних наук" ,"лікар вищої категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Решетов Л.М.",
@@ -2625,6 +2731,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "ReshetovLM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Р"
 }, {
 	"personal_username" : "Мартинюк В.Г.",
@@ -2639,6 +2746,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MartinyukVH",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Авраменко В.С.",
@@ -2652,6 +2760,7 @@
 	"department_name" : "Судинної хірургії",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар ІІ категорії" ],
 	"personal_url" : "AvramenkoVS",
 	"p1" : "А"
 }, {
@@ -2695,6 +2804,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "StriletsPA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Васильківський В.В.",
@@ -2751,6 +2861,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KalinovskijVV",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Чубар І.В.",
@@ -2780,7 +2891,8 @@
 	"position_name" : "Заступник головного лікаря з хірургічної роботи",
 	"position_name2" : "Лікар"
 		,"titles":[
-			"кандидат медичних наук"
+			"кандидат медичних наук","лікар вищої категорії"
+			,"заступник головного лікаря з хірургічної роботи"
 			,"дійсний член Європейської асоціації урологів"
 			]
 ,"personal_url" : "PidmurnyakOlO",
@@ -2813,6 +2925,7 @@
 	"position_name" : "Заступник головного лікаря з амбулаторно-поліклінічної роботи та ЕТН",
 	"position_name2" : "Завідуюча поліклінікою"
 	,"personal_url" : "BondarukNM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Б"
 }, {
 	"personal_username" : "Дрогоруб А.А.",
@@ -2841,6 +2954,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "BodkoOYe",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Б"
 }, {
 	"personal_username" : "Яткевич Ю.В.",
@@ -2855,6 +2969,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "YatkevichYuV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Я"
 }, {
 	"personal_username" : "Войцешин В.В.",
@@ -2869,6 +2984,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "VojtseshinVV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "В"
 }, {
 	"personal_username" : "Монастирський В.М.",
@@ -2883,6 +2999,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MonastirskijVM",
+	"titles":["кандидит медичних наук", "лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Алешко О.А.",
@@ -2896,6 +3013,7 @@
 	"department_name" : "Урологічне",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар І категорії"],
 	"personal_url" : "AleshkoOA",
 	"p1" : "А"
 }, {
@@ -2911,6 +3029,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "DobrovolskijVA",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "Д"
 }, {
 	"personal_username" : "Боюк В.В.",
@@ -2924,6 +3043,7 @@
 	"department_name" : "Урологічне",
 	"position_id" : 1,
 	"position_name" : "Лікар",
+	"titles":["лікар І категорії"],
 	"personal_url" : "BoyukVV",
 	"p1" : "Б"
 }, {
@@ -2939,6 +3059,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "SobchinskijKS",
+	"titles":["лікар вищої категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Власов В.В.",
@@ -2953,6 +3074,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "VlasovVV",
+	"titles":["доктор медичних наук", "лікар вищої категорії","заслужений лікар України"],
 	"p1" : "В"
 }, {
 	"personal_username" : "Подопригора Ю.А.",
@@ -2967,6 +3089,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PodoprihoraYuA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Латинський Е.В.",
@@ -2981,6 +3104,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "LatinskijEV",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Л"
 }, {
 	"personal_username" : "Тропарчук О.І.",
@@ -2995,6 +3119,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "TroparchukOI",
+	"titles":["лікар І категорії"],
 	"p1" : "Т"
 }, {
 	"personal_username" : "Приступа М.Є.",
@@ -3009,6 +3134,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PristupaMYe",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Британчук Р.В.",
@@ -3023,6 +3149,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "BritanchukRV",
+	"titles":["лікар І категорії"],
 	"p1" : "Б"
 }, {
 	"personal_username" : "Петерчук О.Ф.",
@@ -3037,6 +3164,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PeterchukOF",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Сапожнік А.П.",
@@ -3051,6 +3179,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "SapozhnikAP",
+	"titles":["лікар ІІ категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Полоневич С.В.",
@@ -3065,6 +3194,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "PolonevichSV",
+	"titles":["лікар І категорії"],
 	"p1" : "П"
 }, {
 	"personal_username" : "Костюк О.О.",
@@ -3079,6 +3209,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KostyukOO",
+	"titles":["лікар І категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Калиновський В.В.",
@@ -3107,6 +3238,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "BabijIV",
+	"titles":["лікар І категорії"],
 	"p1" : "Б"
 }, {
 	"personal_username" : "Козак І.О.",
@@ -3212,6 +3344,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "FelonyukRV",
+	"titles":["лікар-спеціаліст"],
 	"p1" : "Ф"
 }, {
 	"personal_username" : "Овчарук А.С.",
@@ -3226,6 +3359,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "OvcharukAS",
+	"titles":["лікар вищої категорії"],
 	"p1" : "О"
 }, {
 	"personal_username" : "Нагорний І.М.",
@@ -3268,6 +3402,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "UrsolNB",
+	"titles":["лікар вищої категорії"],
 	"p1" : "У"
 }, {
 	"personal_username" : "Міщенко Є.М.",
@@ -3282,6 +3417,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "MishchenkoYeM",
+	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
 	"personal_username" : "Франковський Р.Б.",
@@ -3296,6 +3432,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "FrankovskijRB",
+	"titles":["лікар вищої категорії"],
 	"p1" : "Ф"
 }, {
 	"personal_username" : "Собчинський С.А.",
@@ -3310,6 +3447,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "SobchinskijSA",
+	"titles":["лікар вищої категорії"],
 	"p1" : "С"
 }, {
 	"personal_username" : "Підмурняк Ор.О.",
@@ -3323,8 +3461,7 @@
 	"department_name" : "Хірургічне",
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення"
-	,"titles":["доктор медичних наук"
-	]
+	,"titles":["доктор медичних наук", "лікар вищої категорії"]
 	,"personal_url" : "PidmurnyakOrO",
 	"p1" : "П"
 }, {
@@ -3340,6 +3477,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "KompaniyetsHP",
+	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Поліклініка",
