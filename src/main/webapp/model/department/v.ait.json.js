@@ -12,7 +12,7 @@
 		"name" : "Персонал",
 		"o2url" : "personal"
 	}, {
-		"name" : "Полиця",
+		"name" : "Бібліотека",
 		"o2url" : "regal",
 		"state" : "active",
 		"orders3" : [ {
@@ -23,49 +23,121 @@
 				"decreeNr" : "236",
 				"tag" : "наказ",
 				"decreeDate" : "04.04.2012",
-				"urlSource" : [ "http://sah.km.ua/ukaz/9" ],
+				"innerSource" : 
+					[{
+						"text":"Наказ"
+						,"href":"{{devProdUrlPrefix}}nakaz/236-nakaz.pdf"
+					},{
+						"text":"Типове положення"
+						,"href":"{{devProdUrlPrefix}}nakaz/236-tipove-polojennya.pdf"
+					},{
+						"text":"ІНСТРУКЦІЯ ЩОДО ОРГАНІЗАЦІЇ КОНТРОЛЮ ТА ПРОФІЛАКТИКИ ПІСЛЯОПЕРАЦІЙНИХ ГНІЙНО-ЗАПАЛЬНИХ ІНФЕКЦІЙ, СПРИЧИНЕНИХ МІКРООРГАНІЗМАМИ, РЕЗИСТЕНТНИМИ ДО ДІЇ АНТИМІКРОБНИХ ПРЕПАРАТІВ"
+						,"href":"{{devProdUrlPrefix}}nakaz/236-instrukciya.pdf"
+					},{
+						"text":"КЛАСИФІКАЦІЯ ФІЗИЧНОГО СТАНУ ПАЦІЄНТА ЗА ШКАЛОЮ ОЦІНКИ РИЗИКУ ВИНИКНЕННЯ ІНФЕКЦІЇ"
+							,"href":"{{devProdUrlPrefix}}nakaz/236-dodatok-1.pdf"
+					},{
+						"text":"КАРТА ЕПІДЕМІОЛОГІЧНОГО СПОСТЕРЕЖЕННЯ"
+							,"href":"{{devProdUrlPrefix}}nakaz/236-dodatok-2.pdf"
+					},{
+						"text":"Карта збору клінічних та лабораторних даних для виявлення у пацієнтів післяопераційних інфекцій"
+							,"href":"{{devProdUrlPrefix}}nakaz/236-dodatok-3.pdf"
+					},{
+						"text":"Чутливість до АМП основних збудників гнійно-запальних інфекцій"
+						,"href":"{{devProdUrlPrefix}}nakaz/236-dodatok-4.pdf"
+					}]
+				,"urlSource" : ["http://www.moz.gov.ua/ua/portal/dn_20120404_236.html", "http://sah.km.ua/ukaz/9" ],
 				"short" : "Контроль та профілактика післяопераційних інфекційних ускладнень.",
 				"name" : "Про організацію контролю та профілактики післяопераційних гнійно-запальних інфекцій, спричинених мікроорганізмами, резистентними до дії антимікробних препаратів"
 			}, {
 				"decreeNr" : "502",
 				"tag" : "наказ",
 				"decreeDate" : "29.08.2008",
-				"urlSource" : [ "http://sah.km.ua/ukaz/8" ],
+				"innerSource" : 
+					[{
+						"text":"pdf"
+						,"href":"{{devProdUrlPrefix}}nakaz/502.pdf"
+					},{
+						"text":"html"
+						,"href":"{{devProdUrlPrefix}}nakaz/502.html"
+					}]
+				,"urlSource" : ["http://www.moz.gov.ua/ua/portal/dn_20080829_502.html", "http://sah.km.ua/ukaz/8" ],
 				"short" : "Антибіотикопрофілактика",
 				"name" : "Про затвердження клінічного протоколу  з антибактеріальної профілактики в хірургії, травматології, акушерстві та гінекології"
 			}, {
 				"decreeNr" : "484",
 				"tag" : "наказ",
 				"decreeDate" : "07.07.2009",
-				"urlSource" : [ "http://www.moz.gov.ua/ua/portal/dn_20090707_484.html", "http://sah.km.ua/ukaz/7" ],
+				"innerSource" : 
+					[{
+						"text":"pdf"
+						,"href":"{{devProdUrlPrefix}}nakaz/484.pdf"
+					},{
+						"text":"html"
+						,"href":"{{devProdUrlPrefix}}nakaz/484.html"
+					}]
+				,"urlSource" : [ "http://www.moz.gov.ua/ua/portal/dn_20090707_484.html", "http://sah.km.ua/ukaz/7" ],
 				"name" : "Про затвердження змін до положення про проведення іспитів на передатестаційних циклах"
 			}, {
 				"decreeNr" : "329",
 				"tag" : "наказ",
 				"decreeDate" : "15.06.2007",
-				"urlSource" : [ "http://sah.km.ua/ukaz/6" ],
+				"innerSource" : 
+					[{
+						"text":"pdf"
+						,"href":"{{devProdUrlPrefix}}nakaz/329.pdf"
+					},{
+						"text":"html"
+						,"href":"{{devProdUrlPrefix}}nakaz/329.html"
+					}]
+				,"urlSource" : [ "http://www.moz.gov.ua/ua/portal/dn_20070615_329.html", "http://sah.km.ua/ukaz/6" ],
 				"name" : "Про затвердження клінічних протоколів надання медичної допомоги з профілактики тромботичних ускладнень в хірургії, ортопедії і травматології, акушерстві та гінекології"
 			}, {
 				"decreeNr" : "303",
 				"tag" : "наказ",
 				"decreeDate" : "08.10.1997",
-				"urlSource" : [ "http://sah.km.ua/ukaz/5" ],
+				"canceled" : "Наказ МОЗ України від 19.11.2014 № 866 „Про скасування наказу Міністерства охорони здоров'я України від 08 жовтня 1997 року № 303“",
+				"urlSource" : ["http://www.moz.gov.ua/ua/portal/dn_20141119_0866.html"
+				               , "http://mozdocs.kiev.ua/view.php?id=1483" 
+				               , "http://sah.km.ua/ukaz/5" 
+				               ],
 				"name" : "Про регламентацію діяльності анестезіологічної служби України"
 			}, {
 				"decreeNr" : "430",
 				"tag" : "наказ",
 				"decreeDate" : "03.07.2006",
-				"urlSource" : [ "http://sah.km.ua/ukaz/3" ],
-				"name" : "Про затвердження клінічних протоколів із спеціальності 'Анестезіологія'"
+				"innerSource" : 
+				[{
+					"text":"pdf"
+					,"href":"{{devProdUrlPrefix}}nakaz/430.pdf"
+				},{
+					"text":"html"
+					,"href":"{{devProdUrlPrefix}}nakaz/430.html"
+				}]
+				,"urlSource" : [ 
+					"http://www.moz.gov.ua/ua/portal/dn_20060703_430.html"
+					,"http://sah.km.ua/ukaz/3"
+					,"http://www.uazakon.com/document/fpart16/idx16501.htm" ],
+				"note":"Протоколи надання медичної допомоги хворим з: гострим респіраторним дистрес-синдромом, гострою нирковою недостатністю, гострою печінковою недостатністю, післяопераційною дихальною недостатністю, тяжким геморагічним шоком. "
+				,"name" : "Про затвердження протоколів надання медичної допомоги за спеціальністю „Анестезіологія та інтенсивна терапія“"
 			}, {
-				"decreeNr" : "234",
+				"decreeNr" : "751",
 				"tag" : "наказ",
-				"decreeDate" : "08.10.1997",
-				"urlSource" : [ "http://sah.km.ua/ukaz/1" ],
+				"decreeDate" : "28.09.2012",
+				"urlSource" : [ "http://www.moz.gov.ua/ua/portal/dn_20120928_751.html"
+				                , "http://zakon1.rada.gov.ua/laws/show/z2001-12"
+				                , "http://www.apteka.ua/article/244837"
+				                , "http://sah.km.ua/ukaz/" ],
 				"name" : "Про створення та впровадження медико-технологічних документів зі стандартизації медичної допомоги в системі Міністерства охорони здоровя України"
+			}, {
+				"decreeNr" : "550",
+				"tag" : "наказ",
+				"decreeDate" : "30.08.2011",
+				"urlSource" : [ "http://www.moz.gov.ua/ua/portal/dn_20110830_550.html" ],
+				"name" : "Про створення мультидисциплінарних робочих груп з опрацювання медичних стандартів та уніфікованих клінічних протоколів медичної допомоги на засадах доказової медицини"
 			} ]
 		}, {
-			"name" : "Бібліотека",
+			"name" : "Література",
 			"o3url" : "library",
 			"orders4" : [ {
 				"name" : "Управление нейромышечным блоком в анестезиологии Клинические рекомендации 2013",
