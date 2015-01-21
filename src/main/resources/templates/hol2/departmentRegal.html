@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="departmentController">
+<html ng-app="holweb2secApp" ng-controller="departmentController"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
 	<div th:replace="hol2/head :: metaLink"/>
 	
 	<title th:replace="hol2/head :: departmentOrder2" />
+	<meta name="description" content="Публічна інформація ::  МОЗ України :: вибірково" />
 </head>
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
@@ -14,26 +17,28 @@
 			<div role="complementary" class="col-md-3">
 				<nav th:replace="hol2/head :: navPanelDepartment" />
 			</div>
-			<div role="complementary" class="col-md-9">
+			<div role="main" class="col-md-9">
 				<ol th:replace="hol2/navbar :: breadcrumb" />
 				<div class="bs-docs-section"
 					th:each="o2,o2row : ${department.orders2}"
 					th:if="${o2.o2url == 'regal'}">
 					<th:block th:if="${o2['orders3'] == null}">
-						<h4>Полиця</h4>
+						<h4>Бібліотека</h4>
 						<div class="alert alert-info">
 							<p>Місце для збору інформації корисної для роботи відділення.
 							</p>
 							<p>
 								Передує в заповнені цього розділу сайту <b> <a
-									href="{{devProdUrlPrefix}}v.ait/regal"> відділення реанімації.</a>
+									href="{{devProdUrlPrefix}}v.ait/regal"> відділення
+										реанімації.</a>
 								</b>
 							</p>
 						</div>
 					</th:block>
 					<th:block th:if="${o2['orders3'] != null}">
 						<th:block th:each="o3,o3row : ${o2.orders3}">
-							<h1 th:id="${o3.o3url}" class="page-header" th:text="${o3.name}"></h1>
+							<h1 th:id="${o3.o3url}" class="page-header" th:text="${o3.name}">
+							</h1>
 							<th:block th:if="${o3['orders4'] != null }">
 								<div th:each="o4, o4row : ${o3.orders4}">
 									<th:block th:if="${o3.o3url != 'decree' }">
@@ -45,18 +50,42 @@
 										<!-- 
 										th:id="${o3.o3url}+'-'+${o4.decreeNr}+'-'+${o4.decreeDate}"></b>
 								 -->
-										<b th:text="'Наказ № '+${o4.decreeNr}"
-											th:id="${o3.o3url}+'-'+${o4.decreeNr}"></b>
-										<span th:text="'від '+${o4.decreeDate}"></span>
-										<span class="h4" th:if="${o4['short']}" th:text="${o4.short}"></span> «<i
-											th:text="${o4.name}"></i>» 
-								</th:block>
-									<th:block th:if="${o4['urlSource'] != null }">
-										<span class="glyphicon glyphicon-link"></span>
-										<span th:each="u,uRow : ${o4.urlSource}"> <a
-											th:href="${u}" th:text="${u}"></a><span
-											th:if="${uRow.count != uRow.size}">, </span>
+										<span
+											th:attr="class=${o4['canceled'] != null} ? 'hol-canceled'">
+											<b th:text="'Наказ № '+${o4.decreeNr}"
+											th:id="${o3.o3url}+'-'+${o4.decreeNr}"></b> <span
+											th:text="'від '+${o4.decreeDate}"></span> <span class="h4"
+											th:if="${o4['short']}" th:text="${o4.short}"></span> «<i
+											th:text="${o4.name}"></i>»
 										</span>
+										<div class="bs-callout bs-callout-success"
+											th:if="${o4['note']}"
+											th:text="${o4['note']}"
+											>
+											
+											</div>
+										<span th:if="${o4['canceled'] != null}"
+											th:text="${o4['canceled']}"> </span>
+									</th:block>
+									<th:block
+										th:if="${o4['urlSource'] != null or o4['innerSource'] != null }">
+										<br />
+										<small> <span class="glyphicon glyphicon-link"></span>
+											<th:block th:if="${o4['innerSource'] != null }">
+												<span th:each="inner,innerRow : ${o4.innerSource}">
+													<a class="hol-url-inner"
+													th:href="${inner.href}" th:text="${inner.text}"></a><span
+													th:if="${innerRow.count != innerRow.size}">, </span> <span
+													class="glyphicon glyphicon-link"
+													th:if="${innerRow.count == innerRow.size}"> </span>
+												</span>
+											</th:block> <th:block th:if="${o4['urlSource'] != null }">
+												<span th:each="u,uRow : ${o4.urlSource}"> <a
+													th:href="${u}" th:text="${u}"></a><span
+													th:if="${uRow.count != uRow.size}">, </span>
+												</span>
+											</th:block>
+										</small>
 									</th:block>
 									<hr />
 								</div>

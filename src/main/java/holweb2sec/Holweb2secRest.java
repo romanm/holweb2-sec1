@@ -51,8 +51,17 @@ public class Holweb2secRest {
 		return "hol2/departmentPersonal";
 	}
 
+	@RequestMapping(value="/hol2/v.{departmentName}/regal/doc", method=RequestMethod.GET)
+	public String departmentRegalDoc(@PathVariable String departmentName, Model model) {
+		System.out.println("/hol2/v-"+departmentName);
+		logger.debug("/hol2/v."+departmentName);
+		model.addAttribute("orders2", "regal");
+		addModelDepartmentModel(model, departmentName);
+		return "hol2/departmentRegal";
+	}
+
 	@RequestMapping(value="/hol2/v.{departmentName}/regal", method=RequestMethod.GET)
-	public String departmentDecree(@PathVariable String departmentName, Model model) {
+	public String departmentRegal(@PathVariable String departmentName, Model model) {
 		System.out.println("/hol2/v-"+departmentName);
 		logger.debug("/hol2/v."+departmentName);
 		model.addAttribute("orders2", "regal");
@@ -128,15 +137,20 @@ public class Holweb2secRest {
 		model.addAttribute("seek", seek);
 	}
 
-	@RequestMapping(value="/hol2/addidx-about", method=RequestMethod.GET)
+	@RequestMapping(value="/hol2/about-addidx", method=RequestMethod.GET)
 	public @ResponseBody Map<String, Object> addIdxAbout(Model model) {
-		logger.debug("/addidx-about");
-		System.out.println("/addidx-about");
+		logger.debug("/about-addidx");
+		System.out.println("/about-addidx");
 		final Map<String, Object> generalInfo = holweb2secController.readModelFile("generalInfo");
 		final Set<String> keySet = generalInfo.keySet();
-		for (String string : keySet) {
-			final Map<String, Object> docBlockContainer = (Map<String, Object>) generalInfo.get(string);
+		for (String key : keySet) {
+			System.out.println(key);
+			final Object object = generalInfo.get(key);
+			if(object instanceof List)
+				continue;
+			final Map<String, Object> docBlockContainer = (Map<String, Object>) object;
 			final List<Map<String, Object>> s2List = (List<Map<String, Object>>) docBlockContainer.get("docBlock");
+			if(null != s2List)
 			for (int s2idx = 0; s2idx < s2List.size(); s2idx++) {
 				final Map<String, Object> s2 = s2List.get(s2idx);
 				holweb2secController.addDocBlockIndex(s2idx, s2);

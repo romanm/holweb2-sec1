@@ -6,7 +6,7 @@
 		},{
 			"name":"Персонал","o2url":"personal"
 		},{
-			"name":"Полиця","o2url":"regal","state":"active"
+			"name":"Бібліотека","o2url":"regal","state":"active"
 		}]
 
 	,"docBlock":[

@@ -9,7 +9,7 @@
     "name" : "Персонал",
     "o2url" : "personal"
   }, {
-    "name" : "Полиця",
+    "name" : "Бібліотека",
     "o2url" : "regal",
     "state" : "active"
   } ],
