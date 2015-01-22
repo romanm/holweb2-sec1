@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="aboutHolController">
+<html ng-app="holweb2secApp" ng-controller="aboutHolController"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
 <div th:replace="hol2/head :: metaLink" />
 	<title>ХОЛ / Про лікарню</title>
@@ -45,9 +47,7 @@
 							data-ng-class="{'chouse-nav-item' : isPage('history') }">
 								Історія становлення лікарні </a></li>
 					</ul>
-					<a class="back-to-top" href="#top"> Догори <span
-						class="glyphicon glyphicon-chevron-up"></span>
-					</a>
+					<a th:replace="hol2/holhome :: gotoTop" />
 				</nav>
 			</div>
 			<div role="main" class="col-md-9">

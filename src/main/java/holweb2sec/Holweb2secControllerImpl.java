@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -70,7 +71,31 @@ public class Holweb2secControllerImpl {
 			}
 		}
 	}
-
+	public void pullOutDepartmentPersonal(Map<String, Object> department) {
+		List<Map<String, Object>> dspl = new ArrayList<Map<String, Object>>();
+		List<Map<String, Object>> dpl = new ArrayList<Map<String, Object>>();
+		final Object dId = department.get("department_id");
+		final Object dId2 = department.get("department_id2");
+		final Map<String, Object> personalListHolWeb = getPersonalListHolWeb();
+		List<Map<String, Object>> pl = (List<Map<String, Object>>) personalListHolWeb.get("pl");
+		for (Map<String, Object> person : pl) {
+			final Object departmentId = person.get("department_id");
+			if(departmentId.equals(dId) || departmentId.equals(dId2))
+			{
+				final int positionId = (int) person.get("position_id");
+				if(positionId == 3){//chief
+					dspl.add(0, person);
+				}else
+				if(positionId == 2){//admin
+					dspl.add(person);
+				}else{
+					dpl.add(person);
+				}
+			}
+		}
+		department.put("dspl", dspl);
+		department.put("dpl", dpl);
+	}
 	public Map<String, Object> addPL() {
 		final Map<String, Object> personalListHolWeb = getPersonalListHolWeb();
 		if(false)
@@ -190,4 +215,6 @@ public class Holweb2secControllerImpl {
 		}
 		return readJsonDbFile2map;
 	}
+
+	
 }

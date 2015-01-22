@@ -125,9 +125,9 @@
 				"tag" : "наказ",
 				"decreeDate" : "28.09.2012",
 				"urlSource" : [ "http://www.moz.gov.ua/ua/portal/dn_20120928_751.html"
-				                , "http://zakon1.rada.gov.ua/laws/show/z2001-12"
-				                , "http://www.apteka.ua/article/244837"
-				                , "http://sah.km.ua/ukaz/" ],
+					, "http://zakon1.rada.gov.ua/laws/show/z2001-12"
+					, "http://www.apteka.ua/article/244837"
+					, "http://sah.km.ua/ukaz/" ],
 				"name" : "Про створення та впровадження медико-технологічних документів зі стандартизації медичної допомоги в системі Міністерства охорони здоровя України"
 			}, {
 				"decreeNr" : "550",

@@ -27,9 +27,7 @@
 							<a href="{{vidId}}"> {{ vidName }} </a>
 						</li>
 					</ul>
-					<a class="back-to-top" href="#top"> Догори <span
-						class="glyphicon glyphicon-chevron-up"></span>
-					</a>
+					<a th:replace="hol2/holhome :: gotoTop" />
 				</nav>
 			</div>
 			<div class="col-md-9" data-ng-if="seek == null || !(seek.length > 0)">Тут буде пошук</div>

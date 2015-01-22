@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="departmentController">
+<html ng-app="holweb2secApp" ng-controller="departmentController"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
 	<div th:replace="hol2/head :: metaLink" />
 
@@ -21,19 +23,19 @@
 				<ol th:replace="hol2/navbar :: breadcrumbAjs" />
 				<div class="row">
 					<div class="col-xs-3">
-						<a href="{{devProdUrlPrefix}}spk/{{department.dspl[0].personal_url}}"> <img
+						<a th:href="'spk/'+${department.dspl[0].personal_url}"> <img
 							class="img-circle"
-							src="/img/spk/{{department.dspl[0].personal_url}}.jpg" />
-							<div class="h4">{{department.dspl[0].personal_username}}</div>
-							{{department.dspl[0].position_name}}
-						</a>
+							th:src="'/img/spk/'+${department.dspl[0].personal_url}+'.jpg'" />
+							<div class="h4" th:text="${department.dspl[0].personal_username}"></div>
+							<th:block th:text="${department.dspl[0].position_name}"></th:block> 
+						</a> 
 					</div>
-					<div class="col-xs-3" data-ng-show="department.dspl[1]">
-						<a href="{{devProdUrlPrefix}}spk/{{department.dspl[1].personal_url}}"> <img
+					<div class="col-xs-3" th:if="department.dspl[1]">
+						<a th:href="'spk/'+${department.dspl[1].personal_url}"> <img
 							class="img-circle"
-							src="/img/spk/{{department.dspl[1].personal_url}}.jpg" />
-							<div class="h4">{{department.dspl[1].personal_username}}</div>
-							{{department.dspl[1].position_name}}
+							th:src="'/img/spk/'+${department.dspl[1].personal_url}+'.jpg'" />
+							<div class="h4" th:text="${department.dspl[1].personal_username}"></div>
+							<th:block th:text="${department.dspl[1].position_name}"></th:block>
 						</a>
 					</div>
 				</div>

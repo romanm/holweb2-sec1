@@ -71,6 +71,7 @@ public class Holweb2secRest {
 	private void addModelDepartmentModel(Model model, String departmentName) {
 		final Map<String, Object> department = departmentModel(departmentName);
 		System.out.println(department);
+		holweb2secController.pullOutDepartmentPersonal(department);
 		model.addAttribute("department", department);
 		model.addAttribute("departmentName", departmentName);
 		addModelAll(model);

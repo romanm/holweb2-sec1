@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="holHomeController">
+<html ng-app="holweb2secApp" ng-controller="holHomeController"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
 	<meta name="google-site-verification" content="n6zpUyDIKxJrFRhAoY7SCGb_nNFC3ZMTFaHuZiB_cJ8" />
 	<div th:replace="hol2/head :: metaLink" />
@@ -38,8 +40,9 @@
 						<li><a href="#vid">Впровадження і досвід</a></li>
 						<li><a href="#fach">Фахівці</a></li>
 					</ul>
-					<a class="back-to-top" href="#top"> Догори <span
-						class="glyphicon glyphicon-chevron-up"></span>
+					<a class="back-to-top" href="#top" th:fragment="gotoTop"> <!-- 
+						<span class="glyphicon glyphicon-chevron-up"></span>
+						 --> <img alt="Догори" src="/img/up-arrow.png" /> Догори
 					</a>
 				</nav>
 			</div>

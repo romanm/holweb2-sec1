@@ -71,9 +71,7 @@
 					<span th:text="${o2.name}"></span>
 			</a></li>
 		</ul>
-		<a class="back-to-top" href="#top"> Догори <span
-			class="glyphicon glyphicon-chevron-up"></span>
-		</a>
+		<a th:replace="hol2/holhome :: gotoTop" />
 	</nav>
 
 	<div class="row" th:fragment="showPersonal">
