@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -95,6 +97,58 @@ public class Holweb2secControllerImpl {
 		}
 		department.put("dspl", dspl);
 		department.put("dpl", dpl);
+	}
+
+	public Map<String, Object> readPersonalListSort(String abc) {
+		HashMap<String, Map<String, Object>> m = new HashMap<String,Map<String, Object>>();
+		final Map<String, Object> readPersonalListSort = readPersonalListSort();
+		List<Map<String, Object>> pl = (List<Map<String, Object>>) readPersonalListSort.get("pl");
+		final ArrayList<Map<String, Object>> abcPl = new ArrayList<Map<String, Object>>();
+		for (Map<String, Object> person : pl) {
+			if(abc.equals(person.get("p1"))){
+				abcPl.add(person);
+				System.out.println(person);
+			}
+		}
+		readPersonalListSort.put("pl", abcPl);
+		return readPersonalListSort;
+	}
+
+	public Map<String, Object> readPersonalListSort() {
+		String pathToFile = Holweb2secConfig.personalListHolWebSort;
+		File file = new File(pathToFile);
+		final Map<String, Object> readJsonDbFile2map = readJsonDbFile2map(file);
+		return readJsonDbFile2map;
+	}
+
+	public void makePersonalListSort() {
+		final Map<String, Object> personalListHolWeb = getPersonalListHolWeb();
+		List<Map<String, Object>> pl = (List<Map<String, Object>>) personalListHolWeb.get("pl");
+		HashMap<String, Map<String, Object>> m = new HashMap<String,Map<String, Object>>();
+		for (Map<String, Object> map : pl) {
+			m.put((String) map.get("personal_username"), map);
+		}
+		final ArrayList<Map<String, Object>> pls = new ArrayList<Map<String, Object>>();
+		final List<String> p1s = new ArrayList<String>();
+		String p1last = "";
+		final Object[] array2 = m.keySet().toArray();
+		Arrays.sort(array2);
+		for (Object key : array2) {
+			final Map<String, Object> person = m.get(key.toString());
+			pls.add(person);
+			final String p1 = (String) person.get("p1");
+			System.out.println(p1last+" = "+p1+" "+(p1last.equals(p1)));
+			if(!p1last.equals(p1))
+			{
+				p1last = p1;
+				p1s.add(p1last);
+				System.out.println(p1last);
+			}
+		}
+		personalListHolWeb.put("p1s", p1s);
+		personalListHolWeb.put("pl", pls);
+		
+		writeToFileInnerPath(personalListHolWeb, Holweb2secConfig.personalListHolWebSort);
 	}
 	public Map<String, Object> addPL() {
 		final Map<String, Object> personalListHolWeb = getPersonalListHolWeb();
@@ -215,6 +269,10 @@ public class Holweb2secControllerImpl {
 		}
 		return readJsonDbFile2map;
 	}
+
+	
+
+	
 
 	
 }

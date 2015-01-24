@@ -22,53 +22,64 @@
 			<div class="col-md-9" role="main">
 				<ol th:replace="hol2/navbar :: breadcrumbAjs" />
 				<div class="row">
-					<div class="col-xs-3">
-						<a th:href="'spk/'+${department.dspl[0].personal_url}"> <img
-							class="img-circle"
-							th:src="'/img/spk/'+${department.dspl[0].personal_url}+'.jpg'" />
-							<div class="h4" th:text="${department.dspl[0].personal_username}"></div>
-							<th:block th:text="${department.dspl[0].position_name}"></th:block> 
-						</a> 
-					</div>
-					<div class="col-xs-3" th:if="department.dspl[1]">
-						<a th:href="'spk/'+${department.dspl[1].personal_url}"> <img
-							class="img-circle"
-							th:src="'/img/spk/'+${department.dspl[1].personal_url}+'.jpg'" />
-							<div class="h4" th:text="${department.dspl[1].personal_username}"></div>
-							<th:block th:text="${department.dspl[1].position_name}"></th:block>
-						</a>
-					</div>
-				</div>
-				<div data-ng-repeat="personal1 in department.dpl "
-					data-ng-init="personalIndex = $index; col = $index%4;
-				personal2 = department.dpl[personalIndex +1];
-				personal3 = department.dpl[personalIndex +2];
-				personal4 = department.dpl[personalIndex +3];
-				">
-					<div class="row" data-ng-if="col == 0">
-						<div class="col-xs-3">
-							<a href="{{devProdUrlPrefix}}spk/{{personal1.personal_url}}"> <img
-								class="img-circle" src="/img/spk/{{personal1.personal_url}}.jpg" />
-								<div class="h4">{{personal1.personal_username}}</div>
+					<div class="col-xs-3" th:with="person = ${department.dspl[0]}">
+						<div th:fragment="personLink">
+							<a th:href="${devProdUrlPrefix}+'spk/'+${person.personal_url}">  <img
+								th:if="${person['personal_foto'] != null} and ${person.personal_foto}"
+								class="img-circle"
+								th:src="'/img/spk/'+${person.personal_url}+'.jpg'" /> <img
+								th:if="${person['personal_foto'] == null} or ${!person.personal_foto}"
+								class="img-circle" th:src="'/img/spk/0foto.jpg'" />
+
+								<div class="h4" th:text="${person.personal_username}"></div> <th:block
+									th:text="${person.position_name}"></th:block>
 							</a>
 						</div>
-						<div class="col-xs-3" data-ng-show="personal2">
-							<a href="{{devProdUrlPrefix}}spk/{{personal2.personal_url}}"><img
-								class="img-circle" src="/img/spk/{{personal2.personal_url}}.jpg" />
-								<div class="h4">{{personal2.personal_username}}</div></a>
-						</div>
-						<div class="col-xs-3" data-ng-show="personal3">
-							<a href="{{devProdUrlPrefix}}spk/{{personal3.personal_url}}"> <img
-								class="img-circle" src="/img/spk/{{personal3.personal_url}}.jpg" />
-								<div class="h4">{{personal3.personal_username}}</div></a>
-						</div>
-						<div class="col-xs-3" data-ng-show="personal4">
-							<a href="{{devProdUrlPrefix}}spk/{{personal4.personal_url}}"> <img
-								class="img-circle" src="/img/spk/{{personal4.personal_url}}.jpg" />
-								<div class="h4">{{personal4.personal_username}}</div></a>
-						</div>
+					</div>
+					<div class="col-xs-3" th:if="${department.dspl.size() gt 1}"
+						th:with="person = ${department.dspl[1]}">
+						<div th:replace="hol2/departmentPersonal :: personLink" />
 					</div>
 				</div>
+				<th:block th:with="spkList = ${department.dpl}, showIn = 'dep'">
+					<th:block th:fragment="spk4ColumnList"
+						th:each="s2,s2row : ${spkList}"
+						th:with="personalIndex = ${s2row.index}, col = ${s2row.index%4}">
+						<th:block th:fragment="spk4ColumnListRow">
+							<div class="row" th:if="${col == 0}">
+								<div class="col-xs-3" th:with="person = ${s2}">
+									<div th:replace="hol2/departmentPersonal :: personLink" />
+								</div>
+								<div class="col-xs-3"
+									th:if="${spkList.size()} gt ${(personalIndex +1)}"
+									th:with="person = ${spkList[personalIndex +1]}">
+									<div th:replace="hol2/departmentPersonal :: personLink" />
+								</div>
+								<div class="col-xs-3"
+									th:if="${spkList.size()} gt ${personalIndex +2}"
+									th:with="person = ${spkList[personalIndex +2]}">
+									<div th:replace="hol2/departmentPersonal :: personLink" />
+								</div>
+								<div class="col-xs-3"
+									th:if="${spkList.size()} gt ${personalIndex +3}"
+									th:with="person = ${spkList[personalIndex +3]}">
+									<div th:replace="hol2/departmentPersonal :: personLink" />
+								</div>
+								<th:block th:if="${showIn == 'all'}">
+								<div class="row"
+									th:if="${col == 0} ? (${spkList.size()} gt ${personalIndex +4}?
+						${spkList[personalIndex].p1 != spkList[personalIndex +4].p1} :false) : false">
+									<div class="col-md-12">
+										<div th:id="${spkList[personalIndex +4].p1}"
+											th:text="${spkList[personalIndex +4].p1}"
+											class="page-header"></div>
+									</div>
+								</div>
+								</th:block>
+							</div>
+						</th:block>
+					</th:block>
+				</th:block>
 			</div>
 		</div>
 	</div>

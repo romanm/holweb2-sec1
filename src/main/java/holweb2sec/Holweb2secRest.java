@@ -236,11 +236,30 @@ public class Holweb2secRest {
 	}
 
 	@RequestMapping(value="/hol2/spivrobitnik", method=RequestMethod.GET)
-	public String spivrobitnik( Model model) {
+	public String spivrobitnik( Model model, HttpServletRequest req) {
+		final long currentTimeMillis = System.currentTimeMillis();
 		System.out.println("/hol2/spivrobitnik");
 		logger.debug("/hol2/spivrobitnik");
 		addModelAll(model);
+		model.addAttribute("parameterMap", req.getParameterMap());
+		final String abc = req.getParameter("abc");
+		final Map<String, Object> personalListSort;
+		if(abc != null){
+			personalListSort = holweb2secController.readPersonalListSort(abc);
+		}else{
+			personalListSort = holweb2secController.readPersonalListSort();
+		}
+		model.addAttribute("personalList", personalListSort);
+		logger.debug(""+currentTimeMillis);
+		System.out.println(System.currentTimeMillis()-currentTimeMillis);
 		return "hol2/spivrobitnik";
+	}
+
+	@RequestMapping(value="/hol2/spivrobitnik-addsortidx", method=RequestMethod.GET)
+	public @ResponseBody Map<String, Object> spivrobitnikAddsortidx(Model model) {
+		holweb2secController.makePersonalListSort();
+		final Map<String, Object> personalListSort = holweb2secController.readPersonalListSort();
+		return personalListSort;
 	}
 
 	@RequestMapping(value="/hol2/spk/{personalUrl}", method=RequestMethod.GET)

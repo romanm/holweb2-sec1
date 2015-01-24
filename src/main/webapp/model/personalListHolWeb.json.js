@@ -303,6 +303,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MorozLP",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 
@@ -2023,6 +2024,7 @@
 	,"position_name2" : "Лікар"
 	,"titles":["лікар вищої категорії" ]
 	,"personal_url" : "BesarabaMD",
+	"personal_foto" : true,
 	"p1" : "Б"
 }, {
 	"personal_username" : "Каритун В.В.",
@@ -2244,6 +2246,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "OdolinskijSeS",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "О"
 }, {
@@ -2260,6 +2263,7 @@
 	"position_name" : "Завідуючий відділення"
 	,"titles":["лікар вищої категорії"]
 	,"personal_url" : "KarnaukhKV",
+	"personal_foto" : true,
 	"p1" : "К"
 }, {
 	"personal_username" : "Притуляк Л.В.",
@@ -2274,6 +2278,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "PritulyakLV",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "П"
 }, {
@@ -2289,6 +2294,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "MukomelaLI",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
@@ -2305,6 +2311,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "KlantsaAI",
+	"personal_foto" : true,
 	"titles":["кандидит медичних наук" ,"лікар І категорії"],
 	"p1" : "К"
 }, {
@@ -2320,6 +2327,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "KostyukOV",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "К"
 }, {
@@ -2335,6 +2343,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "LevitskijVM",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії","заслужений лікар України"],
 	"p1" : "Л"
 }, {
@@ -2364,6 +2373,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "HrinchukOP",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "Г"
 }, {
@@ -2379,6 +2389,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "PavlishenYuI",
+	"personal_foto" : true,
 	"titles":["кандидит медичних наук" ,"лікар вищої категорії" ],
 	"p1" : "П"
 }, {
@@ -2409,6 +2420,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "DovhanLI",
+	"personal_foto" : true,
 	"titles":["лікар І категорії"],
 	"p1" : "Д"
 }, {
@@ -2425,6 +2437,7 @@
 	"position_name" : "Завідуючий відділення",
 	"titles":["кандидит медичних наук" ,"лікар вищої категорії" ],
 	"personal_url" : "BalitskijVV",
+	"personal_foto" : true,
 	"p1" : "Б"
 }, {
 	"personal_username" : "Алешко А.П.",
@@ -2440,8 +2453,9 @@
 	"position_name" : "Завідуючий відділення"
 	,"titles":["кандидит медичних наук" ,"лікар вищої категорії" ,"заслужений лікар України" ]
 		,"1955 р.н.":""
-	,"personal_url" : "AleshkoAP",
-	"p1" : "А"
+	,"personal_url" : "AleshkoAP"
+	,"personal_foto" : true
+	,"p1" : "А"
 }, {
 	"personal_username" : "Логвін О.О.",
 	"personal_surname" : "Логвін",
@@ -2512,6 +2526,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "MarkovaVM",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
@@ -2658,7 +2673,8 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "KrenovKYu",
-	"titles":["лікар І категорії"],
+	"personal_foto" : true,
+	"titles":["лікар І категорії", "старшний ординатор відділення реанімації"],
 	"p1" : "К"
 }, {
 	"personal_username" : "Борисенко І.Д.",
@@ -2930,6 +2946,7 @@
 			,"дійсний член Європейської асоціації урологів"
 			]
 ,"personal_url" : "PidmurnyakOlO",
+	"personal_foto" : true,
 "p1" : "П"
 }, {
 	"personal_username" : "Демидюк",
@@ -2944,6 +2961,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділеням"
 		,"personal_url" : "Demidyuk",
+	"personal_foto" : true,
 		"p1" : "Д"
 }, {
 	"personal_username" : "Бондарук Н.М.",
@@ -2959,6 +2977,7 @@
 	"position_name" : "Заступник головного лікаря з амбулаторно-поліклінічної роботи та ЕТН",
 	"position_name2" : "Завідуюча поліклінікою"
 	,"personal_url" : "BondarukNM",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "Б"
 }, {
@@ -3109,6 +3128,7 @@
 	"position_id" : 1,
 	"position_name" : "Лікар",
 	"personal_url" : "VlasovVV",
+	"personal_foto" : true,
 	"titles":["доктор медичних наук", "лікар вищої категорії","заслужений лікар України"],
 	"p1" : "В"
 }, {
@@ -3323,6 +3343,7 @@
 		,"Заслужений лікар України"
 	]
 	,"personal_url" : "SukhodolyaAI",
+	"personal_foto" : true,
 	"p1" : "С"
 }, {
 	"personal_username" : "Павлюк В.Б.",
@@ -3454,6 +3475,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "MishchenkoYeM",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "М"
 }, {
@@ -3469,6 +3491,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "FrankovskijRB",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "Ф"
 }, {
@@ -3484,6 +3507,7 @@
 	"position_id" : 3,
 	"position_name" : "Завідуючий відділення",
 	"personal_url" : "SobchinskijSA",
+	"personal_foto" : true,
 	"titles":["лікар вищої категорії"],
 	"p1" : "С"
 }, {
@@ -3500,6 +3524,7 @@
 	"position_name" : "Завідуючий відділення"
 	,"titles":["доктор медичних наук", "лікар вищої категорії"]
 	,"personal_url" : "PidmurnyakOrO",
+	"personal_foto" : true,
 	"p1" : "П"
 }, {
 	"personal_username" : "Компанієць Г.П.",

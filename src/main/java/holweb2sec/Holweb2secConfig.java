@@ -6,4 +6,5 @@ public class Holweb2secConfig {
 	final static String innerDepartmentModelFolderPfad	= innerModelFolderPfad + "department/";
 //	final static String devProdUrlPrefix	= "/";
 	final static String devProdUrlPrefix	= "/hol2/";
+	final static String personalListHolWebSort = innerModelFolderPfad +"/personalListHolWebSort.json.js";
 }

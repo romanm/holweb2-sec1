@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="personalController">
+<html ng-app="holweb2secApp" ng-controller="personalController"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
 <div th:replace="hol2/head :: metaLink" />
 
-<title>ХОЛ / Співробітники</title>
+<title>ХОЛ / Співпрацівники</title>
 </head>
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
@@ -15,7 +17,41 @@
 		<div role="complementary" class="col-md-9">
 			<ol th:replace="hol2/navbar :: breadcrumbSpk"/>
 			<h1>Співпрацівники</h1>
-			
+				<th:block th:each="p1,p1row : ${personalList.p1s}" >
+					<!-- 
+					<span th:text="${parameterMap['abc'] != null} ? (${p1 == parameterMap.abc[0]} ? 'bold') "> </span>
+					<span th:text="${parameterMap != null} ? ${parameterMap['abc'] != null} ? 'bold'"> </span>
+					<span th:text="${parameterMap.abc != null}"> </span>
+					<span th:text=""> </span>
+					<span th:text=""> </span>
+					<span th:text=""> </span>
+					 -->
+				<!-- 
+				 -->
+					<a th:class="${parameterMap['abc'] != null} ? (${p1 == parameterMap.abc[0]} ? 'bold') "
+						th:href="'?abc='+${p1}" th:text="${p1}"> </a>
+					<span th:if="${personalList.p1s.size()} gt ${p1row.index + 1}"> | </span>
+				</th:block>
+				<span> - <a href="spivrobitnik">Всі</a>
+				</span>
+
+				<th:block th:if="${parameterMap['abc'] != null}"
+					th:each="s2,s2row : ${personalList.pl}"
+					th:with="personalIndex = ${s2row.index}
+					, col = ${s2row.index%4}, spkList = ${personalList.pl}
+					, showIn = 'abc'
+					">
+					<th:block th:if="${s2.p1 == parameterMap.abc[0]}">
+						<th:block
+							th:replace="hol2/departmentPersonal :: spk4ColumnListRow" />
+					</th:block>
+				</th:block>
+				<th:block th:if="${parameterMap['abc'] == null}"
+				th:with="spkList = ${personalList.pl}, showIn = 'all'">
+					<th:block th:replace="hol2/departmentPersonal :: spk4ColumnList" />
+				</th:block>
+
+				<!-- 
 			<div data-ng-repeat="personal1 in personalList.pl"
 				data-ng-init="personalIndex = $index; col = $index%4;
 				personal2 = personalList.pl[personalIndex +1];
@@ -55,6 +91,7 @@
 					</div>
 				</div>
 			</div>
+ -->
 		</div>
 	</div>
 </div>

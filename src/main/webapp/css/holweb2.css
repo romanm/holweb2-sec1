@@ -1,5 +1,5 @@
 body {
-	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg");
+	background-image: url("/img/prapor-ua.jpeg");
 }
 bbody {
 	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg");
@@ -61,6 +61,10 @@ bbody {
 
 .hol-canceled {
 	text-decoration: line-through;
+}
+
+.bold {
+	font-weight: bold ;
 }
 
 .hol-url-inner {

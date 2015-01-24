@@ -14,7 +14,7 @@
 		</encoder>
 	</appender>
 	
-	<logger name="org.cuwyhol3" level="DEBUG" />
+	<logger name="holweb2sec" level="DEBUG" />
 
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
