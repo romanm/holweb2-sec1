@@ -4,10 +4,9 @@
 >
 <head>
 	<div th:replace="hol2/head :: metaLink" />
-
 	<title th:replace="hol2/head :: departmentOrder2" />
-	
 </head>
+
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
 	<div th:replace="hol2/navbar :: departmentHead2"/>
@@ -21,10 +20,12 @@
 			</div>
 			<div class="col-md-9" role="main">
 				<ol th:replace="hol2/navbar :: breadcrumbAjs" />
-				<div class="row">
+				<div class="row" th:with="showIn = 'dep'">
 					<div class="col-xs-3" th:with="person = ${department.dspl[0]}">
+
 						<div th:fragment="personLink">
-							<a th:href="${devProdUrlPrefix}+'spk/'+${person.personal_url}">  <img
+							<a th:href="${devProdUrlPrefix}+'spk/'+${person.personal_url}">
+								<img
 								th:if="${person['personal_foto'] != null} and ${person.personal_foto}"
 								class="img-circle"
 								th:src="'/img/spk/'+${person.personal_url}+'.jpg'" /> <img
@@ -32,7 +33,13 @@
 								class="img-circle" th:src="'/img/spk/0foto.jpg'" />
 
 								<div class="h4" th:text="${person.personal_username}"></div> <th:block
-									th:text="${person.position_name}"></th:block>
+									th:if="${showIn != 'dep'}" th:text="${person.department_name}+' в-я'"></th:block>
+								<th:block
+									th:if="${showIn != 'dep'} and ${person.position_name != 'Лікар'}"
+									th:text="' - ' + ${person.position_name}">
+								</th:block> <th:block th:if="${showIn == 'dep'}">
+									<span th:text="' - ' + ${person.position_name}"> </span>
+								</th:block>
 							</a>
 						</div>
 					</div>

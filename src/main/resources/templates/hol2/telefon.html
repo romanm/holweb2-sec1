@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="holweb2secApp" ng-controller="telefonHolController">
+<html ng-app="holweb2secApp" ng-controller="telefonHolController"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
 <div th:replace="hol2/head :: metaLink" />
 	<title>ХОЛ / Телефоний довідник</title>
@@ -24,41 +26,70 @@
 			</div>
 		</div>
 				 -->
-				<table class="table">
-					<th:block th:each="building : ${generalInfo.telefon.buildings}">
-						<tr>
-							<th colspan="3" th:text="${building.building}"></th>
-						</tr>
-						<th:block th:if="${building['telefonListe']}">
-							<th:block th:each="telefon : ${building.telefonListe}">
-								<tr>
-									<td th:text="${telefon.position}"></td>
-									<td th:text="${telefon.telefonInner}"></td>
-									<td th:if="${telefon['telefonStationary']}"
-										th:text="${telefon.telefonStationary}"></td>
-								</tr>
-								<th:block th:if="${telefon['personals']}">
-									<th:block th:each="person : ${telefon.personals}">
-									<th:block th:fragment="telefonPerson">
-										<tr th:if="${person['name']}">
-											<td class="telefon-owner"
-												th:text="${person.name}"></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr th:if="${person['position']}">
-											<td class="telefon-owner" th:text="${person.position}"></td>
-											<td th:if="${person['telefonInner']}"
-												th:text="${person.telefonInner}"></td>
-											<td th:if="${person['telefonStationary']}"
-												th:text="${person.telefonStationary}"></td>
-										</tr>
-										</th:block>
-									</th:block>
+				<table class="table2 telefon-table">
+					<col width="50%" />
+					<col width="50%" />
+					<tr>
+						<td>
+							<table class="table2" border="1">
+								<th:block
+									th:each="buildingKey : ${generalInfo.telefon.tables[0]}"
+									th:with="building = ${generalInfo.telefon[''+buildingKey]}">
+									<th:block th:replace="hol2/telefon :: buildingTelefonListe" />
 								</th:block>
+							</table>
+						</td>
+						<td>
+							<table class="table2" border="1">
+								<th:block
+									th:each="buildingKey : ${generalInfo.telefon.tables[1]}"
+									th:with="building = ${generalInfo.telefon[''+buildingKey]}">
+									<th:block th:replace="hol2/telefon :: buildingTelefonListe" />
+								</th:block>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<table class="table">
+					<th:block th:each="building : ${generalInfo.telefon.buildings}" >
+						<th:block th:fragment="buildingTelefonListe"
+							th:if="${building['telefonListe']}">
+							<tr class="telefon-building">
+								<th colspan="3" th:text="${building.building}"></th>
+							</tr>
+							<th:block th:each="telefon : ${building.telefonListe}">
+								<tr 
+								class="telefon-position"
+								th:if="${telefon['position']}">
+									<td th:text="${telefon.position}"></td>
+									<td th:fragment="telefonInner" 
+									><th:block th:if="${telefon['telefonInner'] !=null}"
+											th:text="${telefon.telefonInner}"></th:block></td>
+									<td th:fragment="telefonOuter" 
+									><th:block th:if="${telefon['telefonStationary']}"
+											th:text="${telefon.telefonStationary}">
+										</th:block>
+										<th:block th:if="${telefon['telefonMobil2']}"
+											th:text="${telefon.telefonMobil}">
+										</th:block></td>
+								</tr>
 								<th:block th:if="${telefon['personal']}"
 									th:with="person = ${telefon.personal}">
 									<tr th:replace="hol2/telefon :: telefonPerson" />
+								</th:block>
+								<th:block th:if="${telefon['personals']}">
+									<th:block th:each="person : ${telefon.personals}">
+										<th:block th:fragment="telefonPerson">
+											<tr th:with="telefon = ${person}">
+												<td class="telefon-owner"><th:block
+														th:if="${person['position']}" th:text="${person.position}"></th:block>
+													<th:block th:if="${person['name']}"
+														th:text="${person.name}"></th:block></td>
+												<td th:replace="hol2/telefon :: telefonInner" />
+												<td th:replace="hol2/telefon :: telefonOuter" />
+											</tr>
+										</th:block>
+									</th:block>
 								</th:block>
 							</th:block>
 						</th:block>

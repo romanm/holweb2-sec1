@@ -25,11 +25,28 @@ bbody {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
-
-.telefon-owner{
+/*--------------------------------telefon-------------------------------------*/
+.telefon-building, .telefon-building td{
+	text-align: center;
+	font-weight: bold;
+	background-color: gray;
+	color: white;
+}
+.telefon-position td {
+	font-weight: bold;
+}
+.telefon-table{
+	font-size: 14px;
+}
+.telefon-table td {
+	vertical-align: top;
+}
+.telefon-owner {
 	text-align: right;
 	font-style: italic;
+	font-size: 80%;
 }
+/*--------------------------------telefon----------------------------------END*/
 
 .adminHead{
 	background-image: url("/img/general/bh-wokzal.jpg");

@@ -9,12 +9,15 @@
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
 	<nav th:replace="hol2/navbar :: homeNavBar" />
-
+<!-- 
+					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
+ -->
 	<div class="container">
 		<div class="row">
 			<div role="complementary" class="col-md-3">
 				<nav th:fragment="aboutNavBarContainer"
-					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well">
+					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top bs-callout bs-callout-success hol-margin"
+					>
 					<div class="h5">
 						<a href="{{devProdUrlPrefix}}about">Про лікарню</a>
 					</div>

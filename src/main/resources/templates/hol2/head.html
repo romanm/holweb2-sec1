@@ -19,9 +19,13 @@
 
 </head>
 <body>
+<!-- 
+bs-callout bs-callout-success
 
-	<nav th:fragment="navPanelDepartment"
 		class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well hol-margin"
+ -->
+	<nav th:fragment="navPanelDepartment"
+		class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top bs-callout bs-callout-success hol-margin"
 		>
 		<div class="h5">
 			<a href="" th:href="'{{devProdUrlPrefix}}v.'+${departmentName}"

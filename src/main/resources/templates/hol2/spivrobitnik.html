@@ -18,16 +18,6 @@
 			<ol th:replace="hol2/navbar :: breadcrumbSpk"/>
 			<h1>Співпрацівники</h1>
 				<th:block th:each="p1,p1row : ${personalList.p1s}" >
-					<!-- 
-					<span th:text="${parameterMap['abc'] != null} ? (${p1 == parameterMap.abc[0]} ? 'bold') "> </span>
-					<span th:text="${parameterMap != null} ? ${parameterMap['abc'] != null} ? 'bold'"> </span>
-					<span th:text="${parameterMap.abc != null}"> </span>
-					<span th:text=""> </span>
-					<span th:text=""> </span>
-					<span th:text=""> </span>
-					 -->
-				<!-- 
-				 -->
 					<a th:class="${parameterMap['abc'] != null} ? (${p1 == parameterMap.abc[0]} ? 'bold') "
 						th:href="'?abc='+${p1}" th:text="${p1}"> </a>
 					<span th:if="${personalList.p1s.size()} gt ${p1row.index + 1}"> | </span>

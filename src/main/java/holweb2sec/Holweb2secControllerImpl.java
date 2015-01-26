@@ -122,12 +122,24 @@ public class Holweb2secControllerImpl {
 	}
 
 	public void makePersonalListSort() {
+		final Cyrillic2english cyrillic2english = new Cyrillic2english();
 		final Map<String, Object> personalListHolWeb = getPersonalListHolWeb();
 		List<Map<String, Object>> pl = (List<Map<String, Object>>) personalListHolWeb.get("pl");
+		logger.debug(""+pl);
 		HashMap<String, Map<String, Object>> m = new HashMap<String,Map<String, Object>>();
-		for (Map<String, Object> map : pl) {
-			m.put((String) map.get("personal_username"), map);
+		for (Map<String, Object> person : pl) {
+			String pUn = (String) person.get("personal_username");
+			if(pUn == null){
+				final String pN = (String) person.get("personal_name");
+				final String pSn = (String) person.get("personal_surname");
+				final String pPn = (String) person.get("personal_patronymic");
+				pUn = pN+" "+pSn.substring(0,1)+"."+pPn.substring(0,1)+".";
+				person.put("personal_username", pUn);
+				addPersonalUrl_p1(cyrillic2english, person);
+			}
+			m.put( pUn, person);
 		}
+		logger.debug(""+m);
 		final ArrayList<Map<String, Object>> pls = new ArrayList<Map<String, Object>>();
 		final List<String> p1s = new ArrayList<String>();
 		String p1last = "";
@@ -199,13 +211,18 @@ public class Holweb2secControllerImpl {
 		final List<Map<String, Object>> pl = (List<Map<String, Object>>) readJsonDbFile2map.get("pl");
 		final Cyrillic2english cyrillic2english = new Cyrillic2english();
 		for (Map<String, Object> person : pl) {
-			final String pun = (String) person.get("personal_username");
-			final String convert = cyrillic2english.convert(pun);
-			final String personalUrl = convert.replaceAll(" ", "").replaceAll("'", "").replaceAll("\\.", "");
-			person.put("personal_url", personalUrl);
-			person.put("p1", pun.substring(0,1));
+			addPersonalUrl_p1(cyrillic2english, person);
 		}
 		
+	}
+
+	private void addPersonalUrl_p1(final Cyrillic2english cyrillic2english,
+			Map<String, Object> person) {
+		final String pun = (String) person.get("personal_username");
+		final String convert = cyrillic2english.convert(pun);
+		final String personalUrl = convert.replaceAll(" ", "").replaceAll("'", "").replaceAll("\\.", "");
+		person.put("personal_url", personalUrl);
+		person.put("p1", pun.substring(0,1));
 	}
 	public List<Map<String, Object>> personalList() {
 		final List<Map<String, Object>> personalList = holEihJdbc.personalList();
