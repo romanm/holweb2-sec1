@@ -182,6 +182,12 @@ public class Holweb2secRest {
 		return "hol2/policlinic";
 	}
 
+	@RequestMapping(value="/hol2/geo", method=RequestMethod.GET)
+	public String geo( Model model) {
+		logger.debug("/hol2/about");
+		addGeneralInfoModel(model);
+		return "hol2/geo";
+	}
 	@RequestMapping(value="/hol2/about", method=RequestMethod.GET)
 	public String about( Model model) {
 		System.out.println("/hol2/about");
@@ -231,6 +237,7 @@ public class Holweb2secRest {
 		System.out.println("/hol2/liklife");
 		logger.debug("/hol2/liklife");
 		addModelAll(model);
+		getGeneralInfo(model);
 		return "hol2/hospitalLife";
 	}
 

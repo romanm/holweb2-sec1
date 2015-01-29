@@ -78,11 +78,14 @@ public class Holweb2secControllerImpl {
 		List<Map<String, Object>> dpl = new ArrayList<Map<String, Object>>();
 		final Object dId = department.get("department_id");
 		final Object dId2 = department.get("department_id2");
+		logger.debug(dId+" / "+dId2);
 		final Map<String, Object> personalListHolWeb = getPersonalListHolWeb();
 		List<Map<String, Object>> pl = (List<Map<String, Object>>) personalListHolWeb.get("pl");
 		for (Map<String, Object> person : pl) {
+			logger.debug(""+person);
 			final Object departmentId = person.get("department_id");
-			if(departmentId.equals(dId) || departmentId.equals(dId2))
+			logger.debug(""+departmentId);
+			if(dId.equals(departmentId) || (null != dId2 && dId2.equals(departmentId)))
 			{
 				final int positionId = (int) person.get("position_id");
 				if(positionId == 3){//chief

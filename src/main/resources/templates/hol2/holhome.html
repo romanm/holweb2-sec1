@@ -23,7 +23,7 @@
 </head>
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
-	<nav th:replace="hol2/navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: homeNavBar" />
 	<!-- 
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
 	 -->
@@ -74,9 +74,7 @@
 								служб.
 							</div>
 							<div class="col-md-7">
-								<a href="{{devProdUrlPrefix}}news">
-								Новини
-								</a>
+								<a href="{{devProdUrlPrefix}}news"> Новини </a>
 								<div id="newsCarousel" class="carousel slide"
 									data-ride="carousel">
 									<!-- 
@@ -84,7 +82,8 @@
 									 -->
 									<div class="carousel-inner item-lr-more" role="listbox">
 										<div data-ng-repeat="x in generalInfo.news.news"
-											style="height: {{generalInfo.news.carouselHeight}};" class="item {{x.carouselActive}}">
+											style="height: {{generalInfo.news.carouselHeight"
+											class="item {{x.carouselActive}}">
 											<div data-ng-bind-html="x.textHtml"></div>
 										</div>
 									</div>
@@ -124,7 +123,9 @@
 								<div class="t073">
 									<span field="number" class="circle">1</span>
 									<h6 field="title">
-										<span style="font-weight: 400;">Створення</span>
+										<span style="font-weight: 400;"> <a
+											href="{{devProdUrlPrefix}}about#p-0-1"> Створення </a>
+										</span>
 									</h6>
 									<p field="descr">
 										<span style="font-weight: 300;">З жовтня 1948 року на
@@ -185,7 +186,11 @@
 									</h6>
 									<p field="descr">
 										<span style="font-weight: 300;">Маршрутки 29, 49 ...</span>
-									<div>Детальніше</div>
+									<div>
+									<a href="{{devProdUrlPrefix}}geo#route" role="button"
+										class="btn btn-default">Детальніше ...</a>
+									</div>
+									
 									</p>
 								</div>
 							</div>
@@ -198,7 +203,10 @@
 									<p field="descr">
 										<span style="font-weight: 300;"> В поліклініці лікарні
 											кваліфіковані фахівці ведуть години прийому. </span>
-									<div>Приймальне відділення - Корпус номер 7</div>
+									<div>
+										<a href="{{devProdUrlPrefix}}policlinic"> Приймальне
+											відділення </a>
+									</div>
 									</p>
 								</div>
 							</div>
@@ -210,7 +218,9 @@
 									</h6>
 									<p field="descr">
 										<span style="font-weight: 300;">На теріторії лікарні
-											розташовано сім корпусів</span>
+											розташовано сім лікувальних <a
+											href="{{devProdUrlPrefix}}geo#houses">корпусів</a>
+										</span>
 									</p>
 								</div>
 							</div>
@@ -233,17 +243,17 @@
 				</div>
 				<div class="cd-scrolling-bg cd-color-1" th:fragment="adminHead">
 					<div class="cd-container">
-						<div class="row" id="hospital-chief">
+						<div class="row">
 							<div class="col-md-6">
+								<h2 id="hospital-chief">Головний лікар</h2>
 								На теперішній час Хмельницьку обласну лікарню очолює Флаксемберг
 								Аркадій Семенович, організатор охорони здоров’я вищої
 								кваліфікаційної категорії, лікар-хірург вищої кваліфікаційної
 								категорії, Заслужений лікар України.
 								<div
-								th:if="${not #strings.contains(#httpServletRequest.servletPath,'admin')}"
-								>
-									<a href="{{devProdUrlPrefix}}admin" 
-									role="button" class="btn btn-default">Детальніше на адмін сторінці...</a>
+									th:if="${not #strings.contains(#httpServletRequest.servletPath,'admin')}">
+									<a href="{{devProdUrlPrefix}}admin" role="button"
+										class="btn btn-default">Детальніше на адмін сторінці...</a>
 								</div>
 							</div>
 							<div class="col-md-6">

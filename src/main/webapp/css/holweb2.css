@@ -1,7 +1,8 @@
 body {
-	background-image: url("/img/prapor-ua.jpeg");
+	background: url("/img/prapor-ua.jpeg") top center no-repeat fixed;
 }
 bbody {
+	background-image: url("/img/prapor-ua.jpeg");
 	background-image: url("https://pbs.twimg.com/profile_background_images/471905659923881984/HqgaeOqY.jpeg");
 }
 .head-img-vids {
@@ -68,10 +69,14 @@ bbody {
 .font050 {
 	font-size: 50%;
 }
+#newsCarousel{
+	height: 160px;
+}
 .item-lr-more>.item
 {
-	margin: 50px 120px;
+	margin: 10px 30px;
 	/*
+	margin: 50px 120px;
 	margin-left: 120px;
 	*/
 }

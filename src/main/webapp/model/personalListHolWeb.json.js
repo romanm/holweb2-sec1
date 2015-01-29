@@ -3274,6 +3274,7 @@
     "position_id" : 1,
     "position_name" : "Лікар",
     "personal_url" : "TsekhmisterKYu",
+    "personal_foto" : true,
     "titles" : [ "лікар вищої категорії" ],
     "p1" : "Ц"
   }, {

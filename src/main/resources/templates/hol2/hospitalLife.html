@@ -8,18 +8,34 @@
 </head>
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
-	<nav th:replace="hol2/navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: homeNavBar" />
 	<div class="container">
-		<div class="row">
+		<div class="row"
+			th:with="basicUrl = 'liklife', siteModel = ${generalInfo.siteModel.liklife}">
 			<div role="complementary" class="col-md-3">
+				<nav th:fragment="aboutNavBarContainer"
+					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top bs-callout bs-callout-success hol-margin">
+					<div th:replace="hol2/about :: navBarHead"></div>
+					<hr />
+					<ul th:replace="hol2/about :: aboutNavBar" />
+
+					<a th:replace="hol2/holhome :: gotoTop" />
+				</nav>
 			</div>
-			<div role="complementary" class="col-md-9">
-			Заповнюється :)
+			<div role="main" class="col-md-9">
+				<ol th:replace="hol2/about :: breadcrumbAbout" />
+				<h2
+				th:text=" ${siteModel.title}"
+				>Життя лікарні</h2>
+				<a href="{{devProdUrlPrefix}}history">Історія становлення
+					лікарні</a>
 			</div>
 		</div>
 	</div>
 	
-		<th:block th:replace="hol2/head :: pageFooterScript" />
-	
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
+	<th:block th:replace="hol2/head :: pageFooterScript" />
+
 </body>
 </html>

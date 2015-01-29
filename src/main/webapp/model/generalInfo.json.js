@@ -1,6 +1,28 @@
 {
-	"s2pages" : [ "about", "admin", "telefon", "history" ],
-	"hpVids" : [ {
+	"s2pages" : [ "about", "admin", "telefon", "geo" ]
+	,"siteModel" : {
+		"about" : {
+			"level1sites":["admin","telefon","geo"]
+			,"title":"Про лікарню"
+			,"admin" : {
+				"title":"Адміністрація лікарні"
+			}
+			,"telefon" : {
+				"title":"Телефонний довідник"
+			}
+			,"geo" : {
+				"title":"Путівник по лікарні"
+			}
+		},
+		"liklife" : {
+			"level1sites":["history"]
+			,"title":"Життя лікарні"
+			,"history" : {
+				"title":"Історія становлення лікарні"
+			}
+		}
+	}
+	,"hpVids" : [ {
 		"vUrl" : "cardiacsurgery",
 		"name" : "Кардіоендоваскулярна хірургія",
 		"type" : "chirurgiae",
@@ -22,8 +44,11 @@
 		"carouselHeight" : "150px",
 		"news" : [ {
 			"timesTheNews" : "16.01.2015 22:33",
-			"textHtml" : "<img width='50' title='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' alt='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' src='http://www.amn.net.ua/img/item/2015-01/1421439481.jpg'/> О.Квіташвілі <a href='http://www.amn.net.ua/ukr/news/events/33035'  target='_blank' >стверджує, що для медреформи потрібна консолідація</a> усіх гілок держвлади ",
+			"textHtml" : "<div><img width='50' title='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' alt='О.Квіташвілі стверджує, що для медреформи потрібна консолідація усіх гілок держвлади' src='http://www.amn.net.ua/img/item/2015-01/1421439481.jpg'/> О.Квіташвілі <a href='http://www.amn.net.ua/ukr/news/events/33035'  target='_blank' >стверджує, що для медреформи потрібна консолідація</a> усіх гілок держвлади </div>",
 			"carouselActive" : "active"
+		}, {
+			"timesTheNews" : "26 Грудня 2015 18:08",
+			"textHtml" : "Оновлено «<a href='telefon'>Телефонний довідник</a>»"
 		}, {
 			"timesTheNews" : "24 Жовтня 2014 09:28",
 			"textHtml" : " <a href='http://censor.net.ua/news/308627/rektor_donetskogo_meduniversiteta_otkazalsya_podchinyatsya_okkupantam_ya_vsegda_budu_grajdaninom_ukrainy'> Ректор Донецкого медуниверситета отказался подчиняться оккупантам: «Я всегда буду гражданином Украины» </a>"
@@ -172,7 +197,115 @@
 	"telefon" : {
 		"pageUrl" : "telefon",
 		"pageName" : "Телефонний довідник",
-		"tables":[["policlinic","bookkeeping","pharmacy"],["housing3"]],
+		"tables":
+			[[["policlinic","bookkeeping","pharmacy"],["housing3"]],
+			[["housing7"],[]]
+			],
+		"housing7": {
+			"building" : "Корпус 7"
+			,"telefonListe" : 
+			[{
+				"position" : "Начальник штабу цивільної оборони",
+				"telefonStationary" : "79-57-61",
+				"telefonInner" : "3-65",
+				"personal" : {
+					"name" : "Бондарчук Володимир Михайлович",
+					"telefonHome" : "65-13-49"
+				}
+			},{
+				"position" : "Заступник головного лікаря з хірургічної роботи",
+				"telefonStationary" : "79-57-61",
+				"telefonInner" : "3-65",
+				"personal" : {
+					"name" : "Підмурняк Олексій Олексійович",
+					"telefonMobil" : "097-5-13-49"
+				}
+			},{
+				"position" : "Профком",
+				"telefonStationary" : "79-57-61",
+				"telefonInner" : "1-25",
+				"personal" : {
+					"name" : "Рак Галина Михайлівна",
+					"telefonHome" : "72-03-29",
+					"telefonMobil" : "097-5668998"
+				},
+				"personals" : [ {
+					"position" : "Секретар",
+					"telefonHome" : "65-94-73"
+				}]
+			},{
+				"position" : "Приймальне відділення",
+				"telefonStationary" : "65-00-55",
+				"telefonInner" : "3-63"
+			},{
+				"position" : "Стіл довідок",
+				"telefonStationary" : "65-82-72",
+				"telefonInner" : "3-85"
+			},{
+				"position" : "Ендоскопічне відділення",
+				"telefonStationary" : "65-82-72",
+				"telefonInner" : "3-66",
+				"personal" : {
+					"name" : "Мукомела Олег Іванович",
+					"telefonHome" : "3-03-40",
+					"telefonMobil" : "050-3391997"
+				}
+			},{
+				"position" : "Комп'ютерна томографія",
+				"telefonStationary" : "65-40-73",
+				"telefonInner" : "3-84",
+				"personal" : {
+					"name" : "Дарманський Сергій Миколайович",
+					"telefonMobil" : "050-9121488"
+				}
+			},{
+				"position" : "Ліпотрипсія",
+				"telefonInner" : "4-12",
+				"personal" : {
+					"name" : "Войцишен Володимир Васильович",
+					"telefonHome" : "9-11-77",
+					"telefonMobil" : "067-72-39-077"
+				}
+			},{
+				"position" : "Рентгенологічне відділення",
+				"telefonInner" : "3-97",
+				"personal" : {
+					"name" : "Чурбанов Олег Васильович",
+					"telefonHome" : "65-21-48",
+					"telefonMobil" : "067-74-71-700"
+				}
+			},{
+				"position" : "УЗД",
+				"telefonInner" : "3-83",
+				"personal" : {
+					"name" : "Ільчук Галина Мусіївна",
+					"telefonMobil" : "097-96-37-817"
+				}
+			},{
+				"position" : "УЗД серця",
+				"telefonInner" : "4-33"
+			},{
+				"position" : "Фізіотерапевтичний кабінет",
+				"telefonInner" : "3-69",
+				"personals" : [ {
+					"position" : "Електрики",
+					"telefonInner" : "3-67"
+				}, {
+					"position" : "Киснева",
+					"telefonInner" : "3-81"
+				}, {
+					"position" : "Сантехніки",
+					"telefonInner" : "3-68"
+				} ]
+			},{
+				"position" : "Харчоблок",
+				"telefonInner" : "3-60",
+				"telefonStationary" : "79-47-37",
+				"personal" : {
+					"name" : "Брянцева Альона Леонідівна"
+				}
+			}]
+		},
 		"pharmacy": {
 			"building" : "Аптека"
 			,"telefonListe" : 
@@ -515,10 +648,7 @@
 			"building" : "Корпус 4"
 				,"telefonListe" : 
 					[ {}]
-		}, {
-			"building" : "Корпус 7"
-				,"telefonListe" : 
-					[ {}]
+			
 		} ]
 	},
 	"admin" : {

@@ -6,14 +6,16 @@
 </head>
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
-	<nav th:replace="hol2/navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: homeNavBar" />
 
 	<div class="container">
-		<div class="row">
+		<div class="row"
+		th:with="basicUrl = 'liklife', siteModel = ${generalInfo.siteModel.liklife}">
 			<div role="complementary" class="col-md-3">
-				<nav th:replace="hol2/about :: aboutNavBarContainer" />
+				<nav th:replace="hol2/hospitalLife :: aboutNavBarContainer" />
 			</div>
-			<div role="main" class="col-md-9">
+			<div role="main" class="col-md-9"
+				th:with="siteModel = ${generalInfo.siteModel.liklife}">
 				<ol th:replace="hol2/about :: breadcrumbAbout" />
 				<div class="bs-docs-section"
 					th:each="s2 : ${generalInfo.history.docBlock}">

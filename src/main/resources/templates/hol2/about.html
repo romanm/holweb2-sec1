@@ -8,18 +8,28 @@
 </head>
 <body>
 	<div th:replace="hol2/navbar :: holHead" />
-	<nav th:replace="hol2/navbar :: homeNavBar" />
+	<div th:replace="hol2/navbar :: homeNavBar" />
 <!-- 
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
  -->
 	<div class="container">
-		<div class="row">
+		<div class="row"
+				th:with="basicUrl = 'about', siteModel = ${generalInfo.siteModel.about}"
+		>
 			<div role="complementary" class="col-md-3">
 				<nav th:fragment="aboutNavBarContainer"
 					class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top bs-callout bs-callout-success hol-margin"
 					>
-					<div class="h5">
-						<a href="{{devProdUrlPrefix}}about">Про лікарню</a>
+					<div class="h5"
+					 th:fragment="navBarHead"
+					>
+						<a th:href="'{{devProdUrlPrefix}}' +${basicUrl}"
+						th:text=" ${siteModel.title}"
+						></a> <small
+							th:each="level1site : ${siteModel.level1sites}"
+							th:if="${#strings.contains(#httpServletRequest.servletPath,level1site)}"
+							th:text="${siteModel[''+level1site].title}">
+						</small>
 					</div>
 					<!-- 
 					<ul class="nav bs-docs-sidenav" th:with="s1 = ${generalInfo.about}">
@@ -37,8 +47,24 @@
 								<li><a href="#obstetrics"> Акуше́рство </a></li>
 							</ul></li>
 					</ul>
+					<ul class="nav bs-docs-sidenav" 
+						th:if="${#strings.contains(#httpServletRequest.servletPath,'geo')}">
+						<li><a href="#adress"> Контактні данні </a></li>
+						<li><a href="#map"> Карта </a></li>
+						<li><a href="#route">Як доїхати</a></li>
+						<li><a href="#houses"> Корпуса </a></li>
+					</ul>
 					<hr/>
 					<ul class="nav bs-docs-sidenav" th:fragment="aboutNavBar">
+
+						<li
+							th:each="level1site : ${siteModel.level1sites}"><a
+							th:class="
+							${#strings.contains(#httpServletRequest.servletPath, level1site)} ? 'chouse-nav-item'"
+							th:href="'{{devProdUrlPrefix}}'+${level1site}"
+							th:text="${siteModel[''+level1site].title}">
+						</a></li>
+<!-- 
 						<li><a
 							data-ng-class="{'chouse-nav-item' : isPage('admin') }"
 							href="{{devProdUrlPrefix}}admin"> Адміністрація лікарні </a></li>
@@ -46,27 +72,25 @@
 							data-ng-class="{'chouse-nav-item' : isPage('telefon') }">
 								Телефонний довідник 
 								</a></li>
-						<li><a href="{{devProdUrlPrefix}}history"
-							data-ng-class="{'chouse-nav-item' : isPage('history') }">
-								Історія становлення лікарні </a></li>
+						<li><a href="{{devProdUrlPrefix}}geo"
+							data-ng-class="{'chouse-nav-item' : isPage('geo') }">
+								Путівник по лікарні</a></li>
+ -->
 					</ul>
 					<a th:replace="hol2/holhome :: gotoTop" />
 				</nav>
 			</div>
-			<div role="main" class="col-md-9">
+			<div role="main" class="col-md-9"
+				>
 				<ol class="breadcrumb hidden-print" id="bc-sm"
 					th:fragment="breadcrumbAbout">
 					<li th:replace="hol2/navbar :: bc-homepage" />
-					<li><a href="{{devProdUrlPrefix}}about">Про лікарню</a></li>
-					<li
-						th:if="${#strings.contains(#httpServletRequest.servletPath,'admin')}"><a
-						href="{{devProdUrlPrefix}}admin">Адміністрація лікарні</a></li>
-					<li
-						th:if="${#strings.contains(#httpServletRequest.servletPath,'telefon')}"><a
-						href="{{devProdUrlPrefix}}telefon">Телефонний довідник</a></li>
-					<li
-						th:if="${#strings.contains(#httpServletRequest.servletPath,'history')}"><a
-						href="{{devProdUrlPrefix}}telefon">Історія становлення лікарні</a></li>
+					<li><a th:href="'{{devProdUrlPrefix}}' +${basicUrl}"
+						th:text="${siteModel.title}"></a></li>
+					<li th:each="level1site : ${siteModel.level1sites}"
+						th:if="${#strings.contains(#httpServletRequest.servletPath,level1site)}"><a
+						th:href="'{{devProdUrlPrefix}}'+${level1site}"
+						th:text="${siteModel[''+level1site].title}"> </a></li>
 				</ol>
 
 				<div class="bs-docs-section"
@@ -78,7 +102,9 @@
 		</div>
 	</div>
 	
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
 	<th:block th:replace="hol2/head :: pageFooterScript" />
-	
+
 </body>
 </html>

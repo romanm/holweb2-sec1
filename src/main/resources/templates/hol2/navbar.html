@@ -137,10 +137,8 @@
 	class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top well"
 	 class="navbar navbar-default" 
  -->
-	<nav th:fragment="homeNavBar"
-	 class="navbar navbar-default hol-margin" 
-	>
-		<div class="container-fluid">
+	<div class="container"  th:fragment="homeNavBar">
+		<nav class="navbar navbar-default hol-margin">
 			<div th:replace="hol2/navbar :: iconsLinkHome" />
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -156,12 +154,13 @@
 					</form>
 				</th:block>
 			</div>
-		</div>
-	</nav>
-<!-- 
+		</nav>
+	</div>
+	<!-- 
 	<nav class="navbar navbar-default hol-margin" id="nav" th:fragment="topNavBar">
  -->
-	<nav class="navbar navbar-default hol-margin" th:fragment="topNavBar">
+ <div class="container" th:fragment="topNavBar">
+	<nav class="navbar navbar-default hol-margin" >
 		<div class="container-fluid">
 			<div th:replace="hol2/navbar :: iconsLinkHome"/>
 			<div class="collapse navbar-collapse"
@@ -205,6 +204,7 @@
 
 		</div>
 	</nav>
+ </div>
 
 	<th:block th:fragment="seekFormBody">
 		<div class="form-group">

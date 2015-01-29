@@ -10,11 +10,12 @@
 <body>
 
 	<div th:replace="hol2/navbar :: holHead" />
-	<nav th:replace="hol2/navbar :: homeNavBar" />
-	
+	<div th:replace="hol2/navbar :: homeNavBar" />
 
 	<div class="container">
-		<div class="row">
+		<div class="row"
+			th:with="basicUrl = 'about', siteModel = ${generalInfo.siteModel.about}"
+		>
 		<div role="complementary" class="col-md-3">
 			<nav th:replace="hol2/about :: aboutNavBarContainer" />
 		</div>
@@ -109,10 +110,9 @@
 		</div>
 	</div>
 
-
 	<footer th:replace="hol2/head :: pageFooter"/>
 	<div th:replace="hol2/head :: docFooter"/>
 	<th:block th:replace="hol2/head :: pageFooterScript" />
-	
+
 </body>
 </html>
