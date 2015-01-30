@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="geoHolController"
+	xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+<div th:replace="hol2/head :: metaLink" />
+	<title>ХОЛ / Путівник по лікарні</title>
+</head>
+<body>
+	<div th:replace="hol2/navbar :: holHead" />
+	<div th:replace="hol2/navbar :: homeNavBar" />
+	
+	<div class="container">
+		<div class="row"
+				th:with="basicUrl = 'about', siteModel = ${generalInfo.siteModel.about}"
+		>
+			<div role="complementary" class="col-md-3">
+			<nav th:replace="hol2/about :: aboutNavBarContainer" />
+			
+			</div>
+			<div role="main	" class="col-md-9">
+			<ol th:replace="hol2/about :: breadcrumbAbout" />
+				<div class="row">
+					<div class="col-md-6">
+						<h3 id="adress">Контактні данні</h3>
+						<h4>Хмельницька обласна лікарня</h4>
+						вул. Пілотская, 1, 29010 м.Хмельницкий, Хмельницька обл.
+						<hr/>
+						<div>Телефон: (0382) 65-05-76</div>
+						<div>E-mail: incoming@med.km.ua</div>
+						<div>Сайт: http://hol.in.ua</div>
+					</div>
+					<div class="col-md-6">
+						<h3 id="map">Карта</h3>
+						<iframe scrolling="no" marginheight="0" marginwidth="0"
+							src="https://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D0%BD%D0%B0+%D0%BB%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F&amp;aq=&amp;sll=49.411487,26.968164&amp;sspn=0.01075,0.016394&amp;ie=UTF8&amp;hnear=&amp;t=m&amp;source=embed&amp;hq=&amp;iwloc=A&amp;ll=49.412169,27.003873&amp;spn=0.006295,0.006295&amp;output=embed"
+							width="425" frameborder="0" height="350"></iframe>
+						<br/> <small><a
+							href="https://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D0%BD%D0%B0+%D0%BB%D1%96%D0%BA%D0%B0%D1%80%D0%BD%D1%8F&amp;aq=&amp;sll=49.411487,26.968164&amp;sspn=0.01075,0.016394&amp;ie=UTF8&amp;hnear=&amp;t=m&amp;source=embed&amp;hq=&amp;iwloc=A&amp;ll=49.412169,27.003873&amp;spn=0.006295,0.006295"
+							style="color: #0000FF; text-align: left">View Larger Map</a></small>
+					</div>
+				</div>
+				<h3 id="route">Як доїхати</h3>
+				<p>Маршрутки 29, 49 ...</p>
+				<h3 id="houses">Корпуса</h3>
+				<img class="img-thumbnail pull-right" alt="Корпуса лікарні"
+					src="/img/hol-houses.jpg" /> <a href="{{devProdUrlPrefix}}vid" role="button"
+					class="btn btn-default">Детальніше про відділення ...</a>
+				<div class="row">
+					<div class="col-md-6">
+						<table class="telefon-table">
+							<tr>
+								<th>Корпус № 1</th>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li><a href="{{devProdUrlPrefix}}admin#hospital-chief">
+												Головний лікар </a> <br /> Хмельницької обласної лікарні</li>
+										<li><a href="{{devProdUrlPrefix}}admin#obstetrics">
+												Заступник головного лікаря з акушерства та гінекології </a> ,
+											керівник обласного перинатального центру</li>
+										<li>Обласний центр планування сім’ї
+											<ul>
+												<li>Приймальне відділення</li>
+											</ul>
+										</li>
+										<li>Відділення сумісного перебування матері і дитини</li>
+										<li><a href="{{devProdUrlPrefix}}vid#obstetrics">
+												Пологове відділення </a></li>
+										<li>Відділення інтенсивної терапії новонароджених</li>
+										<li>Відділення анестезіології та інтенсивнї терапії</li>
+										<li>Відділення постінтенсивного догляду та виходжування
+											новонароджених</li>
+										<li><a href="{{devProdUrlPrefix}}vid#gynecology">
+												Гінекологічне </a> відділення</li>
+										<li>Відділення <a
+											href="{{devProdUrlPrefix}}vid#pregnancy"> патології
+												вагітних </a> та екстрагенитальної патології з ліжками
+											невиношування
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+						<table class="telefon-table">
+							<tr>
+								<th>Корпус № 2</th>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li><a href="{{devProdUrlPrefix}}vid#rheuma">Ревматологічне
+										</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#endocrinology">Ендокринологічне</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#gastro">Гастроентерологічне</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#ophthalmology">Очне</a></li>
+										<li>Обласна МСЕК</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+						<table class="telefon-table">
+							<tr>
+								<th>Корпус № 3</th>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li><a href="{{devProdUrlPrefix}}vid#physiotherapy">Фізиотерапевтичне</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#maxillofacial">Щелепно-лицьове</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#pulmo">Пульмонологічне</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#thorax">Торакальна
+												хірургія</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#orthopaedic">Травматологічне</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#nephro">Нефрологічне</a></li>
+										<li><a href="{{devProdUrlPrefix}}vid#burnsurgery">Опікове</a></li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+						<table class="telefon-table">
+							<tr>
+								<th>Корпус № 4</th>
+							</tr>
+							<tr>
+								<td>
+								<ul>
+								<li>Гематологічне відділення</li>
+								</ul>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-md-6">
+						<table class="telefon-table">
+							<tr>
+								<th>Корпус № 5</th>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li><a href="http://hood.org.ua/"> Обласний
+												онкодиспансер </a></li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+						<table class="telefon-table">
+							<tr>
+								<th>Корпус № 6</th>
+							</tr>
+							<tr>
+								<td>
+								<ul>
+								<li>Обласний центр екстренної медичної допомоги та медицини катастроф </li>
+								<li>Водолікування</li>
+								</ul>
+								</td>
+							</tr>
+						</table>
+						<table class="telefon-table">
+							<tr>
+								<th>Корпус № 7</th>
+							</tr>
+							<tr>
+								<td>
+								<ul>
+								<li>Приймальне відділення</li>
+								<li>Ендоскопічне</li>
+								<li>Рентгенологічне відділення</li>
+								<li>Проктологічне</li>
+								<li>Урологічне</li>
+								<li>Нейрохірургічне</li>
+								<li>Судинна хірургія</li>
+								<li>Кардіохірургічне</li>
+								<li>Нефрологічне</li>
+								<li>Хірургічне</li>
+								<li>Реанімаційне</li>
+								<li>Детоксикація</li>
+								<li>Операційний блок</li>
+								</ul>
+								<h4>КАБІНЕТИ</h4>
+								<ul>
+								<li>УЗД</li>
+								<li>Комп’ютерна томографія</li>
+								<li>Ендоурологія</li>
+								</ul>
+								<h4>КЛІНІКА</h4>
+								<ul>
+								<li>професора Суходолі А.І.</li>
+								</ul>
+								</td>
+							</tr>
+						</table>
+					<table class="telefon-table">
+							<tr>
+								<th>Корпус № 8</th>
+							</tr>
+							<tr>
+								<td>
+								<ul>
+								<li>Архів</li>
+								</ul>
+								</td>
+							</tr>
+						</table>
+					<table class="telefon-table">
+							<tr>
+								<th>Корпус № 9</th>
+							</tr>
+							<tr>
+								<td>
+								<ul>
+								<li>Бухгалтерія</li>
+								</ul>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="hol2/head :: pageFooter"/>
+	<div th:replace="hol2/head :: docFooter"/>
+	<th:block th:replace="hol2/head :: pageFooterScript" />
+
+</body>
+</html>
