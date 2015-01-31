@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="ekgController">
+<head>
+<meta charset="UTF-8" />
+<title>ХОЛ, Відділення: {{department.name}}</title>
+<link rel="stylesheet" href="/css-vendor/bootstrap.css" />
+<link href="/css/scrollspy.css" rel="stylesheet" />
+<link href="/css/holweb2.css" rel="stylesheet" />
+<style type="text/css">
+.ecg_img {
+	background-image: url("/img/bd-k/ecg/grid.gif");
+}
+.bold {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" role="main">
+				<h1>ЕКГ приклади</h1>
+				<a href="http://www.ecglibrary.com/ecghome.php">Приклади</a> з <a
+					href="http://www.ecglibrary.com/ecgsbyeg.html">офіційної
+					сторінки</a> книжки ECGs by Example. Jenkins + Gerred
+				<ul>
+					<li data-ng-repeat="o2 in bdk_ecg.ecg_bejg.orders2">{{o2.name}}
+						<ul>
+							<li data-ng-repeat="o3 in o2.orders3"
+								data-ng-class="{'ecg_img bold': o3.showEcg}"><a
+								data-ng-click="o3.showEcg = !o3.showEcg">
+									{{o3.name}} <span data-ng-show="o3.ecg_img"
+									class="glyphicon glyphicon-picture"></span> <span
+									class="glyphicon"
+									data-ng-class="{'glyphicon-chevron-up': o3.showEcg, 'glyphicon-chevron-down':!o3.showEcg}"></span>
+							</a>
+								<ul>
+									<li data-ng-repeat="o4 in o3.orders4">{{o4.name}}</li>
+								</ul>
+								<div data-ng-show="o3.showEcg">
+									<div data-ng-if="o3.ecg_img">
+										<hr />
+										<h2>{{o3.title}}</h2>
+										<img src="{{o3.ecg_img}}" />
+									</div>
+								</div>
+								<div data-ng-if="o3.note" class="bs-callout bs-callout-info">
+									{{o3.note}}</div></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="/js-vendor/jquery-2.1.1.min.js"></script>
+	<script src="/js-vendor/bootstrap.min.js"></script>
+	<script src="/js/scrollspy.js"></script>
+	<script src="/js-vendor/angular.min.js"></script>
+	<script src="/js-vendor/angular-sanitize.min.js"></script>
+	<script src="/js-vendor/ui-bootstrap-tpls-0.11.0.js"></script>
+	<script src="/js-vendor/textAngular-sanitize.min.js"></script>
+	<script src="/js-vendor/textAngular.min.js"></script>
+	<script src="/js/holweb2secApp.directive.js"></script>
+	<script src="/js/moresmall.controller.js"></script>
+
+</body>
+</html>
