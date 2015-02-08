@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="holweb2secApp" ng-controller="icd10Controller">
+<head>
+<meta charset="UTF-8" />
+<title>ХОЛ, Відділення: {{department.name}}</title>
+<link rel="stylesheet" href="/css-vendor/bootstrap.css" />
+<link href="/css/scrollspy.css" rel="stylesheet" />
+<link href="/css/holweb2.css" rel="stylesheet" />
+<style type="text/css">
+.ecg_img {
+	background-image: url("/img/bd-k/ecg/grid.gif");
+}
+
+.bold {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" role="main">
+				<h1>МКБ 10</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-7" role="main">
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<span data-ng-show="seek">Пошук</span> <input type="text"
+							name="seek" data-ng-model="seek" class="form-control"
+							placeholder="Пошук" />
+					</div>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" role="main">
+				<ul>
+					<li data-ng-repeat="vid in icd10Root.icd10Childs | filter: seek">
+						{{ vid.icdCode }}, {{ vid.icdName }}
+						<ul data-ng-if="seek.length > 3">
+							<li data-ng-repeat="vid2 in vid.icd10Childs | filter: seek">
+								{{ vid2.icdCode }}, {{ vid2.icdName }}
+								<ul>
+									<li data-ng-repeat="vid3 in vid2.icd10Childs | filter: seek">
+										{{ vid3.icdCode }}, {{ vid3.icdName }}
+										<ul>
+											<li data-ng-repeat="vid4 in vid3.icd10Childs | filter: seek">
+												{{ vid4.icdCode }}, {{ vid4.icdName }}</li>
+										</ul>
+									</li>
+								</ul></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="/js-vendor/angular.min.js"></script>
+		<script src="/js-vendor/textAngular-sanitize.min.js"></script>
+	<script src="/js-vendor/textAngular.min.js"></script>
+	
+	<script src="/model/icd10uaGroups.json.js"></script>
+	<script src="/js/holweb2secApp.directive.js"></script>
+	<script src="/js/moresmall.controller.js"></script>
+	
+</body>
+</html>
